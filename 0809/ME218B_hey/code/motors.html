@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>motors Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="E128/motors.h">motors.h</a></li>
+<li><a href="E128/motors.c">motors.c</a></li>
+</ul>
+<h3>Interface:</h3>
+
+<p>
+<strong>Function:</strong> InitMotors<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Initializes PWM signals for the Motors
+</p>
+
+<p>
+<strong>Function:</strong> SetPWMOffset<br />
+<strong>Arguments:</strong> Character representing the offset value.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Sets an offset to increase/decrease the magnitude of SimpleMove 
+    commands.
+</p>
+
+<p>
+<strong>Function:</strong> SimpleMove<br />
+<strong>Arguments:</strong> Floats representing the Left and Right duty cycles.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Implements Drive-Brake via and H-bridge. Sends PWM signal to the 
+    robot left and right wheel. <br />
+    -100 (full backwards) to 0 (stopped) to 100 (full forwards)
+</p>
+
+<p>
+<strong>Function:</strong> ControlLawMove<br />
+<strong>Arguments:</strong> Characters representing requesting Left and Right duty cycles<br />
+<strong>Returns:</strong> None. <br />
+<strong>Description:</strong>Sets the module level variables with the requested RPMs for use by 
+    the interrupt Encoder.
+</p>
+	
+<p>
+<strong>Function:</strong> EncoderInterrupt<br />
+<strong>Arguments:</strong> LongByInts structure representing previous time and LongByInts structure representing current time<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Function to run in Interrupt response routine for either encoder. Takes pointers so it
+    can modify the correct variables.
+</p>
+
+<h3>Pseudo-Code:</h3>
+
+<pre> 
+<strong>void InitMotors(void)</strong>
+    Enable PWM0,PWM1,PWM2,PWM3
+    Set clock A and B to /4
+    Set PWM Output polarity as initially high
+    Set clock select to scaled clock A and B
+    Set scale for A
+    Set scale for B
+    Map PWM output to U0, U1, U2, U3                                          
+    Set all four PWM periods			      
+    Initialize all for duties to 0   
+  
+<strong>void SetPWMOffset(unsigned char Offset)</strong>
+    Return Offset
+
+<strong>void SimpleMove(float LeftDuty, float RightDuty)</strong>
+    If Left Duty is 0
+        Stop Left
+    Else If Left Duty > 0
+        Make Left go backwards
+    Else 
+        Make Left go forwards
+  
+   If Right Duty is 0
+        Stop Right
+    Else If Right Duty > 0
+        Make Right go backwards
+    Else 
+        Make Right go forwards
+        
+<strong>void ControlLawMove(char RequestedLeftRPM, char RequestedRightRPM)</strong>
+   Set LeftRPMTarget to static variable RequestedLeftRPM
+   Set RightRPMTarget to static variable RequestedRightRPM
+    
+<strong>static unsigned char EncoderInterrupt(LongByInts *LastTime,LongByInts ThisTime)</strong>
+   If TOF is pending, and captured time after rollover handle TOF
+       Increment overflow counter
+       Clear flag
+   Calculate Period between encoder ticks	 
+   Calculate Encoder Ticks Per Minute
+   Return Encoder Revolutions per Minute
+<br />        
+
+<h4><i>Interrupts:</i></h4>
+
+<strong>void interrupt _Vec_tim1ovf Tim0OverflowInterrupt(void)</strong>
+<i>Increments the overflow counter for timer 0, for absolute timing purposes</i>
+   Increment Overflow Counter
+   Clear Overflow interrup flag
+<br />
+
+<strong>void interrupt _Vec_tim0ch4 LeftEncoder(void)</strong>
+<strong>void interrupt _Vec_tim0ch5 RightEncoder(void)</strong>
+<i>Interrupt response routine for the Right Encoder - input capture</i>
+					 
+   Set ThisTime to value of timer tick counter
+   Call EncoderInterrupt function
+   Calculate the difference between the current RPM and the previosuly measured RPM			
+   Calculate LeftRPM and RightRPM
+       Ignore "average out" misreads, indicated by spikes in RPM
+   Start Encoder Timer
+   Clear interrupt flag
+<br />
+<strong>void interrupt _Vec_tim0ch6 ControlLaw(void)</strong>
+<i>Interrupt response routine for updating control laws every 100ms - output compare</i>
+   
+   Clear interrupt flag
+   Enable Interrupts
+   
+   If Left Encode Timer is Expired
+       Set LeftRPM to 0
+   Else
+       Set ThisRPM to LeftRPM;
+
+   Calculate RPMError as LeftRPMTarget - ThisRPM;	 
+   Update Error Sum as LeftSumError += RPMError
+   Calculate LeftDutyRequest as ((RPMError * pGain) + (LeftSumError * iGain));
+   Implement Anti-windup
+
+   If Right Encode Timer is Expired
+       Set RightRPM to 0
+   Else
+       Set ThisRPM to RightRPM;
+
+   Calculate RPMError as RightRPMTarget - ThisRPM;	  
+   Update Error Sum as RightSumError += RPMError
+   Calculate RightDutyRequest as ((RPMError * pGain) + (RightSumError * iGain));
+   Implement Anti-windup
+  
+   Call SimpleMove with LeftDutyRequest and RightDutyRequest
+   Schedule next output compare event
+</pre>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>Circuits for Motor Driving</h1>
+
+<h2>Description and Calculations</h2>
+<p>Drive-brake was used to actuate the Maxon drive motors, requiring two PWM lines for each motor. The circuit here is straight forward, as it is simply inputs and outputs to the TLE-5208 chip. We added a double pole single throw which allowed us to disconnect our motors, even when receiving a PWM drive signal through our program. This was a very useful feature for testing, as it allowed us to move the robot in neutral and it ensured the robot would not shoot off the table errantly when we turned on the master power.</p>
+
+<p>One downside to this circuit is that we used the direct output from the nominal 14.4V batteries in series arrangement, and in our code we requested specific duty cycles. As the batteries drained during testing, the same requested duty cycle would drive our robot slower, or eventually, not at all. Originally, we planned to request duty cycles using the input from self built encoders, in which case this issue would not have arisen as a higher duty cycle could simply have been requested at lower battery to maintain speed.</p>
+
+<p> To choose the motor drive frequency, there are three limitations: the motor characteristics itself, the H-Bridge response time, and what is acoustically tolerable. We chose to use a PWM frequency of 10000Hz, for the following reasons: <br />
+1)	At lower PWM frequencies, which otherwise would have been desirable, the high pitched noise was intolerable. <br />
+2)	H-Bridge response time significantly crops the requested duty cycle. However, due to acoustic requirements, we had little choice but to use a higher frequency. <br />
+3)	Motor speed and torque, while significantly impacted because of the high duty cycle, were still sufficiently within our desired range that we rarely used more than a 40% duty cycle. <br />
+<br />
+Stall Current: 3.510 Amps <br />
+Motor Coil Resistance: 1.8 ohms (very low!) </p>
+
+<!-- Stall Current:
+Motor Coil Resistance:-->
+<p>Timer prescale: divide by 4<br />
+Timer scale: divide by 2*6<br />
+PWM Period: 200<br />
+PWM frequency: 10 KHz</p>
+
+<h2>Schematics</h2>
+<img class="centered" src="MotorCirc.jpg" />
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

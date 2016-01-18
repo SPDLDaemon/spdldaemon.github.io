@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>Circuits for Voltage Regulation</h1>
+
+<h2>Description and Calculations</h2>
+<p>In the 5V power regulators, the uA7L05C, we must make sure that we don not generate heat faster than we can dissipate it. The junction to ambient thermal resistance is 140C/W, and there is a max junction temp of 125C. Ambient is 25C, so we can allow for (125C-25C)/(140 C/W) = 0.71W. At 14.4V, 75mA is the limit per power board.</p>
+
+<h2>Schematics</h2>
+<img class="centered" src="PowerRegulatorCirc.jpg" />
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

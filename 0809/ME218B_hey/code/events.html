@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>events Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="E128/events.h">events.h</a></li>
+<li><a href="E128/events.c">events.c</a></li>
+</ul>
+
+<h3>Interface</h3>
+
+<p>
+<strong>Function:</strong> CheckEvents<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong>The Event_t indicating the detected event.<br />
+Checks and returns events.
+</p>
+
+<h3>Pseudo-Code</h3>
+
+<pre>
+<strong>CheckEvents(Returns an Event_t indicating the detected event.)</strong>
+  Initialize static variable FlagSensed to FALSE
+  Initialize static variable Capturing to FALSE
+  Initialize static variable RightSawOpposing to FALSE
+  Initialize static variable HitGreenTape to FALSE
+
+  Get the side information and store it in the corners variable
+
+  If a flash is detected:
+    return flash event
+  Endif
+
+  If the game timer is expired:
+    return game timer done event
+  Endif
+
+  If the state of the playing state machine is going to goal:
+    If the state of the goalfinding state machine is finding goal
+     and the duty detected by the right top beacon equals corners.opposing:
+      Set RightSawOpposing to TRUE
+    Endif
+
+    If the green tape timer is expired:
+      Set HitGreenTape to TRUE
+    Endif
+
+    If the state of the goalfinding state machine is heading to goal
+     and either of the front tape sensors see green tape:
+      Start the green tape timer with 100ms
+    Endif
+
+    If the state of the goalfinding state machine is finding goal
+     and the duty detected by the right top beacon equals corners.own
+     and RightSawOpposing is TRUE:
+      Turn off top beacon interrupts
+      return at goal direction event
+    Endif
+
+    If both front tape sensors read green or white
+     and the rear tape sensor reads green:
+      return in goal event
+    Else:
+      return misaligned event
+    Endif
+
+  Endif
+
+  If the flag captured timer is expired:
+    return capturing timer done event
+  Endif
+
+  If the gate sensor is blocked:
+    Start the flag captured timer with 500ms
+    return gate blocked event
+  Endif
+
+  If either flag sensor level is over 400:
+    Set FlagSensed to TRUE
+    return flag sensed event
+  Else if FlagSensed is TRUE:
+    Set FlagSensed to FALSE
+    return flag lost event
+  Endif
+
+  return no event
+</pre>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

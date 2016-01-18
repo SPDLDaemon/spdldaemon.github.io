@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>C32 main Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="C32/main.c">main.c</a></li>
+</ul>
+<h3>Interface:</h3>
+
+<p>
+<strong>Function:</strong> main<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Intializes Ports, SPI, AD.
+	Runs in infinite loop to detect SPI communications and check battery level.
+</p>
+
+<p>
+<strong>Function:</strong> InitPorts<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Intializes Ports on the C32
+	<br />Enable the shift register outputs
+    <br />   T0 = Shift Clock
+    <br />    T1 = Storage Clock
+    <br />    T2 = Serial Input
+    
+</p>
+
+<p>
+<strong>Function:</strong> InitSPI<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Intializes SPI on C32.
+</p>
+
+<p>
+<strong>Function:</strong> Checkbattery<br />
+<strong>Arguments:</strong> Character representing the timer number<br />
+<strong>Returns:</strong> Integer representing the battery level(0-1023). <br />
+<strong>Description:</strong>Reads the voltage across the resistor network on the AD pin.
+</p>
+	
+<p>
+<strong>Function:</strong> ClockLEDState<br />
+<strong>Arguments:</strong> Character array representing the bytes to shift in.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Clocks data in the LEDs array through the shift register.
+    Enables digits to display on the 7-segment.
+</p>
+
+<p>
+<strong>Function:</strong> DisplayState<br />
+<strong>Arguments:</strong> Character array representing the bytes to shift in.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Maps desired segment digit to the data to shift in the register and
+	populates LED array. Calls ClockLEDState to display data.
+</p>
+
+<h3>Pseudo-Code:</h3>
+
+<pre> 
+<strong>void main(void)</strong>
+   Intialize Ports, SPI, AD
+   Forever
+      Check Battery
+      Check SPI flag via interrupt
+    
+  
+<strong>void InitPorts(void)</strong>
+   Enable the shift register outputs
+      T0 = Shift Clock
+      T1 = Storage Clock
+      T2 = Serial Input
+	  
+
+<strong>void InitSPI(void)</strong>
+   Set baud rate to /256
+   Set phase to mode 3
+   Make slave
+   Enable interrupts
+   Enable SPI 
+
+    
+<strong>int Checkbattery(void)</strong>
+   Read AD level of the battery pin
+  
+<strong>void DisplayState(char)</strong>
+   Segment-to-byte mapping
+   Shift in 'dot' bit if desired digit is greater than 9
+   Store shift bits for displaying the appropriate digits
+   Output data to shift register
+        
+<strong>void ClockLEDState(char [])</strong>
+   For each bit
+      Put data on pin 2 
+      Clock data
+   Enable data on the storage register
+   
+<h4><i>Interrupts:</i></h4>       
+<strong>void interrupt _Vec_SPI HandleSPI(void)</strong>
+<i>SPI interrupt response routine</i> 
+    Check SPISR to see if data was received then write to SPIDR to clear
+    Set SPI_Data_Received to YES
+
+</pre>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

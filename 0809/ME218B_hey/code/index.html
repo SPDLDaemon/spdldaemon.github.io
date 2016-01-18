@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>Code Overview</h1>
+
+<p>We implemented our strategy using a state chart. The master state machine is responsible for starting the robot at the flash, and stopping it once two minutes elapses. The game playing state machine deals with finding and getting the flags, keeping track of how many flags have been captured, and going to the goal zone when three flags have been captured or time is running out. There is a separate state machine for going to the goal because of its complexity. This state machine guides the robot in the rough direction of the goal, and then lines it up more precisely once the robot had hit the goal zone paint.</p>
+
+<img class="centered" src="state_diagram.gif" />
+
+<p>The low level functions of our robot are handled by different software modules. Each state machine also has its own module. These modules are listed below, with links to the module page. You can also download a zip of all of the E128 code <a href="E128/E128Code.zip">here</a>, and the C32 code <a href="C32/C32Code.zip">here</a>.</p>
+
+<dt><a href="main.html">main Module</a></dt>
+<dd>Runs the module init functions and loops forever running the Master State Machine.</dd>
+
+<dt><a href="events.html">events Module</a></dt>
+<dd>Deals with identifying events.</dd>
+
+<dt><a href="master_sm.html">master_sm Module</a></dt>
+<dd>The Master State Machine.</dd>
+
+<dt><a href="playing_sm.html">playing_sm Module</a></dt>
+<dd>The Playing State Machine, a sub state machine of the Master.</dd>
+
+<dt><a href="goalfinding_sm.html">goalfinding_sm Module</a></dt>
+<dd>The Goal Finding State Machine, a sub state machine of the Master.</</dd>
+
+<dt><a href="beacons.html">beacons Module</a></dt>
+<dd>Deals with all beacon sensing functionality.</dd>
+
+<dt><a href="motors.html">motors Module</a></dt>
+<dd>Deals with all motor driving functionality.</dd>
+
+<dt><a href="tape.html">tape Module</a></dt>
+<dd>Deals with all tape sensing functionality.</dd>
+
+<dt><a href="timer.html">timer Module</a></dt>
+<dd>An all purpose timer module.</dd>
+
+<dt><a href="debugging.html">debug Module</a></dt>
+<dd>Module that controls the debug LEDs.</dd>
+
+<dt><a href="c32_main.html">C32 main Module</a></dt>
+<dd>The main module of the C32, which displays on the debugging LEDs the number passed via SPI from the E128.</dd>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

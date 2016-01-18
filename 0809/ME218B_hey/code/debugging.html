@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>debug Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="E128/debug.h">debug.h</a></li>
+<li><a href="E128/debug.c">debug.c</a></li>
+<li><a href="c32_main.html">C32 main Module</a></li>
+</ul>
+<h3>Interface:</h3>
+
+<p>
+<strong>Function:</strong> InitSPI<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Intializes SPI on the E128 - makes it a master.
+</p>
+
+<p>
+<strong>Function:</strong> InputSPI<br />
+<strong>Arguments:</strong> Character representing the debug value to display.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Passes a number value 0-9 to send via SPI, sets the transmit ready 
+    flag.
+</p>
+
+<p>
+<strong>Function:</strong> TransmitSPI<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Sends the value stored over the SPI line to the C32
+    Calls this function periodically to update what appears on the display.
+</p>
+
+<h3>Pseudo-Code:</h3>
+
+<pre> 
+<strong>void InitSPI(void)</strong>
+   Set baud rate to /256
+   Set phase to mode 3
+   Make E128 master
+   Enable SPI 			                   
+   Send Initial Byte
+
+<strong>void InputSPI(char debugvalue)</strong>
+   Set static variable State to debugvalue
+   Set SPI_Transmit_Ready flag to YES
+   
+<strong>void InputSPI(char debugvalue)</strong>
+   Set static variable State to debugvalue
+   Set SPI_Transmit_Ready flag to YES
+   
+<strong>void TransmitSPI(void)</strong>
+   If SPI_Transmit_Ready flag is YES
+   Clear the transmit flag and Send Data
+       Read SPISR register
+       Write State to SPIDR register
+   Reset SPI_Transmit_Ready flag 
+   
+   
+   
+</pre>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

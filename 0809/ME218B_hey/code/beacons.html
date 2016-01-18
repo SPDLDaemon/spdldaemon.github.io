@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>beacons Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="E128/beacons.h">beacons.h</a></li>
+<li><a href="E128/beacons.c">beacons.c</a></li>
+</ul>
+
+<h3>Interface:</h3>
+
+<p>
+<strong>Function:</strong> InitBeacons<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Initializes the timers for each of the beacons. 
+</p>
+
+<p>
+<strong>Function:</strong> InitSide<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Initializes the beacons based on which side we are on. 
+    If Pin 5 on the AD port is low, sets the side to 'R' and the     
+    own/opposing duty variables to 30%/70%. 
+    If Pin 6 on the AD port is low, sets the side to 'G' and the     
+    own/opposing duty variables to 70%/30%. 
+    If neither are low, then no side is selected.
+</p>
+
+<p>
+<strong>Function:</strong> GetSide<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> CornerBeacons_t structure containing a character representing the side, the duty of the opponents side, and the duty of the friendly side.<br />
+<strong>Description:</strong>Returns the CornerBeacons structure for the current side.
+</p>
+
+<p>
+<strong>Function:</strong> DetectFlash<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> Character representing TRUE when the flash is detected. <br />
+<strong>Description:</strong>Clears the flash-detected flag. 
+</p>
+	
+<p>
+<strong>Function:</strong> BeaconDuty<br />
+<strong>Arguments:</strong> Character representing the Beacon Number<br />
+<strong>Returns:</strong> Character representing the detected duty of the referenced beacon.<br />
+<strong>Description:</strong>retrieves the detected duty of the referenced beacon.
+</p>
+
+<p>
+<strong>Function:</strong> GetBeaconLevel<br />
+<strong>Arguments:</strong> Character representing the Beacon Pin Number<br />
+<strong>Returns:</strong> Short representing the value from 0 - 1023 representing the beacon intensity.<br />
+<strong>Description:</strong>Reads the referenced AD pin to determine the intensity of that beacon's signal.
+
+<p>
+<strong>Function:</strong> Orientation<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> Unsigned char representing the orientation of the robot.<br />
+<strong>Description:</strong>Returns the absolute orientation of the robot on the field: Facing 30, Facing 70, 70 left and 30 right, 30 left and 70 right.
+</p>
+
+<p>
+<strong>Function:</strong> BeaconControlMove<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Implements control law to head towards a beacon. The function     
+    takes the difference between two beacons(either both flag- or   
+    both orientation-dection beacons) and calculates the appropriate   
+    motor commands to minimize the difference.
+</p>
+
+<h3>Pseudo-Code:</h3>
+
+<pre> 
+<strong>void InitBeacons(void)</strong>
+    StartTimer Top left, Top Right, Flag Left, and Flag right beacon timers to 1ms.
+  
+<strong>void InitSide(void)</strong>
+
+    If Pin 5 on the AD port is low
+        Set the side to 'R'
+        Set own duty variables to 30%
+        Set opposing duty variables to 70%
+    If Pin 6 on the AD port is low
+        Set the side to 'G'
+        Set own duty variables to 70%
+        Set opposing duty variables to 30%
+    If neither are low	
+     	Do nothing
+
+<strong>CornerBeacons_t GetSide(void)</strong>
+     Return corners structure
+
+<strong>char DetectFlash(void)</strong>
+    If TIM0_TFLG1 has been set
+        Clear TIM0_TFLG1
+        Return TRUE
+    Else
+        Return FALSE
+    
+<strong>char BeaconDuty(char BeaconNumber)</strong>
+    If BeaconNumber is 4 
+         Return Left Beacon's Duty Cycle
+    Else If BeaconNumber is 5
+         Return Right Beacon's Duty Cycle
+    Else If BeaconNumber is 6 
+         Return Left Flag Beacon's Duty Cycle
+    Else If BeaconNumber is 7 
+         Return Right Flag Beacon's Duty Cycle
+        
+<strong>short GetBeaconLevel(char BeaconPin)</strong>
+    Return the AD value on the requested pin
+    
+<strong>unsigned char Orientation(void)</strong>
+    If Front two beacons detect 70% duty
+         Return "Facing 70" value
+    Else If Front two beacons detect 30% duty
+         Return "Facing 30" value
+    Else If Left beacon detects 70% duty and Right beacon detects 30% duty
+         Return 70LEFT_30RIGHT
+    Else if Left beacon detects 30% duty and Right beacon detects 70% duty
+         Return Return 30LEFT_70RIGHT
+    Else
+         Return NO_SIGNAL_DETECTED
+        
+<strong>void BeaconControlMove(void)</strong>
+    If Beacon timers expire
+     	Set that beacon's duty to 0
+    If Beacon Control timers expire
+     	Restart the timer
+        
+        Calculate difference in intensity between the Orientation beacons
+        Calculate average intensity of the Orientation beacons
+        Calculate appropriate motor correction commands based on PI control law
+        
+        Calculate difference in intensity between the Flag-detection beacons
+        Calculate average intensity of the Flag-detection beacons
+        Calculate appropriate motor correction commands based on bang-bang control
+
+<br />
+<h4><i>Interrupts:</i></h4>
+<strong>void interrupt _Vec_tim1ch4 BeaconEdge4(void)</strong>
+<strong>void interrupt _Vec_tim1ch5 BeaconEdge5(void)</strong>
+<i>Interrupt response routines for left and right Orientation beacons - input capture</i>
+
+    If rising edge detected
+        Store timer
+    Else
+        Falling edge detected
+        Store timer 
+        If timer overflow
+            HighTime = ThisFallingEdge - ThisRisingEdge;
+ 
+    Calculate Duty Cycle from HighTime
+    Increment the appropriate counter depending on the recorded duty cycle
+    Whichever counter gets to 40 first becomes the duty cycle
+    Reset no-edge timer
+    Clear the Interrupt Flag	
+
+<br />
+<strong>void interrupt _Vec_tim1ch6 BeaconEdge6(void)</strong>
+<strong>void interrupt _Vec_tim1ch7 BeaconEdge7(void)</strong>
+<i>Interrupt response routines for left and right flag beacons - input capture</i>
+    If rising edge detected
+        Store timer
+    Else
+        Falling edge detected
+        Store timer 
+        If timer overflow
+            HighTime = ThisFallingEdge - ThisRisingEdge;
+ 
+    Calculate Duty Cycle from HighTime
+    Increment the appropriate counter depending on the recorded duty cycle
+    Whichever counter gets to 40 first becomes the duty cycle
+    Reset no-edge timer
+    Clear the Interrupt Flag	
+</pre>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

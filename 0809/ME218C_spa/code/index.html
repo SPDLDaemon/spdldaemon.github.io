@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218C | Somali Pirates Association: Jonas Ketterle, Ruddick Lawrence, Graham Doorley</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Somali Pirates Association</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Graham Doorley</h2>
+  <h2 class="centered">ME 218C, Spring 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/coach_master.html">COACH Master</a>
+      <a href="../code/towrp_master.html">TOWRP Master</a>
+      <a href="../code/towrp_slave_motor.html">TOWRP slave motor </a>
+      <a href="../code/towrp_slave_servo.html">TOWRP slave servo</a>
+   </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/coach.html">COACH</a>
+      <a href="../circuits/TOWRP.html">TOWRP</a>
+   </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>Code Overview</h1>
+
+<p> You can download the communications protocol <a href="Comm_Protocol_RevE.pdf">here</a>.</p>
+<p> You can download a zip of all of the COACH code <a href="COACH.zip">here</a>, and the TWORP code <a href="TOWRP.zip">here</a>.</p>
+
+<dt><a href="coach_master.html">COACH Master Code </a></dt>
+<dd> The entire COACH is run off of one PIC. This include communications with the ZigBee radio, running the event checker and the event handler, and processing all I/O. </dd>
+
+<dt><a href="towrp_master.html">TOWRP Master Code </a></dt>
+<dd> The TOWRP master PIC handles communications with the ZIGBEE radio, running the event checker and the event handler, and sending speed and direction commands to the slaves using SSP. </dd>
+
+<dt><a href="towrp_slave_motor.html">TOWRP Slave Motor Code </a></dt>
+<dd> This PIC receives SSP signals and uses them to adjust the motor speed. </dd>
+
+<dt><a href="towrp_slave_servo.html">TOWRP Slave Servo Code  </a></dt>
+<dd> This PIC receives SSP signals and uses them to adjust the servo position. </dd>
+
+
+<h3> Timing on the Master PICs </h3>
+<p>
+Use TIMER 0 for timing the state machine: <br/>
+Timer0 overflow: 10MHz/4 = 2.5MHz / 256 / 256 = 38.15Hz = 26.2 ms <br/>
+
+To create timers, for example: <br/>
+for 5Hz, would check every 8 overflows        = .2 seconds <br/>
+for 1Hz, would check every 39 overflows        = 1 second <br/>
+for .2Hz, would check every 191 overflows     = 5 seconds <br/>
+
+SSP clock rate: 10MHz/ 16 = 625kHz <br/>
+
+</p>
+
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

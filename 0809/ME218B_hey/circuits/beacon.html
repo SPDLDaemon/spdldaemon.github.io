@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>Circuits for Beacon Sensing</h1>
+
+<h2>Description and Calculations</h2>
+<p><strong>Flag Sensor</strong></p>
+
+<p>The aim of this circuit was to amplify the weak IR signals emitted by the flags on the playing field so that we could implement a flag following algorithm in our code. This circuit provides two outputs: a very clean comparator output for timing duty cycle (to ensure that we have locked onto a flag, and not a corner beacon), and an analog output for determining alignment with the beacon. The stages of the circuit are as follows:</p>
+
+<p><em>Transresistive:</em> the 26k resistor results in higher current output when the signal is further away. We intentionally rail the op-amp when the flag is close, so that the analog intensity measurement works at a range of a little over 3 feet, and because despite railing the op-amp our duty cycle only varies by 10%, which is still distinct from the corner beacons. The phototransistor is tied to ground, so using a 0.89V reference voltage allows for a maximum amplitude signal before the op-amp rails. A 1nf capacitor across the 26k resistor was instrumental in reducing noise.</p>
+
+<p>Current out of transresistive circuit: 26k resistor, typ on 2mA.</p>
+
+<p><em>Analog Intensity:</em> an op-amp centered on 2.5V amplifies the signal from the transresistive stage by 20x, and passes it to a low pass filter to create a clean DC intensity level that is red by an AD port.</p>
+
+<p>Gain Calc for amplification stage: 200k/10k = 20<br />
+Low pass corner frequency: R = 150k, C = .47uF, results in 2 Hz </p>
+
+<p><em>Duty Cycle Timing:</em> a high pass filter converts the transresistive output into distinct spikes, which are then amplified by 1.6x to boost the range to a little over 3 feet. In testing we achieved a range of over 18 feet using this circuit, but for playing the game we only wanted to detect flags in close proximity so as not to confuse the robot. This signal then goes to a comparator (note the tight hysteresis bands, indicating a clean, noise free signal).</p>
+	
+<p>High pass corner frequency: R = 670, C = .047uF, results in 5050 Hz <br />
+Gain Calc for amplification stage: 16k/10k = 1.6<br />
+Comparator Calcs: values 1k, 5.1k, 100k		low = 2.38V, high = 2.62V<br /></p>
+
+<p><strong>Corner Sensor</strong></p>
+<p>The aim of this circuit is to amplify and read the duty cycles of the corner beacons emitting at 1250Hz at either a 30% or a 70% duty cycle. Range is most important here: the robot should be able to see the corner beacons from anywhere on the field. Circuit layout is similar as the flag sensor circuit, minus the DC intensity measurement and with slightly different values. The transresistive circuit uses a 10k resistor, to avoid railing the op-amp even when in close proximity, and the amplification stage is 20x. The same hysteresis bands where used because we have the same clean signal.</p>
+ 
+<p>Current out of transresistive circuit: 10k resistor, min on 1mA, typ on 2mA<br />
+High pass corner frequency: R = 670, C = .047uF, results in 5050 Hz <br />
+Gain Calc for amplification stage: 200k/10k = 20<br />
+Comparator Calcs: values 1k, 5.1k, 100k		low = 2.38V, high = 2.62V</p>
+
+<h2>Schematics</h2>
+<img class="centered" src="FlagSensorCirc.jpg" />
+<div><strong>Flag sensor</strong></div>
+
+<img class="centered" src="CornerSensorCirc.jpg" />
+<div><strong>Corner beacon sensor</strong></div>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

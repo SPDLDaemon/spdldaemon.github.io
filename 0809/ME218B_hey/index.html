@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="./style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="./javascript/prototype.js"></script>
+  <script type="text/javascript" src="./javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="./javascript/menu.js"></script>
+  <script type="text/javascript" src="./javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="./index.html">Project Overview</a>
+      <a href="./team.html">About Us</a>
+      <a href="./gems.html">Gems of Wisdom</a>
+      <a href="./bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="./code/index.html">Code Overview</a>
+      <a href="./code/main.html">main Module</a>
+      <a href="./code/events.html">events Module</a>
+      <a href="./code/master_sm.html">master_sm Module</a>
+      <a href="./code/playing_sm.html">playing_sm Module</a>
+      <a href="./code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="./code/beacons.html">beacons Module</a>
+      <a href="./code/motors.html">motors Module</a>
+      <a href="./code/tape.html">tape Module</a>
+      <a href="./code/timer.html">timer Module</a>
+      <a href="./code/c32_main.html">C32 main Module</a>
+      <a href="./code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="./circuits/index.html">Circuits Overview</a>
+      <a href="./circuits/side.html">Side Selection</a>
+      <a href="./circuits/tape.html">Tape Sensing</a>
+      <a href="./circuits/beacon.html">Beacon Sensing</a>
+      <a href="./circuits/flash.html">Flash Sensing</a>
+      <a href="./circuits/voltage.html">Voltage Regulators</a>
+      <a href="./circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="./circuits/encoder.html">Encoders</a>
+      <a href="./circuits/motor.html">Motor Drivers</a>
+      <a href="./circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="./mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>Project Overview</h1>
+
+<img class="centered" src="robot_photo.jpg" />
+
+<p>This year's challenge is a modified version of capture the flag. The playing field has two sides and five flags in predetermined locations. Each robot must bring flags to the goal region on its side. At the end of two minutes, whichever robot has the most flags in its goal region wins. The flags emit IR signals with 50% duty cycle. At each corner of the field is an IR beacon that emits a signal with either 30% or 70% duty cycle, depending on the side of the field it is on. As always, a flash starts the competition.</p>
+
+<p>We designed our robot around the strategy of picking up three flags without any mechanical actuation, then returning to the goal and sitting. Since there are only five flags on the field, securing three guarantees a win. In order to fit three flags with 4" bases inside a robot with a 12" width, we designed the base to hold the flags with the front one slightly forward. The design causes the first two flags captured to settle in the corners, and the third to settle in front, all within the 6" width of the goal area.</p>
+
+<p>In order to drive towards the flags, the robot uses two IR sensors positioned on either side of the flag entrance. The sensors detect duty cycle, as well as signal amplitude. Once the robot detects the duty cycle for a flag, it uses the amplitude and bang-bang control to drive towards it. The sensors for the corner beacons use the same circuit as the flag-detection circuits, but with a longer range and without the amplitude measurement. Two beacon sensors are on the top of the robot with a blinder in between in order to deduce signal direction.</p>
+
+<p>The robot has three tape sensors in order to park the flags in the goalzone. Two tape sensors are just in front of where the flags sit, on either side of them, and one sensor is just behind the flags. The tape sensors distinguish between white, black, green paint, and green tape. The front sensors align the robot. If one of them hits the green paint (the goal region) before the other one does, the robot executes an algorithm that moves it around until both sensors hit the green paint at the same time, indicating that the robot is facing directly at the wall. The robot then moves forward until the back sensor is in the green paint, then stops with all of the flags in the goal region.</p>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

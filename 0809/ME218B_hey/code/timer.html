@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>timer Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="E128/timer.h">timer.h</a></li>
+<li><a href="E128/timer.c">timer.c</a></li>
+</ul>
+
+<h3>Interface:</h3>
+
+<p>
+<strong>Function:</strong> InitPorts<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Initializes the AD Ports.
+</p>
+
+<p>
+<strong>Function:</strong> InitTimer<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+<strong>Description:</strong>Initializes the Absolute Timer
+</p>
+
+<p>
+<strong>Function:</strong> StartTimer<br />
+<strong>Arguments:</strong> Character representing the timer number and unsigned long representing timer duration in ms<br />
+<strong>Returns:</strong> CornerBeacons_t structure containing a character representing the side, the duty of the opponents side, and the duty of the friendly side.<br />
+<strong>Description:</strong>Returns the CornerBeacons structure for the current side. <br />Timer 1 is Left Encoder Stall Test
+     <br />Timer 2 is Right Encoder Stall Test
+     <br />Timer 3 is ControlLaw Update
+</p>
+
+<p>
+<strong>Function:</strong> IsTimerExpired<br />
+<strong>Arguments:</strong> Character representing the timer number<br />
+<strong>Returns:</strong> Character representing TRUE when timer has expired. <br />
+<strong>Description:</strong>Checks if requested timer has expired.
+</p>
+	
+<p>
+<strong>Function:</strong> GetAbsoluteTime<br />
+<strong>Arguments:</strong> None<br />
+<strong>Returns:</strong> Unsigned long representing the absolute time in ticks<br />
+<strong>Description:</strong>retrieves the detected duty of the referenced beacon.
+</p>
+
+<h3>Pseudo-Code:</h3>
+
+<pre> 
+<strong>void InitPorts(void)</strong>
+   Initialize ports to "IIIAAAAA" configuration
+  
+<strong>void InitTimer(void)</strong>
+   Set up Timer 0 which is for the encoders
+       Turn the timer system on
+       Set timer prescale to divide by 128
+           Enable interrupts for IC4, IC5, OC6
+       Capture rising edges on 4,5,7
+       Set timer 0-6 as output compare
+       Schedule the first OC6 event
+       Clear IC4, IC5, OC6, IC7 flag
+       Clear overflow flag
+       Turn on overflow interrupts
+   
+   Second, Timer 1 which is for the beacons, and the absolute timer 
+       Turn the timer system on
+	  Set timer prescale to divide by 128
+       Enable interrupts for IC4-7               
+   
+   Set up Timers for capturing beacon edges, and clear flags
+       Capture all edges on pin 4
+       Capture all edges on pin 5 
+       Capture all edges on pin
+       Capture all edges on pin 7
+       Clear IC4-IC7 flags
+       Clear overflow flag
+       Turn on overflow interrupts
+
+   Initialize absolute timer 
+   Set all timers to not started 
+   Start Flag Captured Timer
+	  
+
+<strong>void StartTimer(char TimerNum, unsigned long ms_duration)</strong>
+   Calculate ms value in clock ticks. May be truncated
+   Calculate end time and store in timer
+
+    
+<strong>char IsTimerExpired(char TimerNum)</strong>
+   If Timer has started and the value of the timer is less than the absolute time
+       Reset the Timer Expired flag 
+       Return TRUE
+   Else
+       Return FALSE
+    
+<strong>unsigned long GetAbsoluteTime(void)</strong>
+   Disable overflow interrupts
+   Set the Absolute Time to the current tick count in the timer register
+   Enable overflow interrupts
+   Return the Absolute Time in ticks
+        
+<strong>short GetBeaconLevel(char BeaconPin)</strong>
+   Return the AD value on the requested pin
+    
+<strong>unsigned char Orientation(void)</strong>
+    If Front two beacons detect 70% duty
+        Return "Facing 70" value
+    Else If Front two beacons detect 30% duty
+        Return "Facing 30" value
+    Else If Left beacon detects 70% duty and Right beacon detects 30% duty
+        Return 70LEFT_30RIGHT
+    Else if Left beacon detects 30% duty and Right beacon detects 70% duty
+        Return Return 30LEFT_70RIGHT
+    Else
+        Return NO_SIGNAL_DETECTED
+
+<h4><i>Interrupts:</i></h4>       
+<strong>void interrupt _Vec_tim1ovf Tim1OverflowInterrupt(void)</strong>
+<i>Increments the overflow counter for timer 1, for absolute timing purposes</i>
+    Increment Overflow Counter
+    Clear Overflow interrup flag
+
+</pre>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

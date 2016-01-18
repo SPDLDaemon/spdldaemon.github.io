@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218C | Somali Pirates Association: Jonas Ketterle, Ruddick Lawrence, Graham Doorley</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Somali Pirates Association</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Graham Doorley</h2>
+  <h2 class="centered">ME 218C, Spring 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/coach_master.html">COACH Master</a>
+      <a href="../code/towrp_master.html">TOWRP Master</a>
+      <a href="../code/towrp_slave_motor.html">TOWRP slave motor </a>
+      <a href="../code/towrp_slave_servo.html">TOWRP slave servo</a>
+   </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/coach.html">COACH</a>
+      <a href="../circuits/TOWRP.html">TOWRP</a>
+   </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>Circuits for COACH </h1>
+
+<img class="centered" src="COACH_circuit.jpg" />
+
+<img class="centered" src="COACH_guts.jpg"
+
+<h3> Analog Input Potentiometers </h3>
+The 2k analog potentiometers (for speed and direction joysticks and the free analog input) are connected to a MCP6024 buffer to provide a linear analog voltage reading to the PIC.   <br>
+
+<h3> Accelerometer for Suppress Mutiny Action </h3>
+Only the Y axis of the accelerometer was used to detect side to side shaking motion. <br>
+Vigorous shaking drives the analog signal coming out of the accelerometer to Ov and 3.3V. <br>
+Neutral voltage is 1.74V, and when the Y axis is tilted, min/max readings are 0.84V and 2.64V. <br>
+As a result, shaking to suppress mutiny is detected by setting an upper (2.75V) and lower (0.75V) bound in software which must be crossed for a duration of one second. <br>
+
+<h3> Digital Input Buttons </h3>
+Each button is connected to 3.3V when closed, and uses a 3.3K pulldown resistor. Current required when switch is momentarily closed is: 3.3V/3.3K = 1mA. <br>
+
+<h3> Mutiny Audio Output </h3>
+To run, we raise a PORTC4 high, which is connected to the gate of a 2N7000. <br>
+The 2N7000 triggers the playback recorder, which is operated off of 9V with an on board voltage regulator. <br>
+
+<h3> Boat Available LED </h3>
+With a minimum forward voltage of 1.6V, powered by a 3.3V PIC, and a 75 Ohm current limiting resistor, the max current is 22.67mA. Max current output by the PIC on a single port is 25mA.  <br>
+
+<h3> 7 segment displays </h3>
+With a minimum forward voltage of 1.2V, powered by a 3.3V PIC, and a 75 Ohm current limiting resistor, the max current is 28.0mA. Max current output by the octal buffer SN74AHCT244N on a single port is 35mA. <br>
+
+<h3> XBee </h3>
+The XBee is connected to the master PIC using the asynchronous transmit and receive capability. <br>
+
+<h3> COACH Runtime Calculation </h3>
+P=IV. <br>
+Assume pushing buttons and trigger for playback recorder trigger have a negligible impact on battery lifespan (1mA each for under 1s). <br>
+Team side select, when high, assuming it is 50% of the time, is 3.3V across 3.3K, which is 1mA, or at 50% time, 0.5mA. <br>
+Three 2k pots, driven at 3.3V, are constantly drawing 3.3V/2k = 1.65mA each, or 4.95mA total. <br>
+MP6024 buffer requires typically 1mA quiescent current, across 3.3V. One device has four buffers. <br>
+XBee requires 45mA to transmit. This occurs at 5Hz, and takes under 10ms. <br>
+XBee requires 50mA to receive. This occurs at 5Hz, and takes under 11ms. <br>
+MC74HC164N requires typically 8.0uA quiescent current, across 3.3V. There are three of these, so 24.0uA, or .024mA. <br>
+SN74AHCT244N buffer requires typically 80uA quiescent current, across 3.3V. There are three of these, so 240uA, or .240mA <br>
+The 7 sement display. The Team ID is typically a 6, which requires lighting 6 segments. <br>
+The MSB of the morale is typically 0, which is simply not lit. The LSB of the morale as an average of all number requires 4.9 segments. <br> 
+Thus, assume a total of 11 segments are always lit. <br>
+With a min forward voltage of 1.2V, powered by 3.3V, and a 75 Ohm current limiting resistor, the max current per segment is 28.0mA. <br>
+For 11 segments, this is 308mA. <br>
+Assume that controller is often controlling a boat, so that boat available LED is on for 1/100 of the time, at 28.0mA. <br>
+PIC power use: 1.0 mA using external 10MHz oscillator at 3.5V. <br>
+<br>
+<br>
+Power:
+Team side select: P = 0.5mA * 3.3V = 1.65mW <br>
+Potentiometers: P = 4.95mA * 3.3V = 16.34mW <br>
+XBee transmit: P = 45mA * 3.3V * 10ms/1000ms = 1.49mW <br>
+XBee receive: P = 50mA * 3.3V * 11ms/1000ms = 1.82mW <br>
+MP6024 buffer: P = 1mA * 3.3V = 3.3mW <br>
+MC74HC164N shift register: P = .024mA * 3.3V = 0.08mW <br>
+SN74AHCT244N buffer: P = .240mA * 3.3V = 0.80mW <br>
+7 Segment Display: P = 308mA * 3.3V = 1016mW <br>
+Boat Available LED: P = 28mA * 3.3V * 1s/100s = 0.92mW <br>
+PIC: P = 1.0mA * 3.3V = 3.3mW <br>
+<br>
+Total power draw: 1045.7 mW <br>
+<br>
+10800 mWhours / 1045.7 mW = 10.33 hours runtime. <br>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

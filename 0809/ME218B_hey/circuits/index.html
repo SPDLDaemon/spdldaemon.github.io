@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218C | Somali Pirates Association: : Jonas Ketterle, Ruddick Lawrence, Graham Doorley</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Somali Pirates Association</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Graham Doorley</h2>
+  <h2 class="centered">ME 218C, Spring 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>Circuits Overview</h1>
+
+<p>The different circuits for our robot are detailed on the pages below. You can download a zip of all the DXP files <a href="DXP.zip">here</a>. All programming was done exclusively on the PIC6F790, in assembly. The TOWRP uses one master PIC and two slaves PICs, and the COACH uses one PIC. Pinouts are listed in the following table.</p>
+
+<dt><a href="side.html">Side Selection</a></dt>
+<dd>Detect the position of the side-selection switch.</dd>
+
+<dt><a href="tape.html">Tape Sensing</a></dt>
+<dd>Condition the signal from the emitter/detector pair.</dd>
+
+<dt><a href="beacon.html">Beacon Sensing</a></dt>
+<dd>Detect the duty cycles and amplitudes of the flags and corner beacons.</dd>
+
+<dt><a href="flash.html">Flash Sensing</a></dt>
+<dd>Detect the starting flash.</dd>
+
+<dt><a href="voltage.html">Voltage Regulators</a></dt>
+<dd>Regulate the battery voltage to 5V.</dd>
+
+<dt><a href="lowvoltage.html">Low-Voltage Indicator</a></dt>
+<dd>Illuminate an LED when the battery voltage drops.</dd>
+
+<dt><a href="encoder.html">Encoders</a></dt>
+<dd>Condition the slot detector signal.</dd>
+
+<dt><a href="motor.html">Motor Drivers</a></dt>
+<dd>Take the PWM signals and drive the motors.</dd>
+
+<dt><a href="debug.html">Debugging LEDs</a></dt>
+<dd>Use an SPI-controlled seven-segment LED display to help with debugging.</dd>
+
+
+<h3>Board Pinouts</h3>
+<img class="centered" src="PinOut.GIF" />
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

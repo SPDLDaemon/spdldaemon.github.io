@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218B | Team Hey!: Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Hey!</h1>
+  <h2 class="centered">Jonas Ketterle, Ruddick Lawrence, Michael McDaniels</h2>
+  <h2 class="centered">ME 218B, Winter 2009</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="#">Project</a>
+    <div class="menulist">
+      <a href="../index.html">Project Overview</a>
+      <a href="../team.html">About Us</a>
+      <a href="../gems.html">Gems of Wisdom</a>
+      <a href="../bom.html">Bill of Materials</a>
+    </div>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/main.html">main Module</a>
+      <a href="../code/events.html">events Module</a>
+      <a href="../code/master_sm.html">master_sm Module</a>
+      <a href="../code/playing_sm.html">playing_sm Module</a>
+      <a href="../code/goalfinding_sm.html">goalfinding_sm Module</a>
+      <a href="../code/beacons.html">beacons Module</a>
+      <a href="../code/motors.html">motors Module</a>
+      <a href="../code/tape.html">tape Module</a>
+      <a href="../code/timer.html">timer Module</a>
+      <a href="../code/c32_main.html">C32 main Module</a>
+      <a href="../code/debugging.html">debugging Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/side.html">Side Selection</a>
+      <a href="../circuits/tape.html">Tape Sensing</a>
+      <a href="../circuits/beacon.html">Beacon Sensing</a>
+      <a href="../circuits/flash.html">Flash Sensing</a>
+      <a href="../circuits/voltage.html">Voltage Regulators</a>
+      <a href="../circuits/lowvoltage.html">Low Voltage Indicator</a>
+      <a href="../circuits/encoder.html">Encoders</a>
+      <a href="../circuits/motor.html">Motor Drivers</a>
+      <a href="../circuits/debug.html">Debugging LEDs</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+
+<div id="content">
+<h1 class='centered'>goalfinding_sm Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="E128/goalfinding_sm.h">goalfinding_sm.h</a></li>
+<li><a href="E128/goalfinding_sm.c">goalfinding_sm.c</a></li>
+</ul>
+
+<h3>Interface</h3>
+
+<p>
+<strong>Function:</strong> StartGoalFindingSM<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> None.<br />
+Does any required initialization for the goalfinding state machine.
+</p>
+
+<p>
+<strong>Function:</strong> RunGoalFindingSM<br />
+<strong>Arguments:</strong> Event_t: the event to process.<br />
+<strong>Returns:</strong> Event_t: an event to return.<br />
+Runs the tasks for the goalfinding state machine.
+</p>
+
+<p>
+<strong>Function:</strong> QueryGoalFindingSM<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> GoalFindingState_t The current state of the goalfinding state machine.<br />
+Runs the tasks for the goalfinding state machine.
+</p>
+
+
+<h3>Pseudo-Code</h3>
+
+<pre>
+<strong>StartGoalFindingSM</strong>
+  Initialize module variable CurrentState to FINDING_GOAL
+
+  Call RunGoalFindingSM(EV_ENTRY)
+</pre>
+
+<pre>
+<strong>RunGoalFindingSM(Takes an Event_t and returns new Event_t)</strong>
+  Initialize MakeTransition to FALSE
+  Set NextState to CurrentState
+
+  Switch between values of CurrentState:
+
+    If value is FINDING_GOAL:
+      Call DuringFindingGoal(CurrentEvent) and store the return in CurrentEvent
+
+      Switch between values of CurrentEvent:
+        if value is EV_AT_GOAL_DIRECTION:
+          Set NextState to HEADING_TO_GOAL
+          Set MakeTransition to TRUE
+        Endif
+      Endswitch
+    Endif
+
+    If value is HEADING_TO_GOAL:
+      Call DuringHeadingToGoal(CurrentEvent) and store the return in CurrentEvent
+
+      Switch between values of CurrentEvent:
+        if value is EV_HIT_GREEN_PAINT:
+          Set NextState to ORIENTING_IN_GOAL
+          Set MakeTransition to TRUE
+        Endif
+      Endswitch
+    Endif
+
+    If value is ORIENTING_IN_GOAL:
+      Call DuringOrientingInGoal(CurrentEvent) and store the return in CurrentEvent
+
+      Switch between values of CurrentEvent:
+        if value is EV_IN_GOAL:
+          Set NextState to WAITING
+          Set MakeTransition to TRUE
+        Endif
+      Endswitch
+    Endif
+
+    If value is WAITING:
+      Call DuringWaiting(CurrentEvent) and store the return in CurrentEvent
+
+      Switch between values of CurrentEvent:
+        if value is EV_MISALIGNED:
+          Set NextState to ORIENTING_IN_GOAL
+          Set MakeTransition to TRUE
+        Endif
+      Endswitch
+    Endif
+
+  Endswitch
+
+  If MakeTransition is TRUE:
+    Call RunGoalFindingSM(EV_EXIT)
+    Set CurrentState to NextState
+    Call RunGoalFindingSM(EV_ENTRY)
+  Endif
+
+  return CurrentEvent
+</pre>
+
+<pre>
+<strong>QueryGoalFindingSM(Returns current GoalFindingState_t)</strong>
+  return module variable CurrentState
+</pre>
+
+<pre>
+<strong>DuringFindingGoal(Takes current event Event_t, returns new event Event_t)</strong>
+  If the event is EV_ENTRY:
+    Turn left
+  Endif
+
+  Return same event
+</pre>
+
+<pre>
+<strong>DuringHeadingToGoal(Takes current event Event_t, returns new event Event_t)</strong>
+  If the event is not EV_EXIT or EV_ENTRY:
+    If event is EV_HIT_BLACK_PAINT:
+      Go straight slowly
+    Else:
+      Go straight
+    Endif
+  Endif
+
+  Return same event
+</pre>
+
+<pre>
+<strong>DuringOrientingInGoal(Takes current event Event_t, returns new event Event_t)</strong>
+  If the event is not EV_EXIT or EV_ENTRY:
+    If both the front left and right tape sensors do not read green paint
+     or both the front left and right tape sensors do read green paint:
+      Move forward
+    Else if the front left tape sensor reads green paint
+     and the right front tape sensor reads black:
+      Turn left
+    Else if the front left tape sensor reads black
+     and the right front tape sensor reads green paint:
+      Turn right
+    Endif
+  Endif
+
+  Return same event
+</pre>
+
+<pre>
+<strong>DuringWaiting(Takes current event Event_t, returns new event Event_t)</strong>
+  If the event is EV_ENTRY:
+    Do not move
+  Endif
+
+  Return same event
+</pre>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+
