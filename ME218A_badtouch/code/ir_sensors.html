@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218A | Bad Touch: Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Bad Touch</h1>
+  <h2 class="centered">Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</h2>
+  <h2 class="centered">ME 218A, Fall 2008</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="../index.html">Overview</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/our_c32.html">our_c32 Module</a>
+      <a href="../code/ir_sensors.html">ir_sensors Module</a>
+      <a href="../code/atari.html">atari Module</a>
+      <a href="../code/cheat.html">cheat Module</a>
+      <a href="../code/motion.html">motion Module</a>
+      <a href="../code/main.html">main Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/interface.html">Atari Interface</a>
+      <a href="../circuits/sensing.html">Hand Sensing</a>
+      <a href="../circuits/feedback.html">User Feedback</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="../ultrasound/index.html">Ultrasonics</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+<div id="content">
+<h1 class='centered'>ir_sensors Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="ir_sensors.h">ir_sensors.h</a></li>
+<li><a href="ir_sensors.c">ir_sensors.c</a></li>
+</ul>
+
+<h3>Interface</h3>
+
+<p>
+<strong>Function:</strong> IrSensorsInit<br />
+<strong>Arguments:</strong> None<br />
+<strong>Returns:</strong> Nothing<br />
+Initializes the ports for use with the IR emitting/detecting.
+</p>
+
+<p>
+<strong>Function:</strong> GetSensorValue<br />
+<strong>Arguments:</strong> sensor: The sensor to read. Easiest to use constants in header file.<br />
+<strong>Returns:</strong> Constant indicating sensor status.<br />
+Gives whether the sensor is covered or uncovered.
+</p>
+
+<h3>Pseudo-Code</h3>
+
+<pre>
+<strong>IrSensorsInit(Takes and returns nothing.)</strong>
+  set the pin that controls the IR LEDs to hi
+  set the data direction of the pin that controls the IR LEDs to write
+
+  for each AD port:
+    set the data direction to analog
+  endfor
+</pre>
+
+<pre>
+<span style="color: #FF0000;">Note: In the final incarnation, this function is not used.</span>
+<strong>ToggleLeds(Takes a consant indicating which state to make the LEDs.)</strong>
+  if passed-in state is ON:
+    turn LED pin HI
+  else if passed-in state is OFF:
+    turn LED pin LO
+  else if passed-in state is TOGGLE:
+    toggle LED pin to the opposite of what it
+      was previously
+  endif
+</pre>
+
+<pre>
+<strong>GetSensorValue(Takes a constant indicating which sensor to check.
+               Returns a sensor state constant)</strong>
+  store the value of the AD port for the passed-in sensor
+  if the value is less than COVERED_THRESHOLD:
+    return COVERED
+  else:
+    return UNCOVERED
+  endif
+</pre>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

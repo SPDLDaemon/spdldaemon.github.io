@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218A | Bad Touch: Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Bad Touch</h1>
+  <h2 class="centered">Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</h2>
+  <h2 class="centered">ME 218A, Fall 2008</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="../index.html">Overview</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/our_c32.html">our_c32 Module</a>
+      <a href="../code/ir_sensors.html">ir_sensors Module</a>
+      <a href="../code/atari.html">atari Module</a>
+      <a href="../code/cheat.html">cheat Module</a>
+      <a href="../code/motion.html">motion Module</a>
+      <a href="../code/main.html">main Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/interface.html">Atari Interface</a>
+      <a href="../circuits/sensing.html">Hand Sensing</a>
+      <a href="../circuits/feedback.html">User Feedback</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="../ultrasound/index.html">Ultrasonics</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+<div id="content">
+<h1 class='centered'>motion Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="motion.h">motion.h</a></li>
+<li><a href="motion.c">motion.c</a></li>
+</ul>
+
+<h3>Interface</h3>
+
+<p>
+<strong>Function:</strong> CheckMotionEvents<br />
+<strong>Arguments:</strong> None.<br />
+<strong>Returns:</strong> Constant indicating directional event, POWER_OFF, or NO_EVENT.<br />
+Reads the location of each hand, and returns a directional event. If the power is off, returns POWER_OFF. If there is no direction, returns NO_EVENT.
+</p>
+
+<p>
+<strong>Function:</strong> HandleMotionEvents<br />
+<strong>Arguments:</strong> event: constant indicating directional event.<br />
+<strong>Returns:</strong> Nothing.<br />
+Takes the motion event and sends the appropriate signal to the Atari.
+</p>
+
+<p>
+<strong>Function:</strong> HandleCheatEvents<br />
+<strong>Arguments:</strong> event: constant indicating directional event.<br />
+<strong>Returns:</strong> Nothing.<br />
+Takes the motion event and keeps track of the cheat status. Once the cheat is entered, activates the cheat fans.
+</p>
+
+<h3>Pseudo-Code</h3>
+
+<pre>
+<strong>CheckMotionEvents(Returns a constant indicating the direction event, no event, or
+                  Atari power off.)</strong>
+  initialize the static variable last_button to NO_EVENT
+  initialize the static variable last_time to 0
+
+  if the Atari power is off:
+    return POWER_OFF
+  endif
+
+  for each hand:
+    get and store the value of each sensor on that hand
+    if the left sensor is covered:
+      set the current hand direction to LEFT
+    else if the right sensor is covered:
+      set the current hand direction to RIGHT
+    else if the front sensor is covered:
+      set the current hand direction to UP
+    else if the back sensor is uncovered:
+      set the current hand direction to DOWN
+    endif
+  endfor
+
+  store the direction returned from NormalControls(left hand direction,
+                                                   right hand direction)
+  if the direction is DOWN and
+     the current time - last_time is less than BACKWARDS_WAIT:
+    return last_button
+  else:
+    set last_time to the current time
+    set last_button to the current direction
+    return the direction
+  endif
+</pre>
+
+<pre>
+<strong>NormalControls(Takes constants indicating the direction of the left and right hands,
+               respectively.)</strong>
+  if both directions are UP:
+    return UP
+  else if both directions are RIGHT:
+    return RIGHT
+  else if both directions are LEFT:
+    return LEFT
+  else if both directions are DOWN:
+    return DOWN
+  else if the left direction is LEFT and the right direction is RIGHT:
+    return BUTTON
+  else:
+    return NO_EVENT
+  endif
+</pre>
+
+<pre>
+<strong>HandleMotionEvents(Takes a constant indicating the direction event, no event, or
+                   Atari power off.)</strong>
+  initialize the static variable last_button to NO_EVENT
+
+  if last_button is the passed-in event:
+    return
+  endif
+
+  if last_button is not NO_EVENT:
+    turn the last_button OFF
+  if the event is not NO_EVENT or POWER_OFF
+    turn the button represented by the event ON
+  endif
+
+  set last_button equal to event
+</pre>
+
+<pre>
+<strong>HandleCheatEvents(Takes a constant indicating the direction event, no event, or
+                   Atari power off.)</strong>
+  initialize the static variable last_event to NO_EVENT
+  initialize the static variable step to 0
+  initialize the static variable last_time to 0
+
+  if the power is OFF:
+    set step to 0
+    turn off the fans
+    return
+  endif
+
+  if the passed-in event is NO_EVENT or the last_event is the same as event or step
+     equals 3:
+    return
+  endif
+
+  if step is 0:
+    store DOWN as the next move
+    set last_time to the current time
+  else if step is 1:
+    store RIGHT as the next move
+  else if step is 2:
+    store UP as the next move
+  endif
+
+  if the current time minus last_time is less than CHEAT_TIMEOUT and the event is
+     the same as the next move:
+    increment step
+  else:
+    set step to 0
+  endif
+
+  if step is 3:
+    turn on the fans
+  endif
+
+  set last_event to event
+</pre>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

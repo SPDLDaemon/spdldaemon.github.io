@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218A | Bad Touch: Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Bad Touch</h1>
+  <h2 class="centered">Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</h2>
+  <h2 class="centered">ME 218A, Fall 2008</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="../index.html">Overview</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/our_c32.html">our_c32 Module</a>
+      <a href="../code/ir_sensors.html">ir_sensors Module</a>
+      <a href="../code/atari.html">atari Module</a>
+      <a href="../code/cheat.html">cheat Module</a>
+      <a href="../code/motion.html">motion Module</a>
+      <a href="../code/main.html">main Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/interface.html">Atari Interface</a>
+      <a href="../circuits/sensing.html">Hand Sensing</a>
+      <a href="../circuits/feedback.html">User Feedback</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="../ultrasound/index.html">Ultrasonics</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+<div id="content">
+<h1 class='centered'>Circuits Overview</h1>
+
+<img class="centered" src="Photo_Full_Board.jpg" />
+<div style="text-align: center;"><strong>Entire proto board</strong></div>
+<img class="centered" src="Photo_From_Back.jpg" />
+<div style="text-align: center;"><strong>External connections</strong></div>
+
+<p>The circuits for our project fell into three broad categories: atari interface, hand sensing, and user feedback. These circuits were all tied together by the C32 board. In addition, we experimented with creating feedback using an array of ultrasonic transducers, but in the end could not get it to completely work. You can see information about that attempt <a href="../ultrasound/index.html">here</a>.</p>
+
+<img class="centered" src="DXP_C32.jpg" />
+<div style="text-align: center;"><strong>C32 pinout</strong></div>
+
+<p>The circuits for our project fell into the three broad categories below. You can download a zip of all the DXP files <a href="BadTouchDXP.zip">here</a>.</p>
+
+<dt><a href="interface.html">Atari Interface</a></dt>
+<dd>These circuits took a signal from a C32 pin and converted it into a signal the Atari board could use, and vice versa for the power status pin.</dd>
+
+<dt><a href="sensing.html">Hand Sensing</a></dt>
+<dd>The sensor circuits conditioned the input from the phototransistors before feeding them to the C32 analog pins.</dd>
+
+<dt><a href="feedback.html">User Feedback</a></dt>
+<dd>The user feedback circuits controlled the controller's lights and fans.</dd>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

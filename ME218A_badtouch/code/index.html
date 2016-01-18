@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218A | Bad Touch: Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Bad Touch</h1>
+  <h2 class="centered">Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</h2>
+  <h2 class="centered">ME 218A, Fall 2008</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="../index.html">Overview</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/our_c32.html">our_c32 Module</a>
+      <a href="../code/ir_sensors.html">ir_sensors Module</a>
+      <a href="../code/atari.html">atari Module</a>
+      <a href="../code/cheat.html">cheat Module</a>
+      <a href="../code/motion.html">motion Module</a>
+      <a href="../code/main.html">main Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/interface.html">Atari Interface</a>
+      <a href="../circuits/sensing.html">Hand Sensing</a>
+      <a href="../circuits/feedback.html">User Feedback</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="../ultrasound/index.html">Ultrasonics</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+<div id="content">
+<h1 class='centered'>Code Overview</h1>
+
+<p>Each function of our controller was handled by a different software module. We also created some helper modules to prevent us from going crazy. The modules are listed below, with links to the pseudo-code and full code. You can also download a zip of all of the code <a href="BadTouchCode.zip">here</a>.</p>
+
+<dt><a href="our_c32.html">our_c32</a></dt>
+<dd>Utility module for ease of interaction with the C32 pins. Makes it more intuitive to set the data direction and read/write data from/to the pins.</dd>
+
+<dt><a href="ir_sensors.html">ir_sensors</a></dt>
+<dd>Interfaces with each IR distance sensor. Interprets the data to determine whether a sensor was covered or not.</dd>
+
+<dt><a href="atari.html">atari</a></dt>
+<dd>Interfaces with the Atari protection board. Sends the motion commands and reads the power status.</dd>
+
+<dt><a href="cheat.html">cheat</a></dt>
+<dd>Controls the physical response of activating the cheat code (enabling/disabling the fans).</dd>
+
+<dt><a href="motion.html">motion</a></dt>
+<dd>The higher level event checker/handler. Interacts with the lower level modules to determine where the user's hands are. Sends the appropriate command to the Atari and activates/deactivates the cheat code.</dd>
+
+<dt><a href="main.html">main</a></dt>
+<dd>The infinite loop that calls the event checkers and handlers.</dd>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="../style.css" />
+  <title>ME 218A | Bad Touch: Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</title>
+  <script type="text/javascript" src="../javascript/prototype.js"></script>
+  <script type="text/javascript" src="../javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="../javascript/menu.js"></script>
+  <script type="text/javascript" src="../javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Bad Touch</h1>
+  <h2 class="centered">Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</h2>
+  <h2 class="centered">ME 218A, Fall 2008</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="../index.html">Overview</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="../code/index.html">Code Overview</a>
+      <a href="../code/our_c32.html">our_c32 Module</a>
+      <a href="../code/ir_sensors.html">ir_sensors Module</a>
+      <a href="../code/atari.html">atari Module</a>
+      <a href="../code/cheat.html">cheat Module</a>
+      <a href="../code/motion.html">motion Module</a>
+      <a href="../code/main.html">main Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="../circuits/index.html">Circuits Overview</a>
+      <a href="../circuits/interface.html">Atari Interface</a>
+      <a href="../circuits/sensing.html">Hand Sensing</a>
+      <a href="../circuits/feedback.html">User Feedback</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="../mechanical/index.html">Mechanical</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="../ultrasound/index.html">Ultrasonics</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+<div id="content">
+<h1 class='centered'>our_c32 Module</h1>
+
+<h3>Files:</h3>
+<ul>
+<li><a href="our_c32.h">our_c32.h</a></li>
+<li><a href="our_c32.c">our_c32.c</a></li>
+</ul>
+
+<h3>Interface</h3>
+
+<p>
+<strong>Function:</strong> SetDDR<br />
+<strong>Arguments:</strong> port: constant of port to set<br />
+pin: pin numberto set (typically 0-7), or -1 to set all (doesn't work for AD).<br />direction: DDR constant, or the hex of all DDRs.<br />
+<strong>Returns:</strong> A success code.<br />
+Sets the data direction of the specified port and pin. To set the data direction of an entire port at once, pass in -1 as the pin, and the hex char value as direction (instead of READ or WRITE). This does not work for the AD pins.
+</p>
+
+<p>
+<strong>Function:</strong> ReadPort<br />
+<strong>Arguments:</strong> port: constant of port to read <br />
+pin: pin number to read, -1 to read all (does not work for AD)<br />
+<strong>Returns:</strong> HI, LO, AD value, hex of values of entire port, or ERROR.<br />
+Reads the value of the specified port and pin. A quirk: can't read in from analog pins set to 'I'.
+</p>
+
+<p>
+<strong>Function:</strong> WritePort<br />
+<strong>Arguments:</strong> port: constant of port to write to<br />
+pin: pin number to write to, -1 to write to all<br />
+value: value to write, or hex of all values<br />
+<strong>Returns:</strong> Success constant.<br />
+Writes passed value to the specified port and pin.
+</p>
+
+<h3>Pseudo-Code</h3>
+
+<pre>
+<strong>SetDDR(Takes the port, pin, and data direction. Returns a success code.)</strong>
+  check to make sure input values are valid
+  if the port is the AD port:
+    set the proper char on the data direction string to the passed in data direction
+    set the AD port with the new data direction string
+    return success or error
+  endif
+
+  store the proper mask based on the pin and data direction values
+  if the passed in pin variable is -1:
+    set the entire data direction for the appropriate port with the passed in
+      direction char
+  else:
+    set the data direction only for the pin and port indicated
+  endif
+  return success or failure
+</pre>
+
+<pre>
+<strong>ReadPort(Takes the port and pin. Returns the pin value.)</strong>
+  check to make sure input values are valid
+  if the port is the AD port:
+    return the short from ADS12_ReadADPin
+  endif
+
+  store the proper mask based on the pin value
+  if the passed in pin variable is -1:
+    return the char for the entire port
+  else:
+    store the result of the port data & mask
+  endif
+  return if the result does not equal 0
+</pre>
+
+<pre>
+<strong>WritePort(Takes the port, pin, and value to write. Returns a success code.)</strong>
+  check to make sure input values are valid
+
+  store the proper mask based on the pin and value
+  if the passed in pin variable is -1:
+    set the entire port with the passed in value
+  else:
+    set the value only for the pin and port indicated
+  endif
+  return success or failure
+</pre>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <link rel="stylesheet" href="./style.css" />
+  <title>ME 218A | Bad Touch: Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</title>
+  <script type="text/javascript" src="./javascript/prototype.js"></script>
+  <script type="text/javascript" src="./javascript/scriptaculous.js"></script>
+  <script type="text/javascript" src="./javascript/menu.js"></script>
+  <script type="text/javascript" src="./javascript/utils.js"></script>
+
+</head>
+<body>
+
+<div id="shadow">
+<div id="container">
+<div id="banner">
+  <h1 class="centered" style="color: #B30000; margin: 0; padding: 0;">Team Bad Touch</h1>
+  <h2 class="centered">Trevor Boswell, Jonas Ketterle, Ruddick Lawrence</h2>
+  <h2 class="centered">ME 218A, Fall 2008</h2>
+</div>
+
+<ul id="menu">
+  <li>
+    <a class="menuheader" href="./index.html">Overview</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="#">Code</a>
+    <div class="menulist">
+      <a href="./code/index.html">Code Overview</a>
+      <a href="./code/our_c32.html">our_c32 Module</a>
+      <a href="./code/ir_sensors.html">ir_sensors Module</a>
+      <a href="./code/atari.html">atari Module</a>
+      <a href="./code/cheat.html">cheat Module</a>
+      <a href="./code/motion.html">motion Module</a>
+      <a href="./code/main.html">main Module</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="#">Circuits</a>
+    <div class="menulist">
+      <a href="./circuits/index.html">Circuits Overview</a>
+      <a href="./circuits/interface.html">Atari Interface</a>
+      <a href="./circuits/sensing.html">Hand Sensing</a>
+      <a href="./circuits/feedback.html">User Feedback</a>
+    </div>
+  </li>
+  <li>
+    <a class="menuheader" href="./mechanical/index.html">Mechanical</a>
+  </li>
+
+  <li>
+    <a class="menuheader" href="./ultrasound/index.html">Ultrasonics</a>
+  </li>
+</ul>
+<div class="clearer"></div>
+
+<div id="content">
+<h1 class='centered'>Project Overview</h1>
+
+<img class="centered" src="Assembled_Box_Picture_1.jpg" />
+
+<p>Our concept was to completely remove the aspect of touch from controlling the Atari FLashback II console. Our Vintage Controller Replacement is controlled by the location of the user's hands. They are placed inside the controller box, 1&quot;-2&quot; above the bottom. Four infrared light detector/emitter pairs per hand sense the location of the user's hands. The controller is operated with both hands, by covering different combinations of sensors to activate video game controls. Players get feedback from LEDs on the top that light up when a game control is activated, and when the cheat goes on.</p>
+
+<p>The top of the box conceals the players' hands in order to make controlling the game more difficult and interesting. Markings on the top of the box indicate where the sensors are so that using the controller is not completely impossible. Each hand must move to a specific place in order to activate a control. A fun variation is to have two people use the controller at the same time, forcing them to coordinate to use the correct control. It results in a lot of yelling.</p>
+
+<p>If the user inputs a specific series of commands (down, right, up) within three seconds, the cheat code is activated. The cheat code turns on fans that blow air up from the bottom. The air only comes up where the sensors are located, which helps the player's hands move to the right places. The cheat goes off when the Atari is turned off.</p>
+
+<h2>Gems of Wisdom</h2>
+<ul>
+  <li>Spend a lot of time brainstorming and planning early on. It will save your team much more time later on.</li>
+  <li>Completely plan and design your project before you start building anything. Reworking or remaking parts after a design change is frustrating and wastes a lot of time.</li>
+  <li>Make sure your power supply is on before you start debugging your circuit.</li>
+  <li>Stock up on components you think you may need while the TAs are in the office.</li>
+</ul>
+
+<h2>Bill of Materials</h2>
+
+<p><strong>Total Cost: $71.19</strong></p>
+
+<h3>Electronic Components</h3>
+<table>
+<tr>
+  <th>Part</th>
+  <th>Qty</th>
+  <th>Cost per Unit</th>
+  <th>Total Cost</th>
+</tr>
+<tr>
+  <td>Tape Sensor</td>
+  <td>8</td>
+  <td>$2.00</td>
+  <td>$16.00</td>
+</tr>
+<tr>
+  <td>2N7000</td>
+  <td>12</td>
+  <td>$0.25</td>
+  <td>$3.00</td>
+</tr>
+<tr>
+  <td>IRLZ34N</td>
+  <td>2</td>
+  <td>$0.25</td>
+  <td>$0.50</td>
+</tr>
+<tr>
+  <td>LM324</td>
+  <td>2</td>
+  <td>$0.50</td>
+  <td>$1.00</td>
+</tr>
+<tr>
+  <td>Capacitors</td>
+  <td>4</td>
+  <td>$0.10</td>
+  <td>$0.40</td>
+</tr>
+<tr>
+  <td>Resistors</td>
+  <td>29</td>
+  <td>$0.01</td>
+  <td>$0.29</td>
+</tr>
+<tr>
+  <td>LEDs</td>
+  <td>24</td>
+  <td>$0.15</td>
+  <td>$3.60</td>
+</tr>
+</table>
+
+<h3>Connectors and Wiring</h3>
+<table>
+<tr>
+  <th>Part</th>
+  <th>Qty</th>
+  <th>Cost per Unit</th>
+  <th>Total Cost</th>
+</tr>
+<tr>
+  <td>Molex 8-pin Connectors</td>
+  <td>5</td>
+  <td>$0.40</td>
+  <td>$2.00</td>
+</tr>
+<tr>
+  <td>Molex 4-pin Connectors</td>
+  <td>10</td>
+  <td>$0.25</td>
+  <td>$2.50</td>
+</tr>
+<tr>
+  <td>Molex 2-pin Connectors</td>
+  <td>26</td>
+  <td>$0.10</td>
+  <td>$2.60</td>
+</tr>
+<tr>
+  <td>Molex Connector Pins</td>
+  <td>76</td>
+  <td>$0.05</td>
+  <td>$3.80</td>
+</tr>
+<tr>
+  <td>Braided Wire</td>
+  <td>50 ft</td>
+  <td>$0.10</td>
+  <td>$5.00</td>
+</tr>
+<tr>
+  <td>Heat Shrink Tube</td>
+  <td>5 gt</td>
+  <td>$0.10</td>
+  <td>$0.50</td>
+</tr>
+<tr>
+  <td>Jumper Wire Kit</td>
+  <td>1</td>
+  <td>$10.00</td>
+  <td>$10.00</td>
+</tr>
+</table>
+
+<h3>Structural, Mechanical, and Cosmetic</h3>
+<table>
+<tr>
+  <th>Part</th>
+  <th>Qty</th>
+  <th>Cost per Unit</th>
+  <th>Total Cost</th>
+</tr>
+<tr>
+  <td>Masonite</td>
+  <td>1</td>
+  <td>$20.00</td>
+  <td>$20.00</td>
+</tr>
+<tr>
+  <td>Tape Sensor Brackets</td>
+  <td>8</td>
+  <td>$1.00</td>
+  <td>$8.00</td>
+</tr>
+<tr>
+  <td>Link Depot 92mm x 92mm x 25mm 12VDC Fan</td>
+  <td>4</td>
+  <td>$5.99</td>
+  <td>$23.96</td>
+</tr>
+</table>
+
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+
