@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LOBBYIST - Airbot</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+		
+		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
+<link rel="stylesheet" type="text/css" href="http://cdn1.editmysite.com/editor/libraries/fancybox/fancybox.css?1234" />
+<link rel="stylesheet" type="text/css" href="files/main_style.css?1464994245" title="wsite-theme-css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,300,300italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+
+<style type='text/css'>
+.wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline {}
+.wsite-headline-paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+</style>
+
+		<script><!--
+var STATIC_BASE = '//cdn1.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+//-->
+</script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+
+<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
+<script src="http://cdn2.editmysite.com/js/site/main.js?buildTime=1234"></script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"><!--
+	var IS_ARCHIVE = 1;
+	
+	(function(jQuery){
+		function initFlyouts(){
+			initPublishedFlyoutMenus(
+				[{"id":"139263896127193406","title":"Home","url":"index.html","target":"","nav_menu":false},{"id":"767982957734002231","title":"Overview","url":"overview.html","target":"","nav_menu":false},{"id":"569191165410237904","title":"The Team","url":"the-team.html","target":"","nav_menu":false},{"id":"141786758108073016","title":"Mechanical","url":"mechanical.html","target":"","nav_menu":true},{"id":"449394511687265301","title":"Electrical","url":"electrical.html","target":"","nav_menu":true},{"id":"649569287185946938","title":"Software","url":"software.html","target":"","nav_menu":true},{"id":"237913707815966086","title":"Blog","url":"blog.html","target":"","nav_menu":false},{"id":"142541488674015058","title":"Gems of Wisdom","url":"gems-of-wisdom.html","target":"","nav_menu":false},{"id":"488234553755170448","title":"BOM","url":"bom.html","target":"","nav_menu":false},{"id":"329192615825364548","title":"Gallery","url":"gallery.html","target":"","nav_menu":false}],
+				"820414154465255419",
+				'',
+				'active',
+				false,
+				{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nav_menu}}\n\t\t\thref=\"{{url}}\"\n\t\t{{\/nav_menu}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nav_menu}}\n\t\t\thref=\"{{url}}\"\n\t\t{{\/nav_menu}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+				{}
+			)
+		}
+		if (jQuery) {
+			jQuery(document).ready(function() { jQuery(initFlyouts); });
+		}else{
+			if (Prototype.Browser.IE) window.onload = initFlyouts;
+			else document.observe('dom:loaded', initFlyouts);
+		}
+	})(window._W && _W.jQuery)
+//-->
+</script>
+		
+	</head>
+	<body class="no-header-page  wsite-theme-light  wsite-page-lobbyist1"><div id="total-wrapper">
+  <div class="top-background">
+	<div id="header-wrap">
+	  <div class="container">
+		<table id="header">
+		  <tr>
+			<td id="header-right">
+			  <table>
+				<tr>
+					<td class="phone-number"></td>
+					<td class="social"></td>
+					<td class="search"></td>
+				</tr>
+			  </table>
+			</td>
+		  </tr>
+		</table>
+	  </div><!-- end container -->
+	</div><!-- end header-wrap -->
+	
+	<div id="nav-wrap">
+		<div class="container header-align-outer">
+			<div class="header-align-mid">
+				<div class="header-align-inner">
+					<div id="logo"><span class="wsite-logo">
+
+	<a href="">
+	
+	<span id="wsite-title">Airbot</span>
+	
+	</a>
+
+</span></div>		
+					<div class="nav-container"><ul class="wsite-menu-default">
+		<li id="pg139263896127193406" class="wsite-menu-item-wrap">
+			<a
+					href="index.html"
+				class="wsite-menu-item"
+				>
+				Home
+			</a>
+			
+		</li>
+		<li id="pg767982957734002231" class="wsite-menu-item-wrap">
+			<a
+					href="overview.html"
+				class="wsite-menu-item"
+				>
+				Overview
+			</a>
+			
+		</li>
+		<li id="pg569191165410237904" class="wsite-menu-item-wrap">
+			<a
+					href="the-team.html"
+				class="wsite-menu-item"
+				>
+				The Team
+			</a>
+			
+		</li>
+		<li id="pg141786758108073016" class="wsite-menu-item-wrap">
+			<a
+				class="wsite-menu-item"
+				>
+				Mechanical
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-820414154465255419"
+	class="wsite-menu-subitem-wrap wsite-nav-current"
+	>
+	<a
+			href="lobbyist1.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			LOBBYIST
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-427092086468387937"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+			href="pac1.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			PAC
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg449394511687265301" class="wsite-menu-item-wrap">
+			<a
+				class="wsite-menu-item"
+				>
+				Electrical
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-237656050900227226"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+			href="lobbyist2.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			LOBBYIST
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-519541060104041199"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+			href="pac2.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			PAC
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg649569287185946938" class="wsite-menu-item-wrap">
+			<a
+				class="wsite-menu-item"
+				>
+				Software
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-503453765178750703"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+			href="lobbyist.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			LOBBYIST
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-213197124584661861"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+			href="pac.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			PAC
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg237913707815966086" class="wsite-menu-item-wrap">
+			<a
+					href="blog.html"
+				class="wsite-menu-item"
+				>
+				Blog
+			</a>
+			
+		</li>
+		<li id="pg142541488674015058" class="wsite-menu-item-wrap">
+			<a
+					href="gems-of-wisdom.html"
+				class="wsite-menu-item"
+				>
+				Gems of Wisdom
+			</a>
+			
+		</li>
+		<li id="pg488234553755170448" class="wsite-menu-item-wrap">
+			<a
+					href="bom.html"
+				class="wsite-menu-item"
+				>
+				BOM
+			</a>
+			
+		</li>
+		<li id="pg329192615825364548" class="wsite-menu-item-wrap">
+			<a
+					href="gallery.html"
+				class="wsite-menu-item"
+				>
+				Gallery
+			</a>
+			
+		</li>
+</ul>
+</div>
+				</div><!-- end header align inner -->
+			</div><!-- end header align mid -->
+	  </div><!-- end container -->
+	</div><!-- end nav-wrap -->
+	</div><!-- end top background -->
+	<div id="main-wrap">
+	  <div class="container">
+		<div id='wsite-content' class='wsite-elements wsite-not-footer'>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/7865216_orig.png" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+<h2 class="wsite-content-title" style="text-align:left;">General Remarks</h2>
+
+<div class="paragraph" style="text-align:left;">Early on, we had a great meeting with our coach, Samir Patel. We talked about a lot of topics, including how to approach the project and how teams in the past have tackled problems surrounding building a functional hovercraft. What was truly helpful about this meeting is that Samir could tell us with confidence about how to design the skirt, which electrical components worked well for their PAC &nbsp;&amp; LOBBYIST, where to get those components, and other important considerations. These tips saved us a lot of precious time. Our mechanical design process was quick, meaning that we noted improvements to be made at each step of the way and rapidly executed these improvements. We did this such that we would have a LOBBYIST to test on and have the next one in the works. Ultimately, this led to a hovercraft that was stable and robust.</div>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/7155119_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/479794_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div class="wsite-spacer" style="height:19px;"></div>
+
+<h2 class="wsite-content-title" style="text-align:left;">Skirt<br />&#8203;Final Material: Nylon<br /></h2>
+
+<div class="paragraph" style="text-align:left;">Keeping in mind that the hovercraft's ability to move would completely hinge on the skirt design, we prototyped this first. Luckily, our first prototypes lifted off of the ground and slid (nearly) frictionlessly across the floor of Room 36. We noted the best features of each design and synthesized to make a better one. To describe the skirt design process - we started with an "air hockey table" design, meaning that the bottom cavity of a foamcore hovercraft mule was covered with a taut piece of plastic and then punctured many times such that there was an even distribution of small holes across the bottom. The slid across the floor well when pushed, but we didn't feel that this was giving us enough of a 'cushion of air' under the hovercraft. With a small amount of weight added, the rigid frame of the hovercraft would contact the ground and bring the whole thing to a halt. Our next design (started only a bit after the first) also employed a taut sheet of plastic but had a large hole in the very center. Our hope was that the plastic would inflate under the hovercraft. Still, we didn't achieve the cushion. So, we tried the same idea, but with much more material. This worked! When we turned on the lift fan, the excess material bloated down and out to give us the skirt that we were looking for. From there, we worked on building a better chassis for the skirt to lift.</div>
+
+<div class="wsite-spacer" style="height:21px;"></div>
+
+<h2 class="wsite-content-title" style="text-align:left;">Chassis/Frame<br />Final Material: Duron/Masonite<br /></h2>
+
+<div class="paragraph" style="text-align:left;">Our first prototypes of the chassis were truly designed to quickly test different skirt designs. Once we found a decent skirt design, we went to overhaul the chassis. We first focused on the interface between the chassis and the skirt. It needed to not interfere with skirt inflation, be airtight, and look decent (at the time, we didn't know that our bumper would ultimately cover this interface). During the skirt iterations, we did happened upon a general chassis silhouette that persisted throughout the rest of the project - a simple ellipse. We took this silhouette and turned it into a perimeter ring that was 0.5" thick. This ring would let us sandwich the edges of the skirt material between the bottom of the chassis (whole ellipse) and the top of the perimeter ring. Hot glue, hot glue, hot glue - not always the best fastening method for a final product, but in this case, it allowed us to quickly seal air leaks in the interface and test immediately. We built a prototype that heavily resembled our final bot using this method and it worked very well. At this point, the skirt material was still plastic. Our meeting with Samir set our intentions on eventually using nylon. By the time we had a reliable test platform, we had started to test propellers for controlling motion of the hovercraft. The props were exposed for some time, so our next priority was to design prop cages to protect the blades and our fingers.&nbsp;</div>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/1449068.png?326" alt="Picture" style="width:326;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/7813248_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div class="wsite-spacer" style="height:133px;"></div>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:right">
+<a>
+<img src="uploads/4/8/8/0/48809657/6867605_orig.png" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div class="wsite-spacer" style="height:10px;"></div>
+
+<h2 class="wsite-content-title" style="text-align:left;">Propeller Cages&nbsp;<br />Final Material: Duron/Masonite</h2>
+
+<div class="paragraph">Important considerations for the prop cages: not impeding airflow, mounting the cages to the chassis in a smart way, and mounting the motors to the cages. Later on, where to mount the XBEE board would be another important consideration. Samir advised us to mount it high and away from motors and this is what we ultimately did. Our first prop cage iteration, however, had no XBEE mounting location. It purely guarded the props. The first iteration required some sanding because of how we decided to mount the motors. There was some contact between the motor pinion gear and duron on the mounting, so we took note and improved the next iteration of the cages. We also felt that the motor mount towers' gussets were too short (vertically). This issue led to too much travel of the prop cage assembly when powering the prop motor (the whole assembly would sway in the direction opposite of the prop's thrust). We made the gussets taller and the prop assemblies swayed significantly less. Our second iteration of prop cages had room for the motor pinion gear, provided sufficient airflow, and securely mounted the XBEE board at a very high point on the hovercraft. The XBEE mounting also mechanically coupled the prop cages for added stability. With our nearly-final chassis and finished prop cages, we moved on to designing a second layer of duron to give space for theme implementation and mounting LEDs/a switch. This would also hide the electronics that were mounted to the chassis.&nbsp;</div>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div class="wsite-spacer" style="height:237px;"></div>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/3108202_orig.png" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:right">
+<a>
+<img src="uploads/4/8/8/0/48809657/3085164_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/291961_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div class="wsite-spacer" style="height:21px;"></div>
+
+<h2 class="wsite-content-title" style="text-align:left;">Second Tier + Arms + Air Deflector + Puppy<br />Final Material: Duron/Masonite</h2>
+
+<div class="paragraph" style="text-align:left;">We focused on these items only after we had a solid base. This means that we could fully control the hovercraft (perhaps only with keyboard events at this point or a mixture of keyboard and PAC controls) and most of the functional design had reached a mature stage. The second tier comprised two separate decks (one for the front of the hovercraft, and one for the back) that were originally parts of the chassis design. We cut the part (in SW) where the props stick up and mounted the decks with 2" standoffs. On the front deck, there is a hole for the mandatory kill switch, holes for the team and time indication LEDs, and a mount for the looking-for-pair indication servo. The extra space provided by the second tier turned out to be advantageous as we attempted to fine-tune the weight distribution of the hovercraft. Batteries were, by far, the heaviest components on the hovercraft. Their placement on the hovercraft was paramount to being able to successfully navigate the bot. We used the extra space to lay down velcro and move the batteries around based on how the hovercraft was handling.&nbsp;<br /><br />The arms on the front of the hovercraft were designed to gather the lawmakers (read: ping pong balls) that would be across the playing field. These arms were mounted to the bottom layer (aka the chassis) and protruded through the bumper that we would add to the hovercraft very last.&nbsp;<br /><br />Another small addition that helped was a small duron board that was mounted via 0.25" standoffs&nbsp;<em>below</em>&nbsp;the hovercraft. That is, this board was mounted within the skirt. The purpose of the board was to deflect the rush of air from the lift fan out into the skirt, rather than down into the ground. We thought that something like this would be helpful as early as the skirt prototypes days, so we added it to the final iteration of the hovercraft.&nbsp;<br /><br />Lastly, we had a puppy riding our bot to complement to 'Airbot' (Airbud - cute dog movie from our childhood) theme. The PAC controllers carried the theme through. The puppy's tail had a servo arm in it, which means that the tail wagged when the hovercraft was looking for a new PAC.&nbsp;<br /></div>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/2287599_orig.png" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/3393123_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/9535892_orig.png" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/4/8/8/0/48809657/124046_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div></div>
+
+	  </div><!-- end container -->
+	</div><!-- end main-wrap -->
+</div>
+	<div id="footer-wrap">
+	  <div class="container">
+		Create a <a target="_top" href="http://www.weebly.com/">free web site</a> with <a target="_top" href="http://www.weebly.com/" title="free web site">Weebly</a>
+	  </div><!-- end container -->
+	</div><!-- end footer-wrap -->
+
+		
+		
+	</body>
+</html>
