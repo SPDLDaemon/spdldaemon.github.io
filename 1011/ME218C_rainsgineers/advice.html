@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="keywords" content="Mechatronics, ME 218, Stanford"/>
+    <meta name="description" content="The greatest ME 218C Project since sliced bread"  />
+    <meta name="copyright" content="2011 Team Rainsgineers" />
+    
+    <title>Rainsgineers | Team</title>
+    <link rel="shortcut icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./css/main.css" type="text/css" media="screen"/>  
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <a href="./overview.html">
+					<img src="./images/header.png" alt="Team Logo" style="float:left;" />
+					<img src="./images/header_right.png" alt="Ironman" style="float:right;" />
+        </a>
+			</div>
+  	  <div class="site_menu shadow">
+        <table cellspacing="0px">
+          <tbody>
+            <tr>
+              <div id="site_menu_top">&nbsp;</div>
+            </tr>
+            <tr>
+              <td>
+                <div class="menu_line"><a href="./overview.html">Overview</a></div>
+              </td>              
+              <td>
+                <div class="menu_line"><a href="./mechanisms.html">Mechanisms</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./electronics.html">Electronics</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./software.html">Software</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./bill_of_materials.html">Parts</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./advice.html">Gems of Wisdom</a></div>
+              </td>
+              <td>
+                <div class="last_menu_line"><a href="./team.html">Team</a></div>
+              </td>
+            </tr>
+          <tbody>
+        </table>
+      </div>
+  
+      <div class="container container_rounded_border shadow">
+				<h1 class="page_title">
+					Gems of Wisdom
+        </h1>
+				<div class="content">
+          <table id="page_header" cellspacing="0px">
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <b>Set up MP Lab on Your Own Computer.</b>  This project is largely software-based, and lab stations will quickly become prime real-estate.
+										 Tooling up with a free version of the PIC development environment and some free compilers helped our team develop more quickly.
+                  </p>
+									<p>
+                    <b>LED's are Great for Debugging.</b>  Even when printf() <i>is</i> available on your microcontroller, toggling an LED can provide valuable insight.  
+										Heartbeat and status LED's are simple ways to better understand a live system and immediately know when a something has gone awry and quickly lead 
+										you to the problem.  And of course, the more granular you make your indicators, the better.
+                  </p>
+									<p><b>Plug n' Program.</b> A dedicated Molex for re-programming each PIC is a great way to develop quickly.  Found a mistake? Just plug in your
+									PICkit3 and program and you're back off to the races.
+									</p>
+									<p><b>Great New Tool: The Bus Pirate</b>.  A must-have for communication development.  This offers a great way to check whether the signal was ever 
+									transmitted or was ever received, really helping you isolate at what point and on what side of the transmission a signal was lost.
+									</p>
+                	<p>
+                    <b>Bug Alert: Use a Series Resistor when Probing the XBee Tx and Rx lines with a Series Resistor.</b>  The oscilloscope and the bus pirate, while 
+										designed to probe with negigible affect on the signal with high-impedance lines, introduce incredible noise on the XBee Tx and Rx lines. 
+										An approximately 1k resistor placed in series between the XBee line and the oscilloscope or bus pirate seemed to provide enough impedance
+										to be able to accurately sense the signal.  (still remains a mystery)
+                  </p>
+                	<p>
+                    <b>Bug Alert: The PIC's Stack is Only 8 Levels Deep.</b>  So watch how complex you make your program.  In particular, avoid making use 
+										of recursion (it's really not necessary in these state machines anyways).
+                  </p>
+								</td>
+              </tr>
+            </tbody>
+          </table>
+      
+        <div class="footer">
+          <hr/>
+          <p>Rainsgineers Industries</p>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

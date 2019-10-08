@@ -1,0 +1,201 @@
+@CHARSET "UTF-8";
+
+/* resetting defaults THIS NOT HELPING*/
+table, tbody, tr, td, h1 {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  overflow-y: scroll; 
+  /* since some browsers (Firefox) will 
+  remove the vertical scroll-bar when not 
+  needed causing the page to jump */
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+  
+  background: #000000;/* #242424; */
+  /*background-image: url('../images/bg.png');
+  background-repeat: repeat-x;*/
+}
+
+img {
+	position: relative;
+  border: none;
+}
+
+hr {
+	background-color: #76797c;
+	color: #76797c; 			/* For IE */
+	border: 0px;
+	height: 1px;
+}
+
+.footer hr {  /* horizontal rules in the .footer class */
+	background-color: #76797c;
+	color: #76797c; 			/* For IE */
+	border: 0px;
+	height: 1px;
+	width: 80%;
+}
+
+.main {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+.header {
+  background-color: #000000;
+	border-bottom: 3px solid #76797c;
+	width: 100%;
+	height: 200px;
+}
+
+.header img {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.site_menu {
+	position: relative;
+  top: 0px;
+  left: 0px;
+  margin: 15px auto 0px auto;
+	max-width: 600px;
+
+	font-size: 16px;
+  text-align: left;
+  
+  background: #ffffff;
+	
+	/*
+  border-radius: 5px;
+	-moz-border-radius: 5px; 	  /* Firefox /
+	-webkit-border-radius: 5px; /* Safari & Chrome /	
+	*/
+}
+
+.menu_line {
+  margin: 5px 0px 5px 0px;
+  padding: 0px 10px 0px 10px;
+  border-right: 1px solid #76797C;
+}
+
+.last_menu_line {
+  margin: 5px 0px 5px 0px;
+  padding: 0px 0px 0px 10px;
+}
+
+#site_menu_top {
+  background-image: url('../images/menu_top.png');
+	
+  background-repeat: repeat-x;
+  padding: 10px 0px 0px 0px;
+  
+	/*
+  border-top-leftradius: 3px;
+	-moz-border-radius-topleft: 3px; 	  /* Firefox /
+	-webkit-border-top-left-radius: 3px; /* Safari & Chrome /
+  
+  border-top-right-radius: 3px;
+	-moz-border-radius-topright: 3px; 	  /* Firefox /
+	-webkit-border-top-right-radius: 3px; /* Safari & Chrome /
+	*/
+}
+
+.container {
+  background: #ffffff;
+  font-family: Arial, Sans-Serif;
+	font-size: 14px;
+	color: #76797c;
+	text-align: center;
+  position: relative;
+  margin: 15px auto 30px auto;
+  padding: 15px;
+  width: 800px;
+	height: auto;
+  
+  display: block;
+}
+
+.content {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+  text-align: left;
+}
+
+.content p {
+  /*margin-right: 100px;*/
+}
+
+
+.page_title {
+  text-align: center;
+}
+
+.footer {
+	font-family: "Palatino", "Lucida Grande", Arial, Sans-Serif;
+	font-size: 12px;
+	color: #76797c;
+	text-align: center;
+  padding-top: 12px;
+}
+
+.shadow {
+	/*x-offset y-offset radius color */
+	-moz-box-shadow: 0px 0px 7px #000000;		/* Firefox */
+	-webkit-box-shadow: 0px 0px 7px #000000;    /* Safari & Chrome */
+	box-shadow: 0px 0px 7px #000000;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=90, Color='#000000')"; 	/* For IE 8 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=90, Color='#000000');		/* For IE 5.5 - 7 */
+}
+
+.container_rounded_border {
+	/*
+	border-radius: 7px;
+	-moz-border-radius: 7px; 	/* Firefox /
+	-webkit-border-radius: 7px; /* Safari & Chrome /	
+	*/
+}
+
+/* Links */
+.content a:link, .content a:visited {
+  color: #30559B;
+	text-decoration: none;
+}
+
+.content a:hover {
+	text-decoration: underline;
+}
+
+
+a:link {
+	color: #76797c;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #76797c;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #30559B;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #76797c;
+	text-decoration: none;
+}

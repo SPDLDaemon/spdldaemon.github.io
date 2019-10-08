@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+.bios img {
+  margin: 5px 10px 5px 0px;
+  border: 1px solid gray;
+  padding: 5px;
+  float: left;
+}
