@@ -1,0 +1,85 @@
+[
+{
+	"uri": "http://spdldaemon.github.io/docs/tools/",
+	"title": "Tools",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 1 Tools Tutorials, Tips, and Tricks for the various software and hardware tools you might encounter.\n"
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/datasheets/",
+	"title": "Datasheets",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 2 Datasheets Curated, sorted, datasheets for stuff you might encounter in lab.\n\u0026hellip;we're really just saving you a Google search in most cases.\n"
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/datasheets/drivers/",
+	"title": "Drivers",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/datasheets/regulators/",
+	"title": "Regulators",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/datasheets/analog/",
+	"title": "Analog",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/datasheets/motors/",
+	"title": "Motors",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/datasheets/logic/",
+	"title": "Logic",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/tools/kicad/",
+	"title": "KiCad",
+	"tags": [],
+	"description": "",
+	"content": "KiCad is an open-source software tool for the creation of electronic schematic diagrams and PCB artwork. Beneath its singular surface, KiCad incorporates an elegant ensemble of the following stand-alone software tools:\n   Program name Description File extension     KiCad Project manager *.pro   Eeschema Schematic and component editor *.sch, *.lib, *.net   Pcbnew Circuit board and footprint editor *.kicad_pcb, *.kicad_mod   GerbView Gerber and drill file viewer *.g*, *.drl, etc.   Bitmap2Component Convert bitmap images to components or footprints *.lib, *.kicad_mod, *.kicad_wks   PCB Calculator Calculator for components, track width, electrical spacing, color codes, and more\u0026hellip; None   Pl Editor Page layout editor *.kicad_wks    The file extension list is not complete and only contains a subset of the files that KiCad supports. It is useful for the basic understanding of which files are used for each KiCad application. KiCad can be considered mature enough to be used for the successful development and maintenance of complex electronic boards.\nKiCad does not present any board-size limitation and it can easily handle up to 32 copper layers, up to 14 technical layers and up to 4 auxiliary layers. KiCad can create all the files necessary for building printed boards, Gerber files for photo-plotters, drilling files, component location files and a lot more.\nBeing open source (GPL licensed), KiCad represents the ideal tool for projects oriented towards the creation of electronic hardware with an open-source flavour.\nOn the Internet, the homepage of KiCad is:\nhttp://www.kicad-pcb.org/\nDownloading and\nHere's a note\n  Adapted in part from the KiCad Getting Started Tutorial, CC-BY-3.0  .\n"
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/",
+	"title": "The SPDL Docs Repository",
+	"tags": [],
+	"description": "",
+	"content": "The SPDL Docs Repository Welcome to the SPDL Docs Repository!\nThis is a work in progress, and is intended to eventually serve as a repository for SPDL-curated best practices, tools, and tips.\nIf you feel extra motivated to write a whitepaper on a topic, you can clone the Github repository, add the page, and make a pull request for SPDL Daemon to review. In this case, you may find the linked documentation at the lower left to be helpful when adding your page. This site is built using Hugo, with the Learn theme.\n"
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/test/",
+	"title": "Test",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://spdldaemon.github.io/docs/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
