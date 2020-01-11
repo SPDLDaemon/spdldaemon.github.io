@@ -11,50 +11,5 @@
 	<atom:link href="http://spdldaemon.github.io/docs/datasheets/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Drivers</title>
-      <link>http://spdldaemon.github.io/docs/datasheets/drivers/</link>
-      <pubDate>Thu, 09 Jan 2020 22:17:13 -0800</pubDate>
-      
-      <guid>http://spdldaemon.github.io/docs/datasheets/drivers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Regulators</title>
-      <link>http://spdldaemon.github.io/docs/datasheets/regulators/</link>
-      <pubDate>Thu, 09 Jan 2020 22:17:06 -0800</pubDate>
-      
-      <guid>http://spdldaemon.github.io/docs/datasheets/regulators/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Analog</title>
-      <link>http://spdldaemon.github.io/docs/datasheets/analog/</link>
-      <pubDate>Thu, 09 Jan 2020 22:16:52 -0800</pubDate>
-      
-      <guid>http://spdldaemon.github.io/docs/datasheets/analog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Motors</title>
-      <link>http://spdldaemon.github.io/docs/datasheets/motors/</link>
-      <pubDate>Thu, 09 Jan 2020 22:16:41 -0800</pubDate>
-      
-      <guid>http://spdldaemon.github.io/docs/datasheets/motors/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Logic</title>
-      <link>http://spdldaemon.github.io/docs/datasheets/logic/</link>
-      <pubDate>Thu, 09 Jan 2020 22:16:35 -0800</pubDate>
-      
-      <guid>http://spdldaemon.github.io/docs/datasheets/logic/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

@@ -3,38 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://spdldaemon.github.io/docs/tools/kicad/usingkicad/</loc>
+    <lastmod>2020-01-10T20:59:29-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://spdldaemon.github.io/docs/tools/kicad/schematiccapture/</loc>
+    <lastmod>2020-01-10T15:16:30-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://spdldaemon.github.io/docs/tools/</loc>
     <lastmod>2020-01-09T21:59:07-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://spdldaemon.github.io/docs/datasheets/</loc>
-    <lastmod>2020-01-09T22:14:18-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://spdldaemon.github.io/docs/datasheets/drivers/</loc>
-    <lastmod>2020-01-09T22:17:13-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://spdldaemon.github.io/docs/datasheets/regulators/</loc>
-    <lastmod>2020-01-09T22:17:06-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://spdldaemon.github.io/docs/datasheets/analog/</loc>
-    <lastmod>2020-01-09T22:16:52-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://spdldaemon.github.io/docs/datasheets/motors/</loc>
-    <lastmod>2020-01-09T22:16:41-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://spdldaemon.github.io/docs/datasheets/logic/</loc>
-    <lastmod>2020-01-09T22:16:35-08:00</lastmod>
   </url>
   
   <url>
@@ -43,13 +23,13 @@
   </url>
   
   <url>
-    <loc>http://spdldaemon.github.io/docs/</loc>
-    <lastmod>2020-01-09T20:03:06-08:00</lastmod>
+    <loc>http://spdldaemon.github.io/docs/datasheets/</loc>
+    <lastmod>2020-01-09T22:14:18-08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://spdldaemon.github.io/docs/test/</loc>
-    <lastmod>2020-01-09T20:00:42-08:00</lastmod>
+    <loc>http://spdldaemon.github.io/docs/</loc>
+    <lastmod>2020-01-09T20:03:06-08:00</lastmod>
   </url>
   
   <url>

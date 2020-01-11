@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/docs/images/favicon.png" type="image/png">
 
-    <title>KiCad :: test docs site</title>
+    <title>Using KiCad :: test docs site</title>
 
     
     <link href="/docs/css/nucleus.css?1578729126" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/docs/tools/kicad/">
+  <body class="" data-url="/docs/tools/kicad/usingkicad/">
     <nav id="sidebar" class="">
 
 
@@ -282,7 +282,7 @@
     
     <li data-nav-id="/docs/tools/kicad/" title="KiCad" class="dd-item 
         parent
-        active
+        
         
         ">
       <a href="/docs/tools/kicad/">
@@ -308,8 +308,8 @@
   
     
     <li data-nav-id="/docs/tools/kicad/usingkicad/" title="Using KiCad" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/tools/kicad/usingkicad/">
@@ -459,7 +459,13 @@
             
           
           
-            <a href='/docs/'>The SPDL Docs Repository</a> > <a href='/docs/tools/'>Tools</a> > KiCad
+            
+            
+          
+          
+            <a href='/docs/'>The SPDL Docs Repository</a> > <a href='/docs/tools/'>Tools</a> > <a href='/docs/tools/kicad/'>KiCad</a> > Using KiCad
+          
+         
           
          
           
@@ -474,17 +480,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#downloading-and-installing-kicad">Downloading and installing KiCad</a>
+    <li>
       <ul>
-        <li><a href="#under-apple-macos">Under Apple macOS</a></li>
-        <li><a href="#under-windows">Under Windows</a></li>
-        <li><a href="#under-gnulinux">Under GNU/Linux</a></li>
-      </ul>
-    </li>
-    <li><a href="#kicad-workflow">KiCad Workflow</a>
-      <ul>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#some-notes-on-fabrication">Some Notes on Fabrication</a></li>
+        <li><a href="#shortcut-keys">Shortcut keys</a></li>
+        <li><a href="#getting-around">Getting Around</a></li>
+        <li><a href="#starting-a-new-project">Starting a New Project</a></li>
       </ul>
     </li>
   </ul>
@@ -504,7 +504,7 @@
           
             <h1>
               
-              KiCad
+              Using KiCad
             </h1>
           
 
@@ -513,134 +513,45 @@
 
 
 
-	<p>KiCad<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is an open-source software tool for the creation of electronic schematic diagrams and PCB artwork.
-Although essentially treated as one program, KiCad is really more of a tight grouping of the following stand-alone software tools:</p>
-<table>
-<thead>
-<tr>
-<th>Program name</th>
-<th>Description</th>
-<th>File extension</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>KiCad</td>
-<td>Project manager</td>
-<td>*.pro</td>
-</tr>
-<tr>
-<td>Eeschema</td>
-<td>Schematic and component editor</td>
-<td>*.sch, *.lib, *.net</td>
-</tr>
-<tr>
-<td>Pcbnew</td>
-<td>Circuit board and footprint editor</td>
-<td>*.kicad_pcb, *.kicad_mod</td>
-</tr>
-<tr>
-<td>GerbView</td>
-<td>Gerber and drill file viewer</td>
-<td>*.g*, *.drl, etc.</td>
-</tr>
-<tr>
-<td>Bitmap2Component</td>
-<td>Convert bitmap images to components or footprints</td>
-<td>*.lib, *.kicad_mod, *.kicad_wks</td>
-</tr>
-<tr>
-<td>PCB Calculator</td>
-<td>Calculator for components, track width, electrical spacing, color codes, and more&hellip;</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Pl Editor</td>
-<td>Page layout editor</td>
-<td>*.kicad_wks</td>
-</tr>
-</tbody>
-</table>
-<p>The file extension list is not complete and only contains a subset of the files that KiCad supports. It is useful for the basic understanding of which files are used for each KiCad application.
-KiCad can be considered mature enough to be used for the successful development and maintenance of complex electronic boards.</p>
-<figure>
-    <img src="/docs/images/KiCad-home.png"
-         alt="KiCad basic window.  The icon row from left to right corresponds to Eeschema (schematic and component editors), Pcbnew ( board and footprint editors), GerbView, Bitmap2Component, PCB Calculator, and Pl Editor."/> <figcaption>
-            <p>KiCad basic window.  The icon row from left to right corresponds to Eeschema (schematic and component editors), Pcbnew ( board and footprint editors), GerbView, Bitmap2Component, PCB Calculator, and Pl Editor.</p>
-        </figcaption>
-</figure>
+	<p>KiCad is pretty powerful, and as with many open-source software, can sometimes have a steep learning curve.
+For the purposes of use in lab, the rest of this tutorial will focus on things you might use reasonably often.
+The detailed information can always be found in the <a href="docs.kicad-pcb.org">KiCad documentation</a>.</p>
+<p>That being said, your life will be enormously easier if you get used to some of the keyboard shortcuts for navigation.</p>
+<h3 id="shortcut-keys">Shortcut keys</h3>
+<p>KiCad has two kinds of related but different shortcut keys: accelerator keys and hotkeys. Both are used to speed up working in KiCad by using the keyboard instead of the mouse to change commands.</p>
+<h4 id="accelerator-keys">Accelerator keys</h4>
+<p>Accelerator keys have the same effect as clicking on a menu or toolbar icon: the command will be entered but nothing will happen until the left mouse button is clicked. Use an accelerator key when you want to enter a command mode but do not want any immediate action.</p>
+<p>Accelerator keys are shown on the right side of all menu panes:</p>
+<p><img src="accelerator_keys.png" alt="Accelerator keys"></p>
+<h4 id="hotkeys">Hotkeys</h4>
+<p>A hotkey is equal to an accelerator key plus a left mouse click. Using a hotkey starts the command immediately at the current cursor location. Use a hotkey to quickly change commands without interrupting your workflow.</p>
+<p>To view hotkeys within any KiCad tool go to <strong>Help
+  <i class="fas fa-long-arrow-alt-right "></i>
+List Hotkeys</strong> or press <kbd>Ctrl</kbd>+<kbd>F1</kbd>:</p>
+<p><img src="hotkeys.png" alt="Hotkeys List"></p>
+<p>You can edit the assignment of hotkeys, and import or export them, from the <strong>Preferences
+  <i class="fas fa-long-arrow-alt-right "></i>
+Hotkeys</strong> Options menu.</p>
 
-
-<div class="notices note" ><p>This tutorial is written using KiCad 5.0.0 on Windows 10.  While significant changes are unlikely, be aware that small details may change if your install is different.</p>
+<div class="notices info" ><p>In this document, keypresses are expressed with styling like this: <kbd>a</kbd>. If you see <kbd>a</kbd>, just type the &ldquo;a&rdquo; key on the keyboard.</p>
 </div>
 
-<p>KiCad does not present any board-size limitation and it can easily handle up to 32 copper layers, up to 14 technical layers and up to 4 auxiliary layers. KiCad can create all the files necessary for building printed boards, Gerber files for photo-plotters, drilling files, component location files and a lot more.</p>
-<p>Being open source (GPL licensed), KiCad represents the ideal tool for projects oriented towards the creation of electronic hardware with an open-source flavour.</p>
-<p>On the Internet, the homepage of KiCad is: <a href="http://www.kicad-pcb.org/">http://www.kicad-pcb.org/</a></p>
-<h2 id="downloading-and-installing-kicad">Downloading and installing KiCad</h2>
-<p>KiCad runs on GNU/Linux, Apple macOS and Windows. You can find the most up to date instructions and download links at:</p>
-<p><a href="http://www.kicad-pcb.org/download/">http://www.kicad-pcb.org/download/</a></p>
-<h3 id="under-apple-macos">Under Apple macOS</h3>
-<p>Stable builds of KiCad for macOS can be found at: <a href="http://downloads.kicad-pcb.org/osx/stable/">http://downloads.kicad-pcb.org/osx/stable/</a></p>
-<h3 id="under-windows">Under Windows</h3>
-<p>Stable builds of KiCad for Windows can be found at: <a href="http://downloads.kicad-pcb.org/windows/stable/">http://downloads.kicad-pcb.org/windows/stable/</a></p>
-<h3 id="under-gnulinux">Under GNU/Linux</h3>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Show Unix Installation Details
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Stable releases of KiCad can be found in most distribution’s package managers as kicad and kicad-doc. If your distribution does not provide latest stable version, please follow the instruction for unstable builds and select and install the latest stable version.</p>
-<p>Under Ubuntu, the easiest way to install an unstable nightly build of KiCad is via <em>PPA</em> and <em>Aptitude</em>. Type the following into your Terminal:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo add-apt-repository ppa:js-reynaud/ppa-kicad
-sudo aptitude update <span style="color:#f92672">&amp;&amp;</span> sudo aptitude safe-upgrade
-sudo aptitude install kicad kicad-doc-en
-</code></pre></div><p>Under Debian, the easiest way to install backports build of KiCad is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Set up Debian Backports</span>
-echo -e <span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74"># stretch-backports
-</span><span style="color:#e6db74">deb http://ftp.us.debian.org/debian/ stretch-backports main contrib non-free
-</span><span style="color:#e6db74">deb-src http://ftp.us.debian.org/debian/ stretch-backports main contrib non-free
-</span><span style="color:#e6db74">&#34;</span> | sudo tee -a /etc/apt/sources.list &gt; /dev/null
-
-<span style="color:#75715e"># Run an Update &amp; Install KiCad</span>
-sudo apt-get update
-sudo apt-get install -t stretch-backports kicad
-</code></pre></div><p>Under Fedora the easiest way to install an unstable nightly build is via <em>copr</em>. To install KiCad via copr type the following in to copr:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo dnf copr enable @kicad/kicad
-sudo dnf install kicad
-</code></pre></div><p>Alternatively, you can download and install a pre-compiled version of KiCad, or directly download the source code, compile and install KiCad.</p>
-
-    </div>
-</div>
-<h2 id="kicad-workflow">KiCad Workflow</h2>
-<p>Despite its similarities with other PCB design software, KiCad is characterised by a unique workflow in which schematic components and footprints are separate. Only after creating a schematic are footprints assigned to the components.</p>
-<h3 id="overview">Overview</h3>
-<p>The KiCad workflow is comprised of two main tasks: drawing the schematic and laying out the board. Both a schematic component library and a PCB footprint library are necessary for these two tasks. KiCad includes many components and footprints, and also has the tools to create new ones.</p>
-<p>Initially, the process begins with schematic capture, as in any other tool.  After the schematic has been defined, footprints are attached to each symbol on the schematic, and the information is then used to lay out the board.</p>
-
-<div class="notices note" ><p>The <a href="https://docs.kicad-pcb.org/5.1.5/en/getting_started_in_kicad/getting_started_in_kicad.html#kicad-work-flow-overview">KiCad Tutorial</a> has a detailed flowchart of the full board design process.</p>
-</div>
-
-<h3 id="some-notes-on-fabrication">Some Notes on Fabrication</h3>
-<p>Both <a href="https://oshpark.com/">Oshpark</a> (PCB only) and <a href="https://macrofab.com/">MacroFab</a>(PCB + assembly) directly accept KiCad formats for fabrication. Naturally neither is the cheapest possible service, but for small projects the convenience can be an advantage.</p>
-<hr>
-<p>Adapted in part from the <a href="https://docs.kicad-pcb.org/5.1.5/en/getting_started_in_kicad/getting_started_in_kicad.html">KiCad Getting Started Tutorial</a>, CC-BY-3.0 <i class='fab fa-creative-commons'></i> <i class="fab fa-creative-commons-by"></i>.</p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>Pronounced &lsquo;Key-CAD&rsquo;. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
+<h4 id="example">Example</h4>
+<p>Consider the simple example of adding a wire in a schematic.</p>
+<p>To use an accelerator key, press <kbd>Shift</kbd>+<kbd>W</kbd> to invoke the &ldquo;Add wire&rdquo; command (note the cursor will change). Next, left click on the desired wire start location to begin drawing the wire.</p>
+<p>With a hotkey, simply press <kbd>w</kbd> and the wire will immediately start from the current cursor location.</p>
+<h3 id="getting-around">Getting Around</h3>
+<p>By default, the mouse wheel zooms in and out.
+Holding <kbd>Shift</kbd> while scrolling will scroll the page up and down, while holding <kbd>Ctrl</kbd> will scroll left and right.
+Panning can also be done by holding down the middle mouse button (wheel) and dragging.</p>
+<h3 id="starting-a-new-project">Starting a New Project</h3>
+<p>Each project in KiCad needs a dedicated directory, and has a <code>*.pro</code> file defining the project.
+To create a project, go to the KiCad man window, then select <strong>File
+  <i class="fas fa-long-arrow-alt-right "></i>
+New
+  <i class="fas fa-long-arrow-alt-right "></i>
+Project&hellip;</strong> or simply press <kbd>Ctrl</kbd>+<kbd>N</kbd>.
+When making the project, leave the checkbox to create a new directory ticked unless you already have a dedicated directory.</p>
 
 
 
@@ -713,8 +624,6 @@ sudo dnf install kicad
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -731,6 +640,9 @@ sudo dnf install kicad
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -774,10 +686,10 @@ sudo dnf install kicad
 	 
 	 
 		
-			<a class="nav nav-prev" href="/docs/tools/" title="Tools"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/docs/tools/kicad/" title="KiCad"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/docs/tools/kicad/usingkicad/" title="Using KiCad" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/docs/tools/kicad/schematiccapture/" title="Schematic Capture" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
