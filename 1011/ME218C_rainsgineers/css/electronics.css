@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.data-table {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.data-table-header {
+  font-weight: bold;
+  /*border-bottom: 1px solid black;*/
+}
+
+.center-img {
+  margin: 0px auto 0px auto;
+  padding: 10px;
+  display: block;
+  border: none;
+}

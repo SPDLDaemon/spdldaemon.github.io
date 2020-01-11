@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="keywords" content="Mechatronics, ME 218, Stanford"/>
+    <meta name="description" content="The greatest ME 218C Project since sliced bread"  />
+    <meta name="copyright" content="2011 Team Rainsgineers" />
+    
+    <title>Rainsgineers | Electronics</title>
+    <link rel="shortcut icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./css/main.css" type="text/css" media="screen"/> 
+    <link rel="stylesheet" href="./css/electronics.css" type="text/css" media="screen"/>      
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <a href="./overview.html">
+					<img src="./images/header.png" alt="Team Logo" style="float:left;" />
+					<img src="./images/header_right.png" alt="Ironman" style="float:right;" />
+        </a>
+			</div>  	  <div class="site_menu shadow">
+        <table cellspacing="0px">
+          <tbody>
+            <tr>
+              <div id="site_menu_top">&nbsp;</div>
+            </tr>
+            <tr>
+              <td>
+                <div class="menu_line"><a href="./overview.html">Overview</a></div>
+              </td>              
+              <td>
+                <div class="menu_line"><a href="./mechanisms.html">Mechanisms</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./electronics.html">Electronics</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./software.html">Software</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./bill_of_materials.html">Parts</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./advice.html">Gems of Wisdom</a></div>
+              </td>
+              <td>
+                <div class="last_menu_line"><a href="./team.html">Team</a></div>
+              </td>
+            </tr>
+          <tbody>
+        </table>
+      </div>
+  
+      <div class="container container_rounded_border shadow">
+        <h1>
+          Electronics
+        </h1>
+        <div class="content">
+          <table cellspacing="0px">
+            <tbody>
+              <tr>
+                <td>
+									<p id="controller_desc">
+										<h3>
+											The Controller
+											<hr/>
+										</h3>
+									</p>
+                </td>
+              </tr>
+							<tr>
+                <td>
+									<p><b>Inputs.</b>
+										A single microcontroller gathered a total of four inputs from the user across three sensing modalities:
+                    <ol>
+											<li>
+												Two ultrasonic sensors to sense the distance of each palm from the ground.  These two distances then 
+												control the speed of their respective motor.
+											</li>
+											<li>
+												One deadman switch (limit switch) to enable the motor signal transmission
+											</li>
+											<li>
+												One potentiometer to adjust the range of physical motion needed to reach the fastest and slowest motor speeds 											
+											</li>
+										</ol>
+										
+										Note: while another limit switch to designate reverse was implemented, the feature was retracted to simplify the user experience.
+                  </p>
+									<p><b>Outputs.</b>
+                    <ol>
+											<li>
+												Wireless motor signals to the vehicle via an XBee RF module.
+											</li>
+											<li>
+												Status of captured atolls through two-color LED's. N-Channel MOSFETs in low-side drive configuration were used 
+												for each of the LEDs to prevent any pin of the microcontroller from having to source the current demanded by any LED.
+											</li>
+											<li>
+											  Transmission Heartbeat LED.
+											</li>
+											<li>  
+												Acoustic Pings.  When proximity data is requested, each of the ultrasonic sensors emit a 40kHz acoustic pulse. 
+											</li>
+										</ol>										
+									</p>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <a href="./images/electronics/CVC/system_diagram_full.png">
+                    <img src="./images/electronics/CVC/system_diagram.png" alt="Overall Controller Circuit" class="center-img"/>
+                  </a>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <p id="sensing_distance_desc"><b>Distance Sensing.</b>
+                    To sense the distance of each palm from the floor, we employed two ultrasonic sensors.  Much of the 
+										interaction with this module is handled in software.  Data is requested by pulling the signal line 
+										high for about five microseconds.  The line is then converted to an input and captures the time 
+										between the ping of an acoustic pulse (logical high) and its echo (a second logical high). While 
+										there was little to wire, pull-down resistors were critical to reduce noise.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="./images/electronics/CVC/ultrasonic_circuit_full.png">
+                    <img src="./images/electronics/CVC/ultrasonic_circuit.png" alt="Ultrasonic Circuit" class="center-img"/>
+                  </a>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <p>
+										<b>Overall Controller Schematic.</b>
+									</p>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <a href="./images/electronics/CVC/overall_circuit_full.png">
+                    <img src="./images/electronics/CVC/overall_circuit.png" alt="Overall Controller Circuit" class="center-img"/>
+                  </a>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <p>
+										<b>
+											Current Check on the Voltage Regulators.
+										</b>
+									</p>
+									<p>
+                    To ensure proper operation of our voltage regulators on the controller, it is ciritcal to ensure that the circuits they power will not demand
+                    more current than the regulator can supply.  We used a LM2940, a low-dropout 1A 5V voltage regulator the regulate the DC power
+										from the batteries in both the controller.
+										<br/><br/>
+										It was necessary to supply current to: 
+										<br/>
+                    the ultrasonic module: I_ultra = 35mA (max)
+                    <br/>
+										Atoll display LED: 33mA (yes, we needed these to be bright)
+										<br/>
+										Current Transmission Heartbeat LED: 16mA
+										<br/><br/>
+
+                    If all of the two-color LEDs are on (with even both colors on) and the transmission heartbeat LED is always on.
+                    <br/>
+                    I_total = 35mA*2 + 33mA*5*2 + 16mA*3 ~=> 410mA
+										<br/>
+                    <b>F.S. = 1A / 410e-3A ~= 2.4 </b>
+                    <br/><br/>
+                  </p>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <p>
+										<b>
+											Controller Battery Lifetime Estimate.
+										</b>
+									</p>
+									<p>
+										The controller is powered by a 7.2V NiCad battery capable of storing 3000mA*hr of charge.
+										
+										<br/>
+										I_LED = ((V_supply - V_f) - 0 )/ R = (5 - 1.7)V / 100Ohm => 33mA <br/>
+										I_hb_LED = ((V_supply - V_f) - 0 )/ R = (5 - 1.7)V / 200Ohm => 17mA => 9mA// the transmission heartbeat LED current (although only on half the time)<br/>
+										I_pot = ( V_supply - 0 )/ R = (5 - 0)V / 100kOhm => 0.5uA (really in parallel with microcontroller impedance, but negligible) <br/>
+										I_ultra = 35mA											               // maximum ultrasonic current<br/>
+										I_switch = (V_supply - 0 )/ R_pd = 5V / 3.3kOhm => 1.5mA  // current through the pull-down resistor when the deadman switch is depressed<br/>
+										I_MCU = 65mA // the microcontroller quiescent current<br/>
+										I_XBee = 50mA<br/> maximum of transmit and receive currents at 3.3V (although not always receiving and transmitting)<br/>
+										<br/><br/>
+										I_tot = 5*I_LED + I_hb_LED + I_pot + I_ultra + I_switch + I_MCU + I_XBee ~=> 360mA<br/>
+									
+									  The lifetime of the battery is then given by: <br/>
+										t_battery = (I_battery*t_battery)/I_tot = 3000mA*hr/359mA => 8.3hrs
+									</p>
+                </td>
+              </tr> 
+							<tr>
+                <td>
+									<p id="controller_desc">
+										<h3>
+											The Vehicle
+											<hr/>
+										</h3>
+									</p>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <p><b>System Overview.</b>
+                    This section describes the system for our atoll capture vehicle (ACV), i.e., our boat.  The design requirements 
+										for the ACV were to:
+										<ol>
+											<li>
+												Navigate the fountain under wireless control
+											</li>
+											<li>
+												Capture atolls by reading their RFID cards and broadcasting those serials in a packet
+											</li>
+											<li>
+												Receive a team color assignment from team RFID cards and electromechanically display that color on the ACV
+											</li>
+											<li>
+												Upon team color assignment, initiate wireless communication using a class-determined communications protocol 
+												to find other boats on your team and establish that you are teammates with them
+											</li>
+										<ol>
+										We divided the functions of our ACV into six separate microcontrollers and had them share information via UART 
+										and SPI protocols.  Although this is less efficient than using a single microcontroller for all tasks, this 
+										allowed us to learn more about networking while satisfying the requirements of the project.
+									</p>
+									<p>
+										Referring to the system map below, we have six individual PIC16F690’s on our ACV, each performing unique tasks.  
+										The diagram shows what other devices each PIC talks to and which communication protocols they use.										
+									</p>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <a href="./images/electronics/ACV/system_diagram_full.png">
+                    <img src="./images/electronics/ACV/system_diagram.png" alt="System Diagram" class="center-img"/>
+                  </a>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <p><b>RFID Reader.</b>  The RFID reader receives RFID card serials using the RFID antenna, and sends them out on 
+									its transmit line via UART.
+                  </p>
+                  <p><b>RFID PIC.</b>  The RFID PIC receives the RFID serials, decodes them into HEX values, and transmits them to 
+									the MASTER PIC via SPI.  The RFID PIC was coded in assembly as per a project requirement.
+                  </p>
+                  <p><b>RFID Reader.</b>  The RFID reader receives RFID card serials using the RFID antenna, and sends them out on 
+									its transmit line via UART.
+                  </p>
+                  <p><b>Master PIC.</b>  The master PIC is the master on the SPI system.  All other chips on that network are slaves.  
+									The master PIC receives RFID serials from the RFID PIC and determines whether they belong to an atoll or a team 
+									color card.  If the serials belong to an atoll, the master PIC sends them to the security controller via UART to 
+									retrieve the security keys necessary for capturing an atoll.  The security controller was provided to us by the 
+									teaching team, and we communicate with it via a professor-determined protocol.  Once the master PIC has the atoll 
+									serials and security keys or just the team color serials, it sends them to the XBee PIC via SPI using a 
+									team-determined protocol.
+                  </p>
+                  <p><b>XBee PIC.</b>  The XBee PIC receives and sends messages to the XBee wireless transceiver via UART, and it 
+									also receives messages from the master PIC via SPI.   If the XBee PIC receives team color serials from the master 
+									PIC, initiates the class-determined communication sequence to find other boats on the same team.   Once a teammate 
+									has been found, the XBee pic turns on one of the team color fans by raising a logic pin tied to a MOSFET.  The 
+									fans blow around colored packing peanuts.If the XBee PIC receives atoll serials and security keys from the master 
+									PIC, it wirelessly broadcasts that information using a class-determined protocol to capture the atoll.
+                  </p>
+									<p><b>Motor PICs.</b>  The motor PICs also receive messages from the XBee transceiver via UART.  They are looking 
+									specifically for speed commands from the remote control.   When they have received the appropriate message, they 
+									update the PWM signal that they are sending to the motor H-bridges.  Each motor PIC runs the same code, but 
+									determines whether it controls the right or the left motor via an address line that is tied high or low.
+                  </p>
+									<p><b>XBee.</b>  The XBee itself is an RF transceiver.   The chip comes with the hardware layer and the low level 
+									sending and receiving software layers prebuilt.  As a class, we designed a wireless communications protocol at 
+									the packet level to allow multiple teams to control their boats, capture atolls, and establish teammates 
+									without interfering with each other.
+                  </p>
+									<hr width="500px" />
+								</td>
+              </tr>
+							
+              <tr>
+                <td>
+                  <p><b>Propulsion.</b>
+									Below are the schematics for our motor PICs and H-bridges.  See the system overview for a description of the 
+									functionality of the motor PICs.  We used PIC16F690’s for the motor PICs.
+									</p>
+									<p>
+									We used an LMD18200 H-bridge, which has 2A continuous and 3A peak current limits.  It came in an SPDL lab 
+									kit with all the necessary capacitors and resistors.  We chose our H-Bridge first and then chose our motors 
+									such that they would work within the operating limits of the H-bridge.
+									</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="./images/electronics/ACV/motor_circuit_full.png">
+                    <img src="./images/electronics/ACV/motor_circuit.png" alt="Vehicle Motor Circuit" class="center-img"/>
+                  </a>
+                </td>
+              </tr>
+							<tr>
+								<td>
+                 <hr/ style="width:50%"><br/>
+                  <div id="YouTube_Intro_Video" style="margin-left: 115px;">
+										<iframe width="560" height="349" src="http://www.youtube.com/embed/Ouxy0E82fjU" frameborder="0" allowfullscreen>
+										</iframe>
+                  </div>						
+								</td>
+							</tr>
+							<tr>
+                <td>
+                  <p>
+                    <b>
+											Current Estimate on our Motor Driver Circuit.
+										</b>
+										To ensure we do not burn out our H-Bridge, it was important to check the most current it will ever have to source is within spec.
+										While no datasheet was available for the motors that drove our propellers, we measured the current at 
+										various loads.  Under a typical load they drew about 1A and when stalled they drew about 2A. Our H-Bridge, 
+										an LMD18200, can deliver 3A so our factor of safety from toasting our H-bridge is:
+									</p>
+							    <p>
+										<b>F.S. = 3A/2A = 1.5</b>    
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p id="power_management_desc"><b>Power Management.</b>
+                   Our power board acts as a switching station, taking power from two batteries and routing it to the circuits 
+									 and the motors.  We use battery 1 to supply 7.2 V to the motor and master boards.  Then we use battery 1 
+									 and battery 2 in series to provide 14.2 V to the propeller motors and the team color fans.
+									</p>
+									<p>									
+									All of our logic circuits require 5V, but our batteries supply 7.2V each.  Thus we use voltage regulators on 
+									each board to convert 7.2V to 5V.  We chose the LM2940 because it has low dropout voltage (.5V typ) and high 
+									current capabilities (1A).  Although 1A current is excessive for our application, we wanted to maintain the 
+									option of adding more LEDs later on in the project.  We did not want to be limited by the 100 mA current 
+									limit of the LM2950.
+									</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="./images/electronics/ACV/power_management_circuit_full.png">
+                    <img src="./images/electronics/ACV/power_management_circuit.png" alt="Vehicle Power Management Circuit" class="center-img"/>
+                  </a>
+                </td>
+              </tr>
+							<tr>
+                <td>
+                  <p id="vehicle_communication_desc"><b>Communication.</b>
+									The master board contains four PIC16F690’s and an RDM630, which is an RFID reader.  The devices work in 
+									tandem to scan RFID cards and pass the serial information to the radio.  The devices are networked 
+									together via UART and SPI protocols.  We used the standard hardware layers for each of these systems 
+									but designed our own software layers on top to handle our custom packets.
+									</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="./images/electronics/ACV/communication_circuit_full.png">
+                    <img src="./images/electronics/ACV/communication_circuit.png" alt="Vehicle Communication Circuit" class="center-img"/>
+                  </a>
+                </td>
+              </tr>
+							<tr>
+								<td>
+                 <hr/ style="width:50%"><br/>
+                  <div id="YouTube_Intro_Video" style="margin-left: 115px;">
+										<iframe width="560" height="349" src="http://www.youtube.com/embed/G_n5uT8vdJg" frameborder="0" allowfullscreen></iframe>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+          </table>      
+        <div class="footer">
+          <hr/>
+          <p>Rainsgineers Industries</p>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

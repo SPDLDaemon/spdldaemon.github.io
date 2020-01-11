@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+.code-listings {
+  margin: 0px auto 0px auto;
+}
+
+.data-table {
+  margin: 5px;
+  padding: 10px;
+  /* border: 1px solid black; */
+}
+
+
+
+.code-listings, .first-row {
+  padding-top: 5px;
+}
+
+td.code-listings {  /* td tags WITHIN the code-listings class */
+  padding-left: 5px;
+  padding-right: 50px;
+}
+
+.data-table-header {
+  font-weight: bold;
+  /* border-bottom: 1px solid black; */
+}
+
+.center-img {
+  margin: 0px auto 0px auto;
+  padding: 10px;
+  display: block;
+  border: none;
+}
+
+.center-table {
+  width: 575px;
+  margin: 0px auto 0px auto;
+  padding: 10px;
+  display: block;
+  border: none;
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="keywords" content="Mechatronics, ME 218, Stanford"/>
+    <meta name="description" content="The greatest ME 218C Project since sliced bread"  />
+    <meta name="copyright" content="2011 Team Rainsgineers" />
+    
+    <title>Rainsgineers | Mechanisms</title>
+    <link rel="shortcut icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./css/main.css" type="text/css" media="screen"/> 
+    <link rel="stylesheet" href="./css/mechanisms.css" type="text/css" media="screen"/> 
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <a href="./overview.html">
+					<img src="./images/header.png" alt="Team Logo" style="float:left;" />
+					<img src="./images/header_right.png" alt="Ironman" style="float:right;" />
+        </a>
+			</div>
+  	  <div class="site_menu shadow">
+        <table cellspacing="0px">
+          <tbody>
+            <tr>
+              <div id="site_menu_top">&nbsp;</div>
+            </tr>
+            <tr>
+              <td>
+                <div class="menu_line"><a href="./overview.html">Overview</a></div>
+              </td>              
+              <td>
+                <div class="menu_line"><a href="./mechanisms.html">Mechanisms</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./electronics.html">Electronics</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./software.html">Software</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./bill_of_materials.html">Parts</a></div>
+              </td>
+              <td>
+                <div class="menu_line"><a href="./advice.html">Gems of Wisdom</a></div>
+              </td>
+              <td>
+                <div class="last_menu_line"><a href="./team.html">Team</a></div>
+              </td>
+            </tr>
+          <tbody>
+        </table>
+      </div>
+  
+      <div class="container container_rounded_border shadow">
+        <h1>
+          Mechanisms
+        </h1>       
+        <div class="content">
+          <table cellspacing="0px">
+            <tbody>
+							<tr>
+                <td>
+									<p>
+										<h3>
+											The Vehicle
+											<hr/>
+										</h3>
+									</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+									<div>
+										General Specs:
+										<ul>
+											<li>
+												Weight: 7.9 lbm
+											</li>
+											<li>
+												Length: 18 in
+											</li>
+											<li>
+												Width:  17.7 in
+											</li>
+											<li>
+												Height: 14.7 in											
+											</li>
+											<li>
+												Microcontroller: 6x PIC16F690 networked through SPI
+												<ul>
+													<li>
+														1x Master                           
+													</li>
+													<li>
+														1x RFID Reader Controller
+													</li>
+													<li>
+														1x Security Controller
+													</li>
+													<li>
+														2x Motor Controller
+													</li>
+													<li>
+														1x Dedicated XBee Transceiver
+													</li>
+												</ul>
+											</li>
+											<li>
+												Power Plant: 2x Gaupner Speed 400 running at 24W each
+											</li>
+											<li>
+												Power Storage: 2x 1500mAHr NiCad 7.2V Batteries
+											</li>
+										</ul>
+									</p>
+									<p>
+										The Atoll Capture Vehicle (ACV) is a mono-hull duel propeller watercraft designed 
+										to compete in an atoll capturing competition in the Stanford Meyer Fountain.   The 
+										body of our vehicle is specifically designed to perform in this arena.
+									</p>
+									<p>
+										The competition area has a powerful waterfall that our capture vehicle was designed 
+										to penetrate.  The ACV has two layer of waterproofing.  The circuits, batteries, 
+										and motors all sealed inside of plastic waterproofed containers.  These containers 
+										are covered by an upper shell formed of polystyrene foam.  This upper shell has 
+										slanted walls to deflect the waterfall around the craft.  This reduces the “dunking” 
+										force of the waterfall, allowing the vehicle to safely pass through.
+									</p>
+									<p>
+										The competition area also was fraught with many shallow obstacles, often only an 
+										inch below the water’s surface.  In order for our vehicle to not be constantly beached, 
+										we designed a hull optimized to ride high in the water rather that for hydrodynamic 
+										efficiency.  Our boat could displace enough water to float approximately 1 inch deep 
+										in water.  In addition, the propellers are set back into the hull, so they do not 
+										protrude dangerously below the hull.
+									</p>
+									<p>
+										In order to maneuver the RFID reader into position to capture and Atoll, we designed 
+										the hull with a length to width aspect ratio of about 1:1.  We also placed the motors 
+										very close to the outer edge of the hull (12+ inches apart).  This allowed the ACV to 
+										turn in place when a single motor was running.
+									</p>
+									<p>
+										The hull design was also modular.  It is composed of 8 separate polystyrene foam hulls 
+										held together by two threaded rods.  The hulls were then sandwiched between an aircraft 
+										plywood laser-cut frame.  Thus no adhesives were used and the hull could be disassembled, 
+										revised, and reassembled during any phase of the project.
+									</p>
+									</div>
+                </td>
+              </tr>								
+							<tr>
+								<td>
+                 <h4>
+                    Overall Vehicle Assembly
+                  </h4>
+										<a href="./images/mechanisms/ACV/assembly_full.png">
+											<img src="./images/mechanisms/ACV/assembly.png" alt="ACV Assembly" class="center-img"/>
+										</a>   									
+										<a href="./images/mechanisms/ACV/assembly_bottom_full.png">
+											<img src="./images/mechanisms/ACV/assembly_bottom.png" alt="ACV Assembly" class="center-img"/>
+										</a>   	
+								</td>
+							</tr>		
+							<tr>
+								<td>
+									<div style="margin-left: 115px">		
+										<iframe width="560" height="349" src="http://www.youtube.com/embed/ukSelyJ3DjI" frameborder="0" allowfullscreen>
+										</iframe>				
+									</div>
+								</td>
+							</tr>
+							<tr>		
+								<td>
+                 <h4>
+                    Team Color Display
+                  </h4>
+										<a href="./images/mechanisms/ACV/team_color_display_full.png">
+											<img src="./images/mechanisms/ACV/team_color_display.png" alt="ACV Team Color Display" class="center-img"/>
+										</a>   									
+								</td>
+							</tr>
+							<tr>
+								<td>
+                  <div id="YouTube_Intro_Video" style="margin-left: 115px;">
+										<iframe width="560" height="349" src="http://www.youtube.com/embed/RkBJyc-03VE" frameborder="0" allowfullscreen></iframe>
+										</iframe>
+                  </div>
+								</td>
+							</tr>
+							<tr>
+                <td>
+									<p>
+										<h3>
+											The Controller
+											<hr/>
+										</h3>
+									</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+									<div id="controller_desc">
+										General Specs:
+										<ul>
+											<li>
+												Weight: 9.4 lbm
+											</li>
+											<li>
+												Length: 8 in
+											</li>
+											<li>
+												Width:  11.1 in
+											</li>
+											<li>
+												Height: 11 in											
+											</li>
+											<li>
+												Microcontroller: 1x Freescale HCS12 E128
+											</li>
+											<li>
+												Power Storage: 1x 3000mA*Hr NiCad 7.2V Battery
+											</li>
+										</ul>
+									</p>
+									<p>
+										The Capture Vehicle Controller (CVC) is a creative controller for a human to direct the motion
+										of the Atoll Capture Vehicle (ACV).  The primary goal of the CVC was to create an inventive 
+										and novel controller as well as to explore the use of ultrasonic proximity sensors.  
+										The CVC also needs to display to the pilot information about which team controls each atoll.
+									</p>
+									<p>
+										The CVC hand assemblies strap to the user’s right and left hands and protectively house 
+										two ultrasonic sensors, preventing the delicate sound transmitter and receiver from 
+										being impacted.  The right hand’s assembly has a large limit switch mounted as a thumb 
+										button.  This acts as a “dead man switch,” so ultrasonic throttle data will only be 
+										transmitted as long as the switch is pressed.  If the switch is released then the ultrasonic 
+										data will cease to transmit, the ACV motor control microcontroller will time out, 
+										and the boat will immediately turn off its motors.  Each hand attachment is connected 
+										to the main CVC via shielded cable, which is strain relieved on each side.
+									</p>
+									<p>
+										The central housing of the CVC is chest mounted on the pilot, allowing them to move 
+										around actively while controlling the boat.  It has a panel with five multi-color LEDs 
+										to alert the pilot to atoll captures by either team.  It also has a tuning potentiometer 
+										to adjust the system to pilots of various heights.
+									</p>
+									</div>
+                </td>
+              </tr>
+							<tr>
+								<td>
+                 <h4>
+                    Chest Plate
+                  </h4>
+										<a href="./images/mechanisms/CVC/assembly_full.png">
+											<img src="./images/mechanisms/CVC/assembly.png" alt="CVC Assembly" class="center-img"/>
+										</a>   									
+								</td>
+							</tr>
+							<tr>
+								<td>
+                 <h4>
+                    Palm Piece
+                  </h4>
+										<a href="./images/mechanisms/CVC/palm_piece_full.png">
+											<img src="./images/mechanisms/CVC/palm_piece.png" alt="CVC Palm Peice" class="center-img"/>
+										</a>   									
+								</td>
+							</tr>
+							<tr>
+								<td>
+                  <div id="YouTube_Intro_Video" style="margin-left: 115px;">
+										<iframe width="560" height="349" src="http://www.youtube.com/embed/PgikRpNOBwU" frameborder="0" allowfullscreen></iframe>
+										</iframe>
+                  </div>						
+								</td>
+							</tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="footer">
+          <hr/>
+          <p>Rainsgineers Industries</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
