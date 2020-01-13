@@ -118,6 +118,33 @@ div.notices.tip p:first-child:before {
     content: "\f138";
 }
 
+/* Fix multi-paragraph notes */
+div.notices.info p {
+    border-top: none;
+}
+div.notices.info p:first-child {
+    border-top: 30px solid #F0B37E;
+}
+div.notices.warning p {
+    border-top: none;
+}
+div.notices.warning p:first-child {
+    border-top: 30px solid rgba(217, 83, 79, 0.8);
+}
+div.notices.note p {
+    border-top: none;
+}
+div.notices.note p:first-child {
+    border-top: 30px solid #6AB0DE;
+}
+div.notices.tip p {
+    border-top: none;
+}
+div.notices.tip p:first-child {
+    border-top: 30px solid rgba(92, 184, 92, 0.8);
+}
+/* End multi-paragraph notes */
+
 kbd {
 	margin: 0px 0.1em;
 	padding: 0.05em 0.2em;
@@ -132,4 +159,14 @@ kbd {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	text-shadow: 0 1px 0 #fff;
+}
+
+/* Fix TOC */
+#TableOfContents > ul > li > a {
+  padding: 0px 0px;
+  margin:0px 0px;
+}
+
+#TableOfContents > ul > li > ul > li > a {
+  font-weight: normal;
 }

@@ -11,5 +11,16 @@
 	<atom:link href="http://spdldaemon.github.io/docs/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Pages organization</title>
+      <link>http://spdldaemon.github.io/docs/tools/testnote/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>http://spdldaemon.github.io/docs/tools/testnote/</guid>
+      <description>In Hugo, pages are the core of your site. Once it is configured, pages are definitely the added value to your documentation site.
+Folders Organize your site like any other Hugo project. Typically, you will have a content folder with all your pages.
+content├── level-one│ ├── level-two│ │ ├── level-three│ │ │ ├── level-four│ │ │ │ ├── _index.md &amp;lt;-- /level-one/level-two/level-three/level-four│ │ │ │ ├── page-4-a.</description>
+    </item>
+    
   </channel>
 </rss>
