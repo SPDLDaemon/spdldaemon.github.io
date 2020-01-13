@@ -170,3 +170,10 @@ kbd {
 #TableOfContents > ul > li > ul > li > a {
   font-weight: normal;
 }
+/* end fix TOC */
+
+/* reduce maximum text width on large screens for readability */
+#body-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}

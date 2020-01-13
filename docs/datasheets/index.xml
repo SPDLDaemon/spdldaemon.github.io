@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Datasheets on test docs site</title>
-    <link>http://spdldaemon.github.io/docs/datasheets/</link>
-    <description>Recent content in Datasheets on test docs site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jan 2020 22:14:18 -0800</lastBuildDate>
-    
-	<atom:link href="http://spdldaemon.github.io/docs/datasheets/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Datasheets on test docs site</title><link>http://spdldaemon.github.io/docs/datasheets/</link><description>Recent content in Datasheets on test docs site</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 09 Jan 2020 22:14:18 -0800</lastBuildDate><atom:link href="http://spdldaemon.github.io/docs/datasheets/index.xml" rel="self" type="application/rss+xml"/></channel></rss>

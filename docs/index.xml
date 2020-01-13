@@ -1,26 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>The SPDL Docs Repository on test docs site</title>
-    <link>http://spdldaemon.github.io/docs/</link>
-    <description>Recent content in The SPDL Docs Repository on test docs site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jan 2020 20:03:06 -0800</lastBuildDate>
-    
-	<atom:link href="http://spdldaemon.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Pages organization</title>
-      <link>http://spdldaemon.github.io/docs/tools/testnote/</link>
-      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
-      
-      <guid>http://spdldaemon.github.io/docs/tools/testnote/</guid>
-      <description>In Hugo, pages are the core of your site. Once it is configured, pages are definitely the added value to your documentation site.
-Folders Organize your site like any other Hugo project. Typically, you will have a content folder with all your pages.
-content├── level-one│ ├── level-two│ │ ├── level-three│ │ │ ├── level-four│ │ │ │ ├── _index.md &amp;lt;-- /level-one/level-two/level-three/level-four│ │ │ │ ├── page-4-a.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The SPDL Docs Repository on test docs site</title><link>http://spdldaemon.github.io/docs/</link><description>Recent content in The SPDL Docs Repository on test docs site</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 09 Jan 2020 20:03:06 -0800</lastBuildDate><atom:link href="http://spdldaemon.github.io/docs/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
