@@ -16,23 +16,23 @@
 <meta name="msapplication-TileColor" content="#8c1515">
 <meta name="msapplication-config" content="/docs/images/favicon/browserconfig.xml">
 <meta name="theme-color" content="#8c1515">
-    <title>Schematic Capture :: test docs site</title>
+    <title>Schematic Capture :: The SPDL Docs Repository</title>
 
     
-    <link href="/docs/css/nucleus.css?1578883899" rel="stylesheet">
-    <link href="/docs/css/fontawesome-all.min.css?1578883899" rel="stylesheet">
-    <link href="/docs/css/hybrid.css?1578883899" rel="stylesheet">
-    <link href="/docs/css/featherlight.min.css?1578883899" rel="stylesheet">
-    <link href="/docs/css/perfect-scrollbar.min.css?1578883899" rel="stylesheet">
-    <link href="/docs/css/auto-complete.css?1578883899" rel="stylesheet">
-    <link href="/docs/css/atom-one-dark-reasonable.css?1578883899" rel="stylesheet">
-    <link href="/docs/css/theme.css?1578883899" rel="stylesheet">
-    <link href="/docs/css/hugo-theme.css?1578883899" rel="stylesheet">
+    <link href="/docs/css/nucleus.css?1578960399" rel="stylesheet">
+    <link href="/docs/css/fontawesome-all.min.css?1578960399" rel="stylesheet">
+    <link href="/docs/css/hybrid.css?1578960399" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css?1578960399" rel="stylesheet">
+    <link href="/docs/css/perfect-scrollbar.min.css?1578960399" rel="stylesheet">
+    <link href="/docs/css/auto-complete.css?1578960399" rel="stylesheet">
+    <link href="/docs/css/atom-one-dark-reasonable.css?1578960399" rel="stylesheet">
+    <link href="/docs/css/theme.css?1578960399" rel="stylesheet">
+    <link href="/docs/css/hugo-theme.css?1578960399" rel="stylesheet">
     
-      <link href="/docs/css/theme-stanford.css?1578883899" rel="stylesheet">
+      <link href="/docs/css/theme-stanford.css?1578960399" rel="stylesheet">
     
 
-    <script src="/docs/js/jquery-3.3.1.min.js?1578883899"></script>
+    <script src="/docs/js/jquery-3.3.1.min.js?1578960399"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -237,14 +237,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/docs/js/lunr.min.js?1578883899"></script>
-<script type="text/javascript" src="/docs/js/auto-complete.js?1578883899"></script>
+<script type="text/javascript" src="/docs/js/lunr.min.js?1578960399"></script>
+<script type="text/javascript" src="/docs/js/auto-complete.js?1578960399"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/spdldaemon.github.io\/docs";
     
 </script>
-<script type="text/javascript" src="/docs/js/search.js?1578883899"></script>
+<script type="text/javascript" src="/docs/js/search.js?1578960399"></script>
 
     
   </div>
@@ -747,13 +747,13 @@ Manage Symbol Libraries</strong>. In the Symbol Libraries window you can see two
 <p>We will now consider an alternative way of making a connection using labels. Pick a net labelling tool by clicking on the &lsquo;Place net label&rsquo; icon <img src="add_line_label.png?classes=inline" alt="Add net label icon"> on the right toolbar. You can also use <kbd>l</kbd>.</p>
 </li>
 <li>
-<p>Click in the middle of the wire connected to pin 6 of the microcontroller. Name this label &lsquo;INPUT&rsquo;. The label is still an independent item which you can for example move, rotate and delete. The small anchor rectangle of the label must be exactly on a wire or a pin for the label to take effect.</p>
+<p>Click the wire connected to the resistor which we connected to pin 6 of the microcontroller. Name this label &lsquo;INPUT&rsquo;. The label is still an independent item which you can for example move, rotate and delete. The small anchor rectangle of the label must be exactly on a wire or a pin for the label to take effect.</p>
 </li>
 <li>
-<p>Follow the same procedure and place another label on the wire to pin 2 of the connector. Also name it &lsquo;INPUT&rsquo;. The two labels, having the same name, create an invisible connection between pin 2 of the connector and the 100 ohm resistor. This is a useful technique when connecting wires in a complex design where drawing the lines would make the whole schematic messier. To place a label you do not necessarily need a wire, you can simply attach the label to a pin.</p>
+<p>Follow the same procedure and place another label on the wire to pin 2 of the connector. Also name it &lsquo;INPUT&rsquo;. The two labels, having the same name, create an invisible connection between pin 2 of the connector and the 100 Ω resistor. This is a useful technique when connecting wires in a complex design where drawing the lines would make the whole schematic messier. To place a label you do not necessarily need a wire, you can simply attach the label to a pin.</p>
 </li>
 <li>
-<p>Labels can also be used to simply label wires for informative purposes. Place a label on pin 5 of the PIC. Enter the name &lsquo;uCtoLED&rsquo;. Name the wire between the resistor and the LED as &lsquo;LEDtoR&rsquo;.</p>
+<p>Labels can also be used to simply label wires for informative purposes. Place a label on pin 5 of the Teensy. Enter the name &lsquo;uCtoLED&rsquo;. Name the wire between the resistor and the LED as &lsquo;LEDtoR&rsquo;.</p>
 </li>
 <li>
 <p>You do not have to label the VCC and GND lines because the labels are implied from the power objects they are connected to.</p>
@@ -784,7 +784,7 @@ Manage Symbol Libraries</strong>. In the Symbol Libraries window you can see two
 <p>First deal with unconnected wires. Any pin or wire that is not connected will generate a warning when checked by KiCad. To avoid these warnings you can either instruct the program that the unconnected wires are deliberate or manually flag each unconnected wire or pin as unconnected.</p>
 </li>
 <li>
-<p>Click on the &lsquo;Place no connection flag&rsquo; icon ~<a href="noconn.png?classes=inline">no connection icon</a> on the right toolbar. Click on the unconnected pins. An X will appear to signify that the lack of a wire connection is intentional.</p>
+<p>Click on the &lsquo;Place no connection flag&rsquo; icon <img src="noconn.png?classes=inline" alt="no connection icon"> on the right toolbar. Click on the unconnected pins. An X will appear to signify that the lack of a wire connection is intentional.</p>
 </li>
 <li>
 <p>It is now necessary to add a &lsquo;Power Flag&rsquo; to indicate to KiCad that power comes in from somewhere. Press <kbd>a</kbd> and search for &lsquo;PWR_FLAG&rsquo; which is in &lsquo;power&rsquo; library. Place two of them. Connect them to a GND pin and to VCC as shown below.</p>
@@ -978,19 +978,19 @@ Manage Symbol Libraries</strong>. In the Symbol Libraries window you can see two
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/docs/js/clipboard.min.js?1578883899"></script>
-    <script src="/docs/js/perfect-scrollbar.min.js?1578883899"></script>
-    <script src="/docs/js/perfect-scrollbar.jquery.min.js?1578883899"></script>
-    <script src="/docs/js/jquery.sticky.js?1578883899"></script>
-    <script src="/docs/js/featherlight.min.js?1578883899"></script>
-    <script src="/docs/js/highlight.pack.js?1578883899"></script>
+    <script src="/docs/js/clipboard.min.js?1578960399"></script>
+    <script src="/docs/js/perfect-scrollbar.min.js?1578960399"></script>
+    <script src="/docs/js/perfect-scrollbar.jquery.min.js?1578960399"></script>
+    <script src="/docs/js/jquery.sticky.js?1578960399"></script>
+    <script src="/docs/js/featherlight.min.js?1578960399"></script>
+    <script src="/docs/js/highlight.pack.js?1578960399"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/docs/js/modernizr.custom-3.6.0.js?1578883899"></script>
-    <script src="/docs/js/learn.js?1578883899"></script>
-    <script src="/docs/js/hugo-learn.js?1578883899"></script>
+    <script src="/docs/js/modernizr.custom-3.6.0.js?1578960399"></script>
+    <script src="/docs/js/learn.js?1578960399"></script>
+    <script src="/docs/js/hugo-learn.js?1578960399"></script>
 
-    <link href="/docs/mermaid/mermaid.css?1578883899" rel="stylesheet" />
-    <script src="/docs/mermaid/mermaid.js?1578883899"></script>
+    <link href="/docs/mermaid/mermaid.css?1578960399" rel="stylesheet" />
+    <script src="/docs/mermaid/mermaid.js?1578960399"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
