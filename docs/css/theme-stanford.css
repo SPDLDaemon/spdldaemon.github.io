@@ -177,3 +177,9 @@ kbd {
   max-width: 900px;
   margin: 0 auto;
 }
+
+/* Define styling for units */
+.units {
+  font-style: inherit;
+  white-space: nowrap;
+}
