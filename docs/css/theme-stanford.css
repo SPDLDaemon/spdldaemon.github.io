@@ -1,174 +1,200 @@
+:root {
+  --MAIN-TEXT-color: #2e2d29; /* Color of text by default */
+  --MAIN-TITLE-TEXT-color: #2e2d29; /* Color of title h1 */
+  --MAIN-TITLES-TEXT-color: #5e5e5e; /* Color of titles h2-h3-h4-h5 */
+  --MAIN-LINK-color: #1c90f3; /* Color of links */
+  --MAIN-LINK-HOVER-color: #167ad0; /* Color of hovered links */
+  --MAIN-ANCHOR-color: #1c90f3; /* color of anchors on titles */
 
-:root{
-    
-    --MAIN-TEXT-color:#2e2d29; /* Color of text by default */
-    --MAIN-TITLES-TEXT-color: #5e5e5e; /* Color of titles h2-h3-h4-h5 */
-    --MAIN-LINK-color:#1C90F3; /* Color of links */
-    --MAIN-LINK-HOVER-color:#167ad0; /* Color of hovered links */
-    --MAIN-ANCHOR-color: #1C90F3; /* color of anchors on titles */
+  --MENU-HEADER-BG-color: #8c1515; /* Background color of menu header */
+  --MENU-HEADER-BORDER-color: #b1040e; /*Color of menu header border */
 
-    --MENU-HEADER-BG-color:#8c1515; /* Background color of menu header */
-    --MENU-HEADER-BORDER-color:#b1040e; /*Color of menu header border */ 
+  --MENU-CRUMBS-CARET-color: #4d4f53; /* Color of carets in breadcrumbs */
 
-    --MENU-SEARCH-BG-color:#f9f6ef; /* Search field background color (by default borders + icons) */
-    --MENU-SEARCH-BOX-color: #b1040e; /* Override search field border color */
-    --MENU-SEARCH-BOX-ICONS-color: #4d4f53; /* Override search field icons color */
+  --MENU-SEARCH-BG-color: #f9f6ef; /* Search field background color (by default borders + icons) */
+  --MENU-SEARCH-BOX-color: #b1040e; /* Override search field border color */
+  --MENU-SEARCH-BOX-ICONS-color: #4d4f53; /* Override search field icons color */
 
-    --MENU-SECTIONS-ACTIVE-BG-color:#20272b; /* Background color of the active section and its childs */
-    --MENU-SECTIONS-BG-color:#252c31; /* Background color of other sections */
-    --MENU-SECTIONS-LINK-color: #ccc; /* Color of links in menu */
-    --MENU-SECTIONS-LINK-HOVER-color: #e6e6e6;  /* Color of links in menu, when hovered */
-    --MENU-SECTION-ACTIVE-CATEGORY-color: #777; /* Color of active category text */
-    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */
+  --MENU-SECTIONS-ACTIVE-BG-color: #20272b; /* Background color of the active section and its childs */
+  --MENU-SECTIONS-BG-color: #252c31; /* Background color of other sections */
+  --MENU-SECTIONS-LINK-color: #ccc; /* Color of links in menu */
+  --MENU-SECTIONS-LINK-HOVER-color: #e6e6e6; /* Color of links in menu, when hovered */
+  --MENU-SECTION-ACTIVE-CATEGORY-color: #777; /* Color of active category text */
+  --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */
 
-    --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
-    --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
-    
+  --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
+  --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
 }
 
 body {
-    color: var(--MAIN-TEXT-color) !important;
+  color: var(--MAIN-TEXT-color) !important;
 }
 
-textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, select[multiple=multiple]:focus {
-    border-color: none;
-    box-shadow: none;
+textarea:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="color"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+select[multiple="multiple"]:focus {
+  border-color: none;
+  box-shadow: none;
 }
 
-h2, h3, h4, h5 {
-    color: var(--MAIN-TITLES-TEXT-color) !important;
+h2,
+h3,
+h4,
+h5 {
+  color: var(--MAIN-TITLES-TEXT-color) !important;
 }
 
 a {
-    color: var(--MAIN-LINK-color);
+  color: var(--MAIN-LINK-color);
 }
 
 .anchor {
-    color: var(--MAIN-ANCHOR-color);
+  color: var(--MAIN-ANCHOR-color);
 }
 
 a:hover {
-    color: var(--MAIN-LINK-HOVER-color);
+  color: var(--MAIN-LINK-HOVER-color);
 }
 
 #sidebar ul li.visited > a .read-icon {
-	color: var(--MENU-VISITED-color);
+  color: var(--MENU-VISITED-color);
 }
 
 #body a.highlight:after {
-    display: block;
-    content: "";
-    height: 1px;
-    width: 0%;
-    -webkit-transition: width 0.5s ease;
-    -moz-transition: width 0.5s ease;
-    -ms-transition: width 0.5s ease;
-    transition: width 0.5s ease;
-    background-color: var(--MAIN-LINK-HOVER-color);
+  display: block;
+  content: "";
+  height: 1px;
+  width: 0%;
+  -webkit-transition: width 0.5s ease;
+  -moz-transition: width 0.5s ease;
+  -ms-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+  background-color: var(--MAIN-LINK-HOVER-color);
 }
 #sidebar {
-	background-color: var(--MENU-SECTIONS-BG-color);
+  background-color: var(--MENU-SECTIONS-BG-color);
 }
 #sidebar #header-wrapper {
-    background: var(--MENU-HEADER-BG-color);
-    color: var(--MENU-SEARCH-BOX-color);
-    border-color: var(--MENU-HEADER-BORDER-color);
+  background: var(--MENU-HEADER-BG-color);
+  color: var(--MENU-SEARCH-BOX-color);
+  border-color: var(--MENU-HEADER-BORDER-color);
 }
 #sidebar .searchbox {
-	border-color: var(--MENU-SEARCH-BOX-color);
-    background: var(--MENU-SEARCH-BG-color);
+  border-color: var(--MENU-SEARCH-BOX-color);
+  background: var(--MENU-SEARCH-BG-color);
 }
-#sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
-    background: var(--MENU-SECTIONS-ACTIVE-BG-color);
+#sidebar ul.topics > li.parent,
+#sidebar ul.topics > li.active {
+  background: var(--MENU-SECTIONS-ACTIVE-BG-color);
 }
 #sidebar .searchbox * {
-    color: var(--MENU-SEARCH-BOX-ICONS-color);
+  color: var(--MENU-SEARCH-BOX-ICONS-color);
 }
 
 #sidebar .searchbox ::placeholder {
-    color: var(--MENU-SEARCH-BOX-ICONS-color);
+  color: var(--MENU-SEARCH-BOX-ICONS-color);
 }
 
 #sidebar a {
-    color: var(--MENU-SECTIONS-LINK-color);
+  color: var(--MENU-SECTIONS-LINK-color);
 }
 
 #sidebar a:hover {
-    color: var(--MENU-SECTIONS-LINK-HOVER-color);
+  color: var(--MENU-SECTIONS-LINK-HOVER-color);
 }
 
 #sidebar ul li.active > a {
-    background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
-    color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
+  background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
+  color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
 }
 
 #sidebar hr {
-    border-color: var(--MENU-SECTION-HR-color);
+  border-color: var(--MENU-SECTION-HR-color);
 }
 
 div.notices.warning p:first-child:before {
-    content: "\f071";
+  content: "\f071";
 }
 
 div.notices.info p:first-child:before {
-    content: "\f05a";
+  content: "\f05a";
 }
 
 div.notices.tip p:first-child:before {
-    content: "\f138";
+  content: "\f138";
 }
 
 /* Fix multi-paragraph notes */
 div.notices.info p {
-    border-top: none;
+  border-top: none;
 }
 div.notices.info p:first-child {
-    border-top: 30px solid #F0B37E;
+  border-top: 30px solid #f0b37e;
 }
 div.notices.warning p {
-    border-top: none;
+  border-top: none;
 }
 div.notices.warning p:first-child {
-    border-top: 30px solid rgba(217, 83, 79, 0.8);
+  border-top: 30px solid rgba(217, 83, 79, 0.8);
 }
 div.notices.note p {
-    border-top: none;
+  border-top: none;
 }
 div.notices.note p:first-child {
-    border-top: 30px solid #6AB0DE;
+  border-top: 30px solid #6ab0de;
 }
 div.notices.tip p {
-    border-top: none;
+  border-top: none;
 }
 div.notices.tip p:first-child {
-    border-top: 30px solid rgba(92, 184, 92, 0.8);
+  border-top: 30px solid rgba(92, 184, 92, 0.8);
 }
 /* End multi-paragraph notes */
 
+/* Define styling for annotating keypresses */
 kbd {
-	margin: 0px 0.1em;
-	padding: 0.05em 0.2em;
-	border-radius: 3px;
-	border: 1px solid #b6b1a9;
-	line-height: 1.2;
-	display: inline-block;
-	box-shadow: 0px 1px 0px rgba(0,0,0,0.2), inset 0px 0px 0px 2px #ffffff;
-	background-color: #f4f4f4;
-	-moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
-	-webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	text-shadow: 0 1px 0 #fff;
+  margin: 0px 0.1em;
+  padding: 0.05em 0.2em;
+  border-radius: 3px;
+  border: 1px solid #b6b1a9;
+  line-height: 1.2;
+  display: inline-block;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2), inset 0px 0px 0px 2px #ffffff;
+  background-color: #f4f4f4;
+  -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+  -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  text-shadow: 0 1px 0 #fff;
 }
 
 /* Fix TOC */
 #TableOfContents > ul > li > a {
   padding: 0px 0px;
-  margin:0px 0px;
+  margin: 0px 0px;
 }
 
 #TableOfContents > ul > li > ul > li > a {
-  font-weight: normal;
+  font-weight: 500;
+}
+
+#breadcrumbs .crumb {
+  color: var(--MENU-CRUMBS-CARET-color) !important;
+
+  font-size: smaller;
 }
 /* end fix TOC */
 
@@ -178,8 +204,64 @@ kbd {
   margin: 0 auto;
 }
 
-/* Define styling for units */
+/* Define styling for units to keep number attached to unit */
 .units {
   font-style: inherit;
   white-space: nowrap;
 }
+
+/* Alignment of inlined images for icons */
+#body img.icon {
+  display: inline-block !important;
+  margin: 0 !important;
+  vertical-align: middle;
+  height: 1.5em !important;
+}
+
+/* Change Fonts */
+h1 {
+  font-family: "Oswald", sans-serif;
+  color: var(--MAIN-TITLE-TEXT-color);
+  font-weight: 500;
+}
+
+#chapter h3 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 18px !important;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IBM Plex Sans", sans-serif;
+  text-rendering: optimizeLegibility;
+  color: var(--MAIN-TITLES-TEXT-color);
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+#sidebar #shortcuts h3 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+@media print {
+  #top-bar {
+    display:none !important;
+  }
+}
+
+/* Import settings for Bigfoot footnotes styling */
+@import "bigfoot.css";
