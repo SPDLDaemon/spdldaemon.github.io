@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The Death Star</title>
+<!--
+	1 ) Reference to the files containing the JavaScript and CSS.
+	These files must be located on your server.
+-->
+
+<script type="text/javascript" src="highslide/highslide.js"></script>
+<link rel="stylesheet" type="text/css" href="highslide/highslide.css" />
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="highslide/highslide-ie6.css" />
+<![endif]-->
+
+
+
+<!--
+    2) Optionally override the settings defined at the top
+    of the highslide.js file. The parameter hs.graphicsDir is important!
+-->
+
+<script type="text/javascript">
+hs.registerOverlay({
+	overlayId: 'closebutton',
+	position: 'top right',
+	fade: 2 // fading the semi-transparent overlay looks bad in IE
+});
+
+
+hs.graphicsDir = 'highslide/graphics/';
+hs.wrapperClassName = 'borderless';
+</script>
+<style type="text/css"> 
+<!-- 
+body  {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #666666;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+	background-image: url(images/stripebg.png);
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+
+/* Tips for Elastic layouts 
+1. Since the elastic layouts overall sizing is based on the user's default fonts size, they are more unpredictable. Used correctly, they are also more accessible for those that need larger fonts size since the line length remains proportionate.
+2. Sizing of divs in this layout are based on the 100% font size in the body element. If you decrease the text size overall by using a font-size: 80% on the body element or the #container, remember that the entire layout will downsize proportionately. You may want to increase the widths of the various divs to compensate for this.
+3. If font sizing is changed in differing amounts on each div instead of on the overall design (ie: #sidebar1 is given a 70% font size and #mainContent is given an 85% font size), this will proportionately change each of the divs overall size. You may want to adjust based on your final font sizing.
+*/
+.twoColElsLtHdr #container { 
+	width: 46em;  /* this width will create a container that will fit in an 800px browser window if text is left at browser default font sizes */
+	background: #000000;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 0px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+} 
+.twoColElsLtHdr #header { 
+	/*background-image: url(images/headerbg.jpg);*/
+	background: #000000;
+	padding: 0 10px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+} 
+.twoColElsLtHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+
+/* Tips for sidebar1:
+1. Be aware that if you set a font-size value on this div, the overall width of the div will be adjusted accordingly.
+2. Since we are working in ems, it's best not to use padding on the sidebar itself. It will be added to the width for standards compliant browsers creating an unknown actual width. 
+3. Space between the side of the div and the elements within it can be created by placing a left and right margin on those elements as seen in the ".twoColElsLtHdr #sidebar1 p" rule.
+*/
+.twoColElsLtHdr #sidebar1 {
+	float: left;
+	width: 12em; /* since this element is floated, a width must be given */
+	background: #000000; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 0; /* top and bottom padding create visual space within this div */
+}
+.twoColElsLtHdr #sidebar1 h3, .twoColElsLtHdr #sidebar1 p {
+	margin-left: 10px; /* the left and right margin should be given to every element that will be placed in the side columns */
+	margin-right: 10px;
+}
+
+/* Tips for mainContent:
+1. If you give this #mainContent div a font-size value different than the #sidebar1 div, the margins of the #mainContent div will be based on its font-size and the width of the #sidebar1 div will be based on its font-size. You may wish to adjust the values of these divs.
+2. The space between the mainContent and sidebar1 is created with the left margin on the mainContent div.  No matter how much content the sidebar1 div contains, the column space will remain. You can remove this left margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends.
+3. To avoid float drop, you may need to test to determine the approximate maximum image/element size since this layout is based on the user's font sizing combined with the values you set. However, if the user has their browser font size set lower than normal, less space will be available in the #mainContent div than you may see on testing.
+4. In the Internet Explorer Conditional Comment below, the zoom property is used to give the mainContent "hasLayout." This avoids several IE-specific bugs that may occur.
+*/
+.twoColElsLtHdr #mainContent {
+	margin: 0 1.5em 0 13em; /* the right margin can be given in ems or pixels. It creates the space down the right side of the page. */
+} 
+.twoColElsLtHdr #footer { 
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#2B2B2B;
+} 
+.twoColElsLtHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+.twoColElsLtHdr #footer2 { 
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#FFFFFF;
+} 
+.twoColElsLtHdr #footer2 p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+/* Miscellaneous classes for reuse */
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+--> 
+
+/* =-=-=-=-=-=-=-[Menu Four]-=-=-=-=-=-=-=- */
+	
+#menu4 {
+	width: 12em;
+	border-style: solid solid none solid;
+	border-color: #000000;
+	background:#000000;
+	border-size: 1px;
+	border-width: 1px;
+	margin: 0px;
+	}
+	
+#menu4 li a {
+  	height: 32px;
+  	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	height: 24px;
+	text-decoration: none;
+	}
+	
+#menu4 li a:link, #menu4 li a:visited {
+	color: #7E7449;
+	display: block;
+	background: url(images/menu4.gif);
+	padding: 8px 0 0 30px;
+	}
+	
+#menu4 li a:hover {
+	color: #fff;
+	background: url(images/menu4.gif) 0 -32px;
+	padding: 8px 0 0 30px;
+	}
+	
+#menu4 li a:active {
+	color: #fff;
+	background: url(images/menu4.gif) 0 -64px;
+	padding: 8px 0 0 30px;
+	}
+a:link{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #7E7449;
+}
+a:visited{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #7E7449;
+}
+a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+.style2 {color: #ABABAB}
+.style3 {
+	color: #ada87d;
+}
+</style>
+<!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColElsLtHdr #sidebar1 { padding-top: 30px; }
+.twoColElsLtHdr #mainContent { zoom: 1; padding-top: 15px; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]--></head>
+
+<body class="twoColElsLtHdr">
+
+<div id="container">
+  <div id="header">
+    <h1 align="center"><img src="images/deathstarlogo.png" width="708" height="177" /></h1>
+  <!-- end #header -->
+  </div>
+  <div id="sidebar1">
+  	<div id="menu4">
+	  <ul>
+			<li><a href="index.html" title="Home">About</a></li>
+			<li><a href="team.html" title="About">Team</a></li>
+			<li><a href="mechanical.html" title="Services">Mechanical</a></li>
+			<li><a href="electrical.html" title="Portfolio">Electrical</a></li>
+		  	<li><a href="software.html" title="Store">Software</a></li>
+            <li><a href="bom.html" title="Bill of Materials">Bill of Materials</a></li>
+            <li><a href="gow.html" title="Gems of Wisdom">Gems of Wisdom</a></li>
+            <li><a href="media.html" title="Download">Media</a></li>
+	  </ul>
+    <!-- end #menu4 -->    
+	</div>
+    <!-- end #sidebar1 -->
+  </div>
+  <div id="mainContent">
+    <h1 align="center"><img src="images/drivetrain.png" width="500" height="50" /> </h1>
+    <div>
+    <p align="center" class="style3"><a href="software.html" title="Overview">Overview</a> | <a href="mainsw.html" title="Main">Main</a> | <a href="smsw.html" title="State Machine">State Machine</a> | <a href="eventssw.html" title="Events">Events</a> | <a href="irsw.html" title="Infrared">IR</a> | <a href="tapesw.html" title="Tape">Tape</a> | <a href="drivesw.html" title="DriveTrain">Drivetrain</a> | <a href="pwmsw.html" title="PWM">PWM</a> | <a href="flashsw.html" title="Flash">Flash</a> | <a href="twominutetimersw.html" title="Two Minute Timer">Two Minute Timer</a> | <a href="bumpsw.html" title="Bump">Bump</a></p>
+    </div>
+            <p align="justify" class="style3"><a href="src/drivetrain.c">drivetrain.c<br />
+            </a><a href="src/drivetrain.h">drivetrain.h</a></p>
+            <p align="justify" class="style3">void drivetrainInit(void): initialize the drivetrain subsystem<br />
+              <br />
+              void commandMotion(char cmd): send a new movement command to the drive wheels<br />
+              <br />
+              void main(void): test harness for the drivetrain module<br />
+            </p>
+    <p align="justify" class="style3">The drivetrain module provides a public function to accept and execute movement commands from other modules.  The available commands are rotate counter-clockwise, rotate clockwise, drive forward, drive in reverse, and stop.  Each movement command has two available speeds, fast and slow.  The module uses two PWM pins for PWM and two output pins for direction control.</p>
+    <p align="center" class="style3"><strong>PSEUDOCODE</strong></p>
+    <p align="center" class="style3">(<a href="docs/drivepseudo.doc">Download Pseudocode .doc 27kb</a>)</p>
+<p align="left" class="style3">void drivetrainInit(void)<br />&nbsp;&nbsp;&nbsp;&nbsp;Initialize the PWM module<br />&nbsp;&nbsp;&nbsp;&nbsp;Initialize the PWM channels used by the motors<br />&nbsp;&nbsp;&nbsp;&nbsp;Set the data direction of the pins used for direction control to be outputs<br />&nbsp;&nbsp;&nbsp;&nbsp;Make sure the robot starts stopped<br /><br />void commandMotion(char cmd)<br />&nbsp;&nbsp;&nbsp;&nbsp;Stop is both wheels at 0% duty cycle<br />&nbsp;&nbsp;&nbsp;&nbsp;CCW fast is left backward fast and right forward fast<br />&nbsp;&nbsp;&nbsp;&nbsp;CCW slow is left backward slow and right forward slow<br />&nbsp;&nbsp;&nbsp;&nbsp;CW fast is left forward fast and right backward fast<br />&nbsp;&nbsp;&nbsp;&nbsp;CW slow is left forward slow and right backward slow<br />&nbsp;&nbsp;&nbsp;&nbsp;Forward fast is both wheels forward fast<br />&nbsp;&nbsp;&nbsp;&nbsp;Forward slow is both wheels forward slow<br />&nbsp;&nbsp;&nbsp;&nbsp;Backward fast is both wheels backward fast<br />&nbsp;&nbsp;&nbsp;&nbsp;Backward slow is both wheels backward slow<br /><br />void main(void) **Test Harness**<br />&nbsp;&nbsp;&nbsp;&nbsp;Initialize the terminal I/O subsystem<br />&nbsp;&nbsp;&nbsp;&nbsp;Initialize the drivetrain module<br />&nbsp;&nbsp;&nbsp;&nbsp;Repeat forever<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a character from the keyboard<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the character is ‘w’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drive forward fast<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else if the character is ‘a’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rotate counter-clockwise fast<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else if the character is ‘s’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drive reverse fast<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else if the character is ‘d’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rotate clockwise fast<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else if the character is ‘x’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else if the character is ‘i’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drive forward slow<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else if the character is ‘j’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rotate counter-clockwise slow<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else if the character is ‘k’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drive reverse slow<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else if the character is ‘l’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rotate clockwise slow<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else if the character is ‘m’<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complain about an invalid character<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stop<br />
+              <br class="clearfloat" />
+    </p>
+  </div>
+  
+  <div id="footer">
+    <p align="center" class="style2">The Death Star - ME218B - Winter 2009</p>
+  <!-- end #footer --></div>
+    <div id="footer2">
+      <!-- end #footer -->
+  </div>
+<!-- end #container --></div>
+</body>
+</html>

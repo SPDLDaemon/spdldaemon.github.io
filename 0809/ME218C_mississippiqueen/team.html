@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mississippi Queen</title>
+<!--
+	1 ) Reference to the files containing the JavaScript and CSS.
+	These files must be located on your server.
+-->
+
+<script type="text/javascript" src="highslide/highslide.js"></script>
+<link rel="stylesheet" type="text/css" href="highslide/highslide.css" />
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="highslide/highslide-ie6.css" />
+<![endif]-->
+
+
+
+<!--
+    2) Optionally override the settings defined at the top
+    of the highslide.js file. The parameter hs.graphicsDir is important!
+-->
+
+<script type="text/javascript">
+hs.registerOverlay({
+	overlayId: 'closebutton',
+	position: 'top right',
+	fade: 2 // fading the semi-transparent overlay looks bad in IE
+});
+
+
+hs.graphicsDir = 'highslide/graphics/';
+hs.wrapperClassName = 'borderless';
+</script>
+<style type="text/css"> 
+<!-- 
+body  {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #D4E5F7;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+	/*background-image: url(images/bg.jpg);*/
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+
+/* Tips for Elastic layouts 
+1. Since the elastic layouts overall sizing is based on the user's default fonts size, they are more unpredictable. Used correctly, they are also more accessible for those that need larger fonts size since the line length remains proportionate.
+2. Sizing of divs in this layout are based on the 100% font size in the body element. If you decrease the text size overall by using a font-size: 80% on the body element or the #container, remember that the entire layout will downsize proportionately. You may want to increase the widths of the various divs to compensate for this.
+3. If font sizing is changed in differing amounts on each div instead of on the overall design (ie: #sidebar1 is given a 70% font size and #mainContent is given an 85% font size), this will proportionately change each of the divs overall size. You may want to adjust based on your final font sizing.
+*/
+.twoColElsLtHdr #container { 
+	width: 46em;  /* this width will create a container that will fit in an 800px browser window if text is left at browser default font sizes */
+	background: #F7EED4;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 0px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+} 
+.twoColElsLtHdr #header { 
+	/*background-image: url(images/headerbg.jpg);*/
+	background: #F7EED4;
+	padding: 0 0px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+} 
+.twoColElsLtHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+
+/* Tips for sidebar1:
+1. Be aware that if you set a font-size value on this div, the overall width of the div will be adjusted accordingly.
+2. Since we are working in ems, it's best not to use padding on the sidebar itself. It will be added to the width for standards compliant browsers creating an unknown actual width. 
+3. Space between the side of the div and the elements within it can be created by placing a left and right margin on those elements as seen in the ".twoColElsLtHdr #sidebar1 p" rule.
+*/
+.twoColElsLtHdr #sidebar1 {
+	float: left;
+	width: 12em; /* since this element is floated, a width must be given */
+	background: #F7EED4; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 0; /* top and bottom padding create visual space within this div */
+}
+.twoColElsLtHdr #sidebar1 h3, .twoColElsLtHdr #sidebar1 p {
+	margin-left: 10px; /* the left and right margin should be given to every element that will be placed in the side columns */
+	margin-right: 10px;
+}
+
+/* Tips for mainContent:
+1. If you give this #mainContent div a font-size value different than the #sidebar1 div, the margins of the #mainContent div will be based on its font-size and the width of the #sidebar1 div will be based on its font-size. You may wish to adjust the values of these divs.
+2. The space between the mainContent and sidebar1 is created with the left margin on the mainContent div.  No matter how much content the sidebar1 div contains, the column space will remain. You can remove this left margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends.
+3. To avoid float drop, you may need to test to determine the approximate maximum image/element size since this layout is based on the user's font sizing combined with the values you set. However, if the user has their browser font size set lower than normal, less space will be available in the #mainContent div than you may see on testing.
+4. In the Internet Explorer Conditional Comment below, the zoom property is used to give the mainContent "hasLayout." This avoids several IE-specific bugs that may occur.
+*/
+.twoColElsLtHdr #mainContent {
+	margin: 0 1.5em 0 13em; /* the right margin can be given in ems or pixels. It creates the space down the right side of the page. */
+} 
+.twoColElsLtHdr #footer { 
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#2B2B2B;
+} 
+.twoColElsLtHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+.twoColElsLtHdr #footer2 { 
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#FFFFFF;
+} 
+.twoColElsLtHdr #footer2 p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+/* Miscellaneous classes for reuse */
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+--> 
+
+/* =-=-=-=-=-=-=-[Menu Four]-=-=-=-=-=-=-=- */
+	
+#menu4 {
+	width: 12em;
+	border-style: solid solid none solid;
+	border-color: #000000;
+	border-size: 1px;
+	border-width: 1px;
+	margin: 0px;
+	}
+	
+#menu4 li a {
+  	height: 32px;
+  	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	height: 24px;
+	text-decoration: none;
+	}
+	
+#menu4 li a:link, #menu4 li a:visited {
+	color: #F5DD98;
+	display: block;
+	background: url(images/menu4.gif);
+	padding: 8px 0 0 30px;
+	}
+	
+#menu4 li a:hover {
+	color: #fff;
+	background: url(images/menu4.gif) 0 -32px;
+	padding: 8px 0 0 30px;
+	}
+	
+#menu4 li a:active {
+	color: #fff;
+	background: url(images/menu4.gif) 0 -64px;
+	padding: 8px 0 0 30px;
+	}
+a:link{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #7E7449;
+}
+a:visited{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #7E7449;
+}
+a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+.style1 {
+	color: #ababab
+}
+.style2 {color: #ABABAB}
+.style3 {
+	color: #213B90;
+}
+</style>
+<!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColElsLtHdr #sidebar1 { padding-top: 30px; }
+.twoColElsLtHdr #mainContent { zoom: 1; padding-top: 15px; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]--></head>
+
+<body class="twoColElsLtHdr">
+
+<div id="container">
+  <div id="header">
+    <h1 align="left"><img src="images/logo.png" width="737" height="195" hspace="0" vspace="0" border="0" align="texttop" /></h1>
+  <!-- end #header -->
+  </div>
+  <div id="sidebar1">
+  	<div id="menu4">
+	  <ul>
+			<li><a href="index.html" title="About">About</a></li>
+			<li><a href="team.html" title="Team">Team</a></li>
+			<li><a href="towrp.html" title="TOWRP">TOWRP</a></li>
+			<li><a href="coach.html" title="COACH">COACH</a></li>
+            <li><a href="comm.html" title="Communications">Communications</a></li>
+			<li><a href="bom.html" title="Bill of Materials">Bill of Materials</a></li>
+            <li><a href="gow.html" title="Gems of Wisdom">Gems of Wisdom</a></li>
+            <li><a href="media.html" title="Download">Media</a></li>
+	  </ul>
+    <!-- end #menu4 -->    
+	</div>
+    <!-- end #sidebar1 -->
+  </div>
+  <div id="mainContent">
+    <h1 align="center"><img src="images/team.png" width="500" height="50" /> </h1>
+    <p align="center" class="style3"><strong>Andrew Parra<br />
+(aparra {AT} stanford.edu)</strong>    </p>
+    <div>
+        <!--
+            3) This is how you mark up the thumbnail image with an anchor tag around it.
+            The anchor's href attribute defines the URL of the full-size image.
+        -->
+        <a href="images/andrew.jpg" class="highslide" onclick="return hs.expand(this)">
+            <p align="center"><img src="images/andrewthumb.jpg" alt="Highslide JS"
+                title="Click to enlarge" height="250" width="292" /><br />
+      Click to Enlarge</p>
+
+        </a>
+        
+        <!--
+            4 (optional). This is how you mark up the caption. The caption must be directly
+            after the anchor above.
+        -->
+        
+        <div class="highslide-caption">
+            Andrew Parra
+        
+        </div>
+      
+        <!--
+            5 (optional). Add a semi transparent close button
+        -->
+      <div id="closebutton" class="highslide-overlay closebutton" onclick="return hs.close(this)" title="Close"></div>
+    </div>
+    
+    </p>
+    <p align="justify" class="style3">I am from UC Santa Cruz with a background in Computer Engineering,  focused primarily in Robotics and Controls. My interests have always  been in robotics, and I am now moving into Aerospace Robotics. In the  past, I have done research in a variety of robotic heavy topics,  including swarm theory and the micromechanical flying insect project at  UC Berkeley. I am originally from Fremont, CA and have lived in the Bay  Area my entire life. Outside of class, I enjoy photography and guitar,  both of which I am new to and am trying to improve. This summer, I plan on working at Apple Inc. on the iPhone engineering team.</p>
+    <p align="center" class="style3"><strong>David Hoffert<br />
+    (hoffert {AT} stanford.edu)</strong> </p>
+    <div>
+      <!--
+            3) This is how you mark up the thumbnail image with an anchor tag around it.
+            The anchor's href attribute defines the URL of the full-size image.
+        -->
+      <p align="center"><a href="images/david.jpg" class="highslide" onclick="return hs.expand(this)"><img src="images/davidthumb.jpg" alt="Highslide JS"
+                title="Click to enlarge" height="300" width="332" /><br />
+      Click to Enlarge</a></p>
+      <!--
+            4 (optional). This is how you mark up the caption. The caption must be directly
+            after the anchor above.
+        -->
+      <div class="highslide-caption"> David Hoffert </div>
+      <!--
+            5 (optional). Add a semi transparent close button
+        -->
+      <div id="closebutton2" class="highslide-overlay closebutton" onclick="return hs.close(this)" title="Close"></div>
+    </div>
+    </p>
+    <p align="justify" class="style3">I am a first-year graduate student in the  mechanical engineering department at Stanford. I completed my bachelor’s  degree in May 2008 at the University of Wisconsin—Madison with a double major  in mechanical engineering and computer science. I wanted to have a career  in robotics since middle school, and am proud to have the depth of my master’s  degree be in mechatronics. After completing my master’s degree coursework in  December, I will continue at Stanford as a Ph.D. candidate. I am currently  serving as a graduate researcher in the Dynamic Design Lab under the direction  of Dr. J. Christian Gerdes, where his research centers on vehicle automation  and driver assistance systems. In addition to my technical work, I am also  a percussionist in both the Stanford Wind Ensemble and the Stanford Symphony Orchestra  and am quite active in the Jewish community of the greater Bay Area.</p>
+    <p align="center" class="style3"><strong>Stuart Calder<br />
+      (stuart.calder {AT} comcast.net)</strong> </p>
+    <div>
+      <!--
+            3) This is how you mark up the thumbnail image with an anchor tag around it.
+            The anchor's href attribute defines the URL of the full-size image.
+        -->
+      <p align="center"><a href="images/stuart.jpg" class="highslide" onclick="return hs.expand(this)"><img src="images/stuartthumb.jpg" alt="Highslide JS"
+                title="Click to enlarge" height="300" width="306" /><br />
+        Click to Enlarge</a></p>
+      <!--
+            4 (optional). This is how you mark up the caption. The caption must be directly
+            after the anchor above.
+        -->
+      <div class="highslide-caption"> Andrew Parra </div>
+      <!--
+            5 (optional). Add a semi transparent close button
+        -->
+      <div id="closebutton3" class="highslide-overlay closebutton" onclick="return hs.close(this)" title="Close"></div>
+    </div>
+    <p align="justify"><span class="style3">I completed my undergraduate Mechanical Engineering degree  at Boston University in May 2008.  Since  then, I have been focusing on control design and robotics at Stanford, and plan  to graduate with my Master’s at the end of the summer.  I’m new to the Bay Area, and sunshine in  general having grown up in Scotland.  I’m  also interested in travelling, golf, skiing, and music, particularly bagpipes,  in which I play with a pipe band who placed 4th in the World  Championships last summer</span><br class="clearfloat" />
+    </p>
+  </div>
+  
+  <div id="footer">
+    <p align="center" class="style2">Mississippi Queen - ME218C - Spring 2009</p>
+  <!-- end #footer --></div>
+    <div id="footer2">
+      <!-- end #footer -->
+  </div>
+<!-- end #container --></div>
+</body>
+</html>

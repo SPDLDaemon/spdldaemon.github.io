@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="ADS12.H" server="cardinal.stanford.edu/WWW/me218b/" local="127330857860000000" remote="128814170650000000" />
+<file name="ADS12e.C" server="cardinal.stanford.edu/WWW/me218b/" local="128226378760000000" remote="128814170650000000" />
+<file name="bumpSensor.c" server="cardinal.stanford.edu/WWW/me218b/" local="128805497040000000" remote="128814170650000000" />
+<file name="bumpSensor.h" server="cardinal.stanford.edu/WWW/me218b/" local="128805481000000000" remote="128814170650000000" />
+<file name="Claw.c" server="cardinal.stanford.edu/WWW/me218b/" local="128805267600000000" remote="128814170650000000" />
+<file name="Claw.h" server="cardinal.stanford.edu/WWW/me218b/" local="128805245440000000" remote="128814170650000000" />
+<file name="datapage.c" server="cardinal.stanford.edu/WWW/me218b/" local="127511890920000000" remote="128814170660000000" />
+<file name="drivetrain.c" server="cardinal.stanford.edu/WWW/me218b/" local="128805969800000000" remote="128814170660000000" />
+<file name="drivetrain.h" server="cardinal.stanford.edu/WWW/me218b/" local="128806099080000000" remote="128814170660000000" />
+<file name="events.c" server="cardinal.stanford.edu/WWW/me218b/" local="128805582820000000" remote="128814170660000000" />
+<file name="events.h" server="cardinal.stanford.edu/WWW/me218b/" local="128805604980000000" remote="128814170660000000" />
+<file name="flashSensor.c" server="cardinal.stanford.edu/WWW/me218b/" local="128805959120000000" remote="128814170660000000" />
+<file name="flashSensor.h" server="cardinal.stanford.edu/WWW/me218b/" local="128805331220000000" remote="128814170660000000" />
+<file name="lightSensor.c" server="cardinal.stanford.edu/WWW/me218b/" local="128806784900000000" remote="128814170660000000" />
+<file name="lightSensor.h" server="cardinal.stanford.edu/WWW/me218b/" local="128806786720000000" remote="128814170660000000" />
+<file name="main.c" server="cardinal.stanford.edu/WWW/me218b/" local="128806784820000000" remote="128814170670000000" />
+<file name="pwm_e128.c" server="cardinal.stanford.edu/WWW/me218b/" local="128800915800000000" remote="128814170670000000" />
+<file name="pwm_e128.h" server="cardinal.stanford.edu/WWW/me218b/" local="128800914760000000" remote="128814170670000000" />
+<file name="S12eVec.h" server="cardinal.stanford.edu/WWW/me218b/" local="127517499120000000" remote="128814170670000000" />
+<file name="stateMachines.c" server="cardinal.stanford.edu/WWW/me218b/" local="128806070620000000" remote="128814170670000000" />
+<file name="stateMachines.h" server="cardinal.stanford.edu/WWW/me218b/" local="128805914380000000" remote="128814170670000000" />
+<file name="Stepper.h" server="cardinal.stanford.edu/WWW/me218b/" local="128804414360000000" remote="128814170670000000" />
+<file name="tape.c" server="cardinal.stanford.edu/WWW/me218b/" local="128806795600000000" remote="128814170670000000" />
+<file name="tape.h" server="cardinal.stanford.edu/WWW/me218b/" local="128805528360000000" remote="128814170670000000" />
+<file name="termio.c" server="cardinal.stanford.edu/WWW/me218b/" local="127511898980000000" remote="128814170670000000" />
+<file name="TwoMinTimer.c" server="cardinal.stanford.edu/WWW/me218b/" local="128805409720000000" remote="128814170670000000" />
+<file name="TwoMinTimer.h" server="cardinal.stanford.edu/WWW/me218b/" local="128805376780000000" remote="128814170670000000" />
+<file name="deathstarsoftware.zip" server="cardinal.stanford.edu/WWW/me218b/" local="128810642200240000" remote="128814170660000000" />
+</dwsync>

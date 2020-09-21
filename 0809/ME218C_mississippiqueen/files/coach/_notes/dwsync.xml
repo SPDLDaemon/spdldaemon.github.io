@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="COACH_StateMachine.c" server="cardinal.stanford.edu/WWW/me218c/" local="128880958840000000" remote="128886566460000000" />
+<file name="COACH_StateMachine.h" server="cardinal.stanford.edu/WWW/me218c/" local="128872589460000000" remote="128886566460000000" />
+<file name="CoachDisplay.c" server="cardinal.stanford.edu/WWW/me218c/" local="128880959900000000" remote="128886566460000000" />
+<file name="CoachDisplay.h" server="cardinal.stanford.edu/WWW/me218c/" local="128880961700000000" remote="128886566470000000" />
+<file name="CoachEvents.c" server="cardinal.stanford.edu/WWW/me218c/" local="128880961160000000" remote="128886566470000000" />
+<file name="CoachEvents.h" server="cardinal.stanford.edu/WWW/me218c/" local="128877060960000000" remote="128886566470000000" />
+<file name="CommunicationsTest.c" server="cardinal.stanford.edu/WWW/me218c/" local="128880963140000000" remote="128886566470000000" />
+<file name="CommunicationsTest.h" server="cardinal.stanford.edu/WWW/me218c/" local="128880963400000000" remote="128886566470000000" />
+<file name="datapage.c" server="cardinal.stanford.edu/WWW/me218c/" local="127511890920000000" remote="128886566470000000" />
+<file name="encoder.c" server="cardinal.stanford.edu/WWW/me218c/" local="128878598120000000" remote="128886566470000000" />
+<file name="encoder.h" server="cardinal.stanford.edu/WWW/me218c/" local="128871651740000000" remote="128886566470000000" />
+<file name="main.c" server="cardinal.stanford.edu/WWW/me218c/" local="127511890920000000" remote="128886566470000000" />
+<file name="MississippiQueen_Main.c" server="cardinal.stanford.edu/WWW/me218c/" local="128872584940000000" remote="128886566470000000" />
+<file name="seg7_display.c" server="cardinal.stanford.edu/WWW/me218c/" local="128878545760000000" remote="128886566470000000" />
+<file name="seg7_display.h" server="cardinal.stanford.edu/WWW/me218c/" local="128877882940000000" remote="128886566470000000" />
+<file name="termio.c" server="cardinal.stanford.edu/WWW/me218c/" local="127511898980000000" remote="128886566470000000" />
+</dwsync>
