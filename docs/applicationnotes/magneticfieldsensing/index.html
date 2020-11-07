@@ -1,9 +1,1029 @@
-<!doctype html><html lang=en class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.69.2"><meta name=description content><link rel=apple-touch-icon sizes=180x180 href=/docs/images/favicon/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/docs/images/favicon/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/docs/images/favicon/favicon-16x16.png><link rel=manifest href=/docs/images/favicon/site.webmanifest><link rel=mask-icon href=/docs/images/favicon/safari-pinned-tab.svg color=#5bbad5><link rel="shortcut icon" href=/docs/images/favicon/favicon.ico><meta name=msapplication-TileColor content="#8c1515"><meta name=msapplication-config content="/docs/images/favicon/browserconfig.xml"><meta name=theme-color content="#8c1515"><title>Magnetic Field Sensing :: The SPDL Docs Repository</title><link href=/docs/css/nucleus.css?1588666478 rel=stylesheet media="screen, print"><link href=/docs/css/fontawesome-all.min.css?1588666478 rel=stylesheet media="screen, print"><link href=/docs/css/hybrid.css?1588666478 rel=stylesheet media="screen, print"><link href=/docs/css/featherlight.min.css?1588666478 rel=stylesheet media="screen, print"><link href=/docs/css/perfect-scrollbar.min.css?1588666478 rel=stylesheet media="screen, print"><link href=/docs/css/auto-complete.css?1588666478 rel=stylesheet media="screen, print"><link href=/docs/css/atom-one-dark-reasonable.css?1588666478 rel=stylesheet media="screen, print"><link href=/docs/css/theme.css?1588666478 rel=stylesheet media="screen, print"><link href=/docs/css/hugo-theme.css?1588666478 rel=stylesheet media="screen, print"><link href=/docs/css/theme-stanford.css?1588666478 rel=stylesheet media="screen, print"><script src=/docs/js/jquery-3.3.1.min.js?1588666478></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style><link rel=stylesheet href=/docs/bigfoot.css><link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500|Oswald:500&display=swap" rel=stylesheet><script async src="https://www.googletagmanager.com/gtag/js?id=UA-71199601-2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-71199601-2');</script></head><body data-url=/docs/applicationnotes/magneticfieldsensing/><nav id=sidebar><div id=header-wrapper><div id=header><a id=logo href=http://spdldaemon.github.io/docs><svg style="width:100%;height:100%" viewBox="0 0 109 109" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><g transform="translate(-41.3 -52.8)" display="none"><g fill="none" stroke="#4d4f53" stroke-width="2"><path d="m46.4 101 4.08 4.08"/><path d="m49.4 98.4 4.08 4.08"/><path d="m52.5 95.3 4.08 4.08"/><path d="m55.6 92.2 4.08 4.08"/><path d="m58.7 89.1 4.08 4.08"/><path d="m61.7 86.1 4.08 4.08"/><path d="m64.8 83 4.08 4.08"/><path d="m67.9 79.9 4.08 4.08"/><path d="m71 76.8 4.08 4.08"/><path d="m74.1 73.8 4.08 4.08"/><path d="m77.1 70.7 4.08 4.08"/><path d="m80.2 67.6 4.08 4.08"/><path d="m83.3 64.5 4.08 4.08"/><path d="m86.4 61.5 4.08 4.08"/><path d="m89.4 58.4 4.08 4.08"/><path d="m92.5 55.3 4.08 4.08"/></g><g><rect transform="rotate(-45)" x="-44.1" y="100" width="4.16" height="14.7" ry="2.08" fill="#0000c8"/><rect transform="rotate(-45)" x="27.3" y="100" width="4.16" height="14.7" ry="2.08" fill="#0000c8"/><rect transform="rotate(-45)" x="-44.1" y="112" width="4.16" height="14.7" ry="2.08" display="inline" fill="#c8c800"/><rect transform="rotate(225)" x="-114" y="-47.4" width="4.16" height="14.7" ry="2.08" display="inline" fill="#c8c800"/></g><g fill="#c80000"><rect transform="rotate(-45)" x="-44.1" y="164" width="8.7" height="14.7" ry="2.08" display="inline"/><rect transform="rotate(-45)" x="22.8" y="123" width="8.7" height="14.7" ry="2.08" display="inline"/><rect transform="rotate(45)" x="110" y="-21.6" width="8.7" height="14.7" ry="2.08" display="inline"/><rect transform="rotate(45)" x="177" y="18.1" width="8.7" height="14.7" ry="2.08" display="inline"/></g></g><g transform="translate(-41.3 -52.8)" display="none"><rect x="30.9" y="53.1" width="134" height="110" fill="#dc1010" fill-opacity=".992"/></g><g transform="translate(-41.3 -52.8)" fill="none" stroke="#f4f4f4" stroke-opacity=".588" stroke-width="2"><g transform="rotate(-45.4 94.5 112)"><path d="m66.1 66.2v5.76"/><path d="m70.5 66.2v5.76"/><path d="m74.8 66.2v5.76"/><path d="m79.2 66.2v5.76"/><path d="m83.5 66.2v5.76"/><path d="m87.9 66.2v5.76"/><path d="m92.2 66.2v5.76"/><path d="m96.6 66.2v5.76"/><path d="m101 66.2v5.76"/><path d="m105 66.2v5.76"/><path d="m110 66.2v5.76"/><path d="m114 66.2v5.76"/><path d="m118 66.2v5.76"/><path d="m123 66.2v5.76"/><path d="m127 66.2v5.76"/><path d="m131 66.2v5.76"/></g><g transform="rotate(225 114 68.5)"><path d="m66.1 66.2v5.76"/><path d="m70.5 66.2v5.76"/><path d="m74.8 66.2v5.76"/><path d="m79.2 66.2v5.76"/><path d="m83.5 66.2v5.76"/><path d="m87.9 66.2v5.76"/><path d="m92.2 66.2v5.76"/><path d="m96.6 66.2v5.76"/><path d="m101 66.2v5.76"/><path d="m105 66.2v5.76"/><path d="m110 66.2v5.76"/><path d="m114 66.2v5.76"/><path d="m118 66.2v5.76"/><path d="m123 66.2v5.76"/><path d="m127 66.2v5.76"/><path d="m131 66.2v5.76"/></g><g transform="rotate(-45.4 192 71.3)"><path d="m66.1 66.2v5.76"/><path d="m70.5 66.2v5.76"/><path d="m74.8 66.2v5.76"/><path d="m79.2 66.2v5.76"/><path d="m83.5 66.2v5.76"/><path d="m87.9 66.2v5.76"/><path d="m92.2 66.2v5.76"/><path d="m96.6 66.2v5.76"/><path d="m101 66.2v5.76"/><path d="m105 66.2v5.76"/><path d="m110 66.2v5.76"/><path d="m114 66.2v5.76"/><path d="m118 66.2v5.76"/><path d="m123 66.2v5.76"/><path d="m127 66.2v5.76"/><path d="m131 66.2v5.76"/></g><g transform="rotate(44.6 1.09 64.4)"><path d="m66.1 66.2v5.76"/><path d="m70.5 66.2v5.76"/><path d="m74.8 66.2v5.76"/><path d="m79.2 66.2v5.76"/><path d="m83.5 66.2v5.76"/><path d="m87.9 66.2v5.76"/><path d="m92.2 66.2v5.76"/><path d="m96.6 66.2v5.76"/><path d="m101 66.2v5.76"/><path d="m105 66.2v5.76"/><path d="m110 66.2v5.76"/><path d="m114 66.2v5.76"/><path d="m118 66.2v5.76"/><path d="m123 66.2v5.76"/><path d="m127 66.2v5.76"/><path d="m131 66.2v5.76"/></g></g><g transform="translate(-41.3 -52.8)"><rect transform="rotate(-45.4)" x="-46.7" y="106" width="75.1" height="75.1" ry="3.86" fill="none" stroke="#f4f4f4" stroke-linejoin="round"/><circle transform="rotate(-45.4)" cx="-40.5" cy="112" r="2.27" fill="#f4f4f4"/></g><g transform="translate(-41.3 -52.8)" display="none" word-spacing="0"><text transform="rotate(-45.4)" x="-18.984667" y="126.87369" fill="#2d2e29" font-family="sans-serif" font-size="9.76" letter-spacing="0" stroke-width=".183" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25"><tspan x="-18.984667" y="126.87369" fill="#f4f4f4" font-size="11.3" stroke-width=".183"><tspan font-family="Raleway" font-weight="300">ME</tspan><tspan font-family="Orbitron" font-weight="bold">218</tspan></tspan></text><text transform="rotate(-45.4)" x="-38.931206" y="138.35268" fill="#f4f4f4" font-family="'League Mono'" font-size="11.3" font-weight="200" letter-spacing="2.05" stroke-width=".308" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1"><tspan x="-38.931206" y="138.35268"><tspan font-weight="bold">S</tspan><tspan fill="#f4f4f4" fill-opacity=".784">MART</tspan><tspan font-weight="bold">P</tspan><tspan fill="#f4f4f4" fill-opacity=".855">R</tspan></tspan><tspan x="-38.931206" y="149.78459"><tspan fill="#f4f4f4" fill-opacity=".855">ODUCT</tspan><tspan font-weight="bold">D</tspan><tspan fill="#f4f4f4" fill-opacity=".855">E</tspan></tspan><tspan x="-38.931206" y="161.21651"><tspan fill="#f4f4f4" fill-opacity=".855">SIGN</tspan><tspan font-weight="bold">L</tspan><tspan fill="#f4f4f4" fill-opacity=".855">AB</tspan></tspan><tspan x="-38.931206" y="172.64842" fill-opacity=".855">ORATORY</tspan></text></g><g transform="translate(1.32e-6)" fill="#f4f4f4"><g><path d="m41.6 43.9-4.94-4.87 1.63 6.05-.254.257-6.07-1.55 4.94 4.87-.404.41-5.71-5.63.404-.41 6.43 1.65-1.74-6.41.404-.41 5.71 5.63z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m46.8 37.9.37.365-3.75 3.8-5.71-5.63 3.68-3.73.37.365-3.27 3.32 2.24 2.21 2.86-2.9.354.349-2.86 2.9 2.37 2.34z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m46.8 27.1q.222-.225.509-.339.295-.122.59-.116.295-.01.591.108.288.11.513.332l1.29 1.27q.233.23.347.516.114.287.116.59.002.287-.116.584-.11.288-.332.513l-3.46 3.51q-.0555.0563-.0073.104l1.13 1.11q.0562.0555.112-795e-6l4.56-4.62 1.05 1.04-5.65 5.73-2.23-2.2q-.225-.222-.339-.509-.122-.295-.124-.582-.0021-.303.108-.591.11-.288.34-.521l3.46-3.51q.0555-.0563.0073-.104l-1.29-1.27q-.0562-.0555-.112 795e-6l-3.46 3.51q-.0555.0563 765e-6.112l.434.428-1.04 1.05-.434-.428q-.225-.222-.339-.509-.122-.295-.124-.582-.0021-.303.108-.591.11-.288.34-.521z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m50.1 23.7 1.15-1.17 5.79 5.71-1.04 1.05-4.25-4.19q.0258.263.0435.519.0176.239.0433.487l-1.37 1.39z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m59.8 18.4q.153.151.266.341.113.175.154.39.216.0384.4.157.184.102.337.253l1.28 1.26q.233.23.347.516.114.287.116.59.002.287-.116.584-.11.288-.332.513l-3.46 3.51q-.23.233-.516.347-.287.114-.582.124-.295-.0059-.584-.116-.288-.11-.521-.34l-1.28-1.26q-.322-.317-.42-.731-.416-.0929-.737-.41l-1.13-1.12q-.225-.222-.339-.509-.122-.295-.124-.582-.0021-.303.108-.591.11-.288.34-.521l3.46-3.51q.198-.201.453-.314.255-.13.526-.147.271-.0338.535.0362.272.062.496.22zm.119 2.19q-.0482-.0475-.104.0087l-3.46 3.51q-.0555.0563-.0073.104l1.28 1.26q.0562.0555.112-794e-6l3.46-3.51q.0555-.0563-766e-6-.112zm-2.28-2.25q-.0562-.0555-.112 795e-6l-3.46 3.51q-.0555.0563 766e-6.112l1.21 1.19q.0562.0555.112-794e-6l3.46-3.51q.0555-.0563-766e-6-.112z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m29.1 66.1q.692-.348 1.26-.536.557-.195 1.2-.136.647.0514 1.19.59.884.872.684 1.86-.201.991-1.14 1.95-1.59 1.61-3.28 1.03l.516-1.57q.456.164.918.0654.462-.099.859-.501.388-.394.473-.802.0769-.416-.253-.741-.289-.285-.712-.211-.423.0748-1.06.383-.613.3-1.16.487-.542.179-1.21.12-.671-.0592-1.23-.614-.764-.753-.539-1.69.225-.936 1.09-1.81.666-.675 1.48-.904.805-.237 1.56.0929l-.437 1.49q-.456-.18-.871-.0977-.423.0748-.74.396-.349.354-.426.689-.0775.336.172.582.225.222.6.227.367-.0026.797-.213z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/></g><g fill-opacity=".784"><path d="m40 61.9-4.92-4.41 3.25 5.38-.444.45-5.43-3.18 4.48 4.86-.412.418-5.3-5.88.499-.506 4.19 2.52 1.73 1.09-1.12-1.71-2.57-4.16.499-.506 5.95 5.22z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m43.8 54.3-2.05 2.07 1.45 2.26-.42.426-4.38-6.81 1.22-1.24 6.87 4.29-.42.426zm-.465-.284-3.66-2.3-.555.563 2.35 3.63z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m48.5 45.1q1.41 1.39.497 2.65l3.57 1.43-.452.458-3.51-1.44-1.31 1.33 2.5 2.47-.404.41-5.63-5.55 1.7-1.72q.42-.426.85-.653.429-.227.989-.119.56.108 1.2.742zm-1.58 4.05 1.53-1.55q.42-.426.369-.921-.0515-.511-.719-1.17-.627-.618-1.13-.623-.503-.0204-.931.414l-1.49 1.51z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m53.6 37.6-1.62 1.64 5.25 5.18-.404.41-5.25-5.18-1.61 1.63-.378-.373 3.63-3.68z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/></g><path d="m61 36.8 1.85 1.82-1.21 1.23-5.63-5.55 1.83-1.86q.468-.474.961-.749.493-.291 1.17-.192.679.0831 1.46.852 1.22 1.2 1.08 2.14-.153.927-.89 1.67zm-.981-.967.404-.41q.285-.289.388-.522t-.0116-.519q-.114-.303-.516-.699-.37-.365-.65-.45-.28-.102-.511.0036-.231.105-.516.395l-.404.41z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><g fill-opacity=".784"><path d="m67.1 26.2q1.41 1.39.497 2.65l3.57 1.43-.452.458-3.51-1.44-1.31 1.33 2.5 2.47-.404.41-5.63-5.55 1.7-1.72q.42-.426.85-.653.429-.227.989-.119t1.2.742zm-1.58 4.05 1.53-1.55q.42-.426.369-.921-.0515-.511-.719-1.17-.627-.618-1.13-.623-.503-.0204-.931.414l-1.49 1.51z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m40.5 77.8q-.864.876-1.98.772-1.12-.12-2.76-1.74-1.63-1.61-1.76-2.72-.128-1.12.736-2 .856-.868 1.97-.748 1.12.104 2.75 1.71 1.64 1.62 1.77 2.74.127 1.11-.729 1.98zm-.386-.38q.436-.442.528-.954.1-.52-.272-1.24-.372-.732-1.35-1.7-.981-.967-1.71-1.32-.721-.362-1.24-.255-.51.0994-.946.541-.436.442-.536.962-.1.52.264 1.24.372.716 1.35 1.68.981.967 1.71 1.34.729.354 1.25.247.518-.107.954-.549z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m40.9 66q.571-.579 1.12-.846.541-.275 1.47.0217.936.289 2.23 1.56 1.29 1.28 1.6 2.21.31.924.0502 1.48-.268.545-.838 1.12l-1.26 1.28-5.63-5.55zm5.41 5.02q.491-.498.584-1.03.0921-.527-.288-1.2-.38-.692-1.31-1.61-.932-.919-1.62-1.28-.689-.378-1.22-.279-.526.0995-1.02.598l-1.01 1.03 4.87 4.8z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m52.9 65.2q-.571.579-1.15.75-.582.156-1.29-.151-.705-.314-1.6-1.2l-3.36-3.31.404-.41 3.44 3.39q.723.713 1.28.981.553.26.999.145.454-.123.898-.573.452-.458.56-.906.109-.448-.167-.989-.275-.557-.999-1.27l-3.44-3.39.404-.41 3.36 3.31q.9.888 1.22 1.59t.177 1.28q-.156.576-.734 1.16z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m60 56.3q.204.629.0089 1.28-.203.64-.79 1.23-.919.932-2.07.733-1.15-.215-2.66-1.71-1.5-1.48-1.72-2.63-.216-1.16.712-2.1 1.13-1.14 2.53-.728l-.18.584q-.56-.188-1.04-.0566-.47.123-.922.581-.713.723-.483 1.68t1.53 2.24q1.31 1.29 2.26 1.52.951.225 1.66-.491.919-.932.577-1.95z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m61.8 45.6-1.62 1.64 5.25 5.18-.404.41-5.25-5.18-1.61 1.63-.378-.373 3.63-3.68z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/></g><path d="m65.8 40.7q.61-.619 1.2-.926.596-.315 1.56-.0508.96.249 2.25 1.52 1.29 1.28 1.56 2.24.27.948-.0371 1.55-.299.593-.91 1.21l-1.72 1.74-5.63-5.55zm4.51 4.72q.452-.458.521-.85.0611-.4-.23-.861-.299-.469-1.04-1.2-.739-.729-1.2-1.01-.473-.292-.864-.217-.399.0666-.85.525l-.373.378 3.67 3.61z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><g fill-opacity=".784"><path d="m71.3 35.9 2.3 2.27 2.23-2.26.37.365-2.23 2.26 2.2 2.17 2.66-2.69.378.373-3.06 3.1-5.63-5.55 3.06-3.1.378.373z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m45.3 82.7q1.34-.608 2.21-.702.861-.102 1.46.493.715.705.602 1.61-.114.887-.954 1.74-1.39 1.41-2.83.994l.203-.624q.576.188 1.13.0081.549-.187 1.11-.758.674-.683.757-1.33.0832-.663-.439-1.18-.434-.428-1.1-.359-.678.0606-1.71.547-.971.47-1.8.508-.83.0218-1.41-.549-.643-.634-.513-1.43.138-.799.875-1.55 1.21-1.23 2.58-.768l-.187.592q-.544-.204-1.03-.0647-.486.123-.978.621-.539.547-.663 1.12-.116.568.334 1.01.78.769 2.35.0634z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m49.7 74.1 4.87 4.8 1.3-1.32.378.373-3 3.04-.378-.373 1.29-1.31-4.87-4.8-1.29 1.31-.378-.373 3-3.04.378.373z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m62 70.6q.108.566-.0871 1.25-.195.68-.853 1.35-.919.932-2.07.733-1.14-.208-2.66-1.71-1.5-1.48-1.69-2.66-.184-1.2.751-2.14.555-.563 1.14-.71.59-.148 1.3.0628l-.18.584q-.576-.188-1.01-.0888-.438.0909-.874.533-1.51 1.54.978 3.99 1.31 1.29 2.26 1.52.952.225 1.66-.491.935-.948.753-1.97l-1.76-1.74-1.24 1.26-.378-.373 1.65-1.67z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m63.1 59.8 5.63 5.55-.539.547-7.21-2.69 5 4.93-.404.41-5.63-5.55.539-.547 7.21 2.69-5-4.93z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/></g><path d="m74.4 57.5.981.967-3.52 3.57-5.63-5.55 1.21-1.23 4.65 4.58z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><g fill-opacity=".784"><path d="m78.7 51.5-2.05 2.07 1.45 2.26-.42.426-4.38-6.81 1.22-1.24 6.87 4.29-.42.426zm-.465-.284-3.66-2.3-.555.563 2.35 3.63z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m83.7 44.2q-.0322-.0317.326-.138.366-.114.862-.006.488.1 1.02.624.812.801.881 1.53.061.726-.645 1.44l-1.89 1.92-5.63-5.55 1.55-1.57q.428-.434.818-.652.382-.226.893-.134.503.0843 1.11.679.482.476.645.89t.133.702q-.0299.288-.0621.256zm-2.13 1.92 1.43-1.45q.357-.362.242-.84t-.662-1.02q-.587-.579-1.03-.568-.431.003-.827.405l-1.32 1.33zm4.18 1.18q.515-.522.456-1.04-.0595-.518-.711-1.16-.547-.539-1.08-.559-.527-.0282-.892.341l-1.59 1.61 2.34 2.31z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m56.8 93.9q-.864.876-1.98.772-1.12-.12-2.76-1.74-1.63-1.61-1.76-2.72-.128-1.12.736-2 .856-.868 1.97-.748 1.12.104 2.75 1.71 1.64 1.62 1.77 2.74.127 1.11-.729 1.98zm-.386-.38q.436-.442.528-.954.1-.52-.272-1.24-.372-.732-1.35-1.7t-1.71-1.32q-.721-.362-1.24-.255-.51.0994-.946.541-.436.442-.536.962-.1.52.264 1.24.372.716 1.35 1.68t1.71 1.34q.729.354 1.25.247.518-.107.954-.549z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m60.5 81.7q1.41 1.39.497 2.65l3.57 1.43-.452.458-3.51-1.44-1.31 1.33 2.5 2.47-.404.41-5.63-5.55 1.7-1.72q.42-.426.85-.653.429-.227.989-.119.56.108 1.2.742zm-1.58 4.05 1.53-1.55q.42-.426.369-.921-.0515-.511-.719-1.17-.627-.618-1.13-.623-.503-.0204-.931.414l-1.49 1.51z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m68.2 78.3-2.05 2.07 1.45 2.26-.42.426-4.38-6.81 1.22-1.24 6.87 4.29-.42.426zm-.465-.284-3.66-2.3-.555.563 2.35 3.63z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m71.8 67.9-1.62 1.64 5.25 5.18-.404.41-5.25-5.18-1.61 1.63-.378-.373 3.63-3.68z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m81.5 68.8q-.864.876-1.98.772-1.12-.12-2.76-1.74-1.63-1.61-1.76-2.72-.128-1.12.736-2 .856-.868 1.97-.748 1.12.104 2.75 1.71 1.64 1.62 1.77 2.74.127 1.11-.729 1.98zm-.386-.38q.436-.442.528-.954.1-.52-.272-1.24-.372-.732-1.35-1.7-.981-.967-1.71-1.32-.721-.362-1.24-.255-.51.0994-.946.541-.436.442-.536.962-.1.52.264 1.24.372.716 1.35 1.68.981.967 1.71 1.34.729.354 1.25.247.518-.107.954-.549z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m85.3 56.6q1.41 1.39.497 2.65l3.57 1.43-.452.458-3.51-1.44-1.31 1.33 2.5 2.47-.404.41-5.63-5.55 1.7-1.72q.42-.426.85-.653.429-.227.989-.119t1.2.742zm-1.58 4.05 1.53-1.55q.42-.426.369-.921-.0515-.511-.719-1.17-.627-.618-1.13-.623-.503-.0204-.931.414l-1.49 1.51z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/><path d="m90.1 48.7 1.7 4.97 2.28 2.25-.404.41-2.27-2.24-5.01-1.63.452-.458 4.2 1.35.0238-.0241-1.42-4.17z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/></g></g></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label><input data-search-input id=search-by type=search placeholder=Search...>
-<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=/docs/js/lunr.min.js?1588666478></script><script type=text/javascript src=/docs/js/auto-complete.js?1588666478></script><script type=text/javascript>var baseurl="http:\/\/spdldaemon.github.io\/docs";</script><script type=text/javascript src=/docs/js/search.js?1588666478></script></div><div class=highlightable><ul class=topics><li data-nav-id=/docs/tools/ title=Tools class=dd-item><a href=/docs/tools/><b>1. </b>Tools</a><ul><li data-nav-id=/docs/tools/onshape/ title=Onshape class=dd-item><a href=/docs/tools/onshape/>Onshape</a></li><li data-nav-id=/docs/tools/kicad/ title=KiCad class=dd-item><a href=/docs/tools/kicad/>KiCad</a><ul><li data-nav-id=/docs/tools/kicad/usingkicad/ title="Using KiCad" class=dd-item><a href=/docs/tools/kicad/usingkicad/>Using KiCad</a></li><li data-nav-id=/docs/tools/kicad/schematiccapture/ title="Schematic Capture" class=dd-item><a href=/docs/tools/kicad/schematiccapture/>Schematic Capture</a></li></ul></li></ul></li><li data-nav-id=/docs/applicationnotes/ title="Application Notes" class="dd-item
-parent"><a href=/docs/applicationnotes/><b>2. </b>Application Notes</a><ul><li data-nav-id=/docs/applicationnotes/magneticfieldsensing/ title="Magnetic Field Sensing" class="dd-item
-parent
-active"><a href=/docs/applicationnotes/magneticfieldsensing/>Magnetic Field Sensing</a></li><li data-nav-id=/docs/applicationnotes/audiomodems/ title="Audio Modems and the PIC" class=dd-item><a href=/docs/applicationnotes/audiomodems/>Audio Modems and the PIC</a></li></ul></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://me218archive.stanford.edu><i class="fas fa-archive"></i>The ME 218 Archive</a></li><li><a class=padding href=https://github.com/SPDLDaemon/spdl-docs-master><i class="fab fa-github"></i>Github Repository</a></li><li><a class=padding href=https://gohugo.io/><i class="fas fa-bookmark"></i>Hugo Documentation</a></li><li><a class=padding href=https://learn.netlify.com/en/><i class="fas fa-bookmark"></i>Learn Theme Documentation</a></li></ul></section><section id=footer><p>Built with <a href=https://github.com/matcornic/hugo-theme-learn><i class="fas fa-heart"></i></a>from <a href=https://getgrav.org>Grav</a> and <a href=https://gohugo.io/>Hugo</a></p></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i></a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span><span class=links><a href=/docs/>The SPDL Docs Repository</a> <i class="fa fa-caret-right crumb" aria-hidden=true></i><a href=/docs/applicationnotes/>Application Notes</a> <i class="fa fa-caret-right crumb" aria-hidden=true></i>Magnetic Field Sensing</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><ul><li><a href=#basic-em>Basic E&M</a></li><li><a href=#detection>Detection</a></li><li><a href=#coils-as-inductors>Coils as Inductors</a></li><li><a href=#lc-resonance-and-signal-amplification>LC Resonance and Signal Amplification</a></li><li><a href=#noise-rejection>Noise Rejection</a></li><li><a href=#signal-amplification>Signal Amplification</a></li><li><a href=#sensor-locations--sensor-signal-math>Sensor Locations & Sensor Signal Math</a></li><li><a href=#other-sensing-tidbits>Other Sensing Tidbits</a></li></ul></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>Magnetic Field Sensing</h1><p>If this looks overly mathematical, don’t worry, you can certainly skip the math and get something working by trial and error as is commonly done. If you take this approach, you still might want to check out the section on matching your coil resonance to the track frequency to minimize noise picked up from other sources. Either way, it’s usually helpful to understand the underlying physics when it comes to troubleshooting or improving your sensors. Also, some quick, back of the envelope calculations can often get you in the ballpark a lot quicker than random experimentation.</p><h3 id=basic-em>Basic E&M</h3><p>A current flowing in an infinite wire will generate a magnetic field that circles around the wire (in a direction given by the right hand rule – align your thumb with the current, and your fingers point in the \(B\) field direction) whose strength drops off with \(1/r\):</p><p>$$B=\frac{\mu_0 i}{2\pi r}$$</p><p>where \(\mu_0 = 1.26 \times 10^{-6} \mathrm{H}/\mathrm{m}\) is the vacuum permeability, \(i\) is the current in Amps, and \(r\) is the distance from the wire in meters.</p><p>So if there is a sinusoidal current flowing in the wire that looks like</p><p>$$ \begin{aligned} i &= 0.1 \sin \omega t \\ \omega &= 2\pi f \\ f &= 20000 \end{aligned} $$</p><p>It will generate a magnetic field around the wire that varies sinusoidally in time:</p><p>$$ B = \frac{\mu_0}{2\pi r} \cdot 0.1 \sin \omega t $$</p><h3 id=detection>Detection</h3><p>An easy way to detect a magnetic field is to take advantage of the fact that when the magnetic flux in a loop of wire changes, a voltage is generated in the coil that is proportional to the rate of change:</p><p>$$ \begin{aligned} V &= -\frac{\partial\Phi}{\partial t} \\ \Phi &= B \cdot A\end{aligned} $$</p><p>where \(B\) is the magnetic field, and \(A\) is the coil area. We assume that \(B\) is constant over the area of the coil, which is a good approximation when the coils are small.</p><p>Calculating the peak induced voltage for a <i class=units>1&#8201;cm</i> diameter coil located <i class=units>10&#8201;cm</i> from the wire, we get:</p><p>$$ \begin{aligned} V &= -\frac{\partial}{\partial t} \left( \frac{\mu_0}{2\pi r} \cdot 0.1 \sin \omega t \right) \cdot A \\ &= \omega \cdot \left( \frac{\mu_0}{2\pi r} \cdot 0.1 \cos \omega t \right) \cdot A \\ V_\mathrm{peak} &= 2.52 \thinspace \mathrm{\mu V} \end{aligned} $$</p><p>which is a miniscule value, and would not be able to see it on a typical oscilloscope with <i class=units>5&#8201;mV</i> resolution. To increase your signal, you can connect several of these sensor loops in series. If you have \(N\) turns on your coil, you will get an induced voltage that is \(N\) times larger than the result for a single loop. With 1000 coils on the same sensor as above, you would see <i class=units>2.52&#8201;mV</i>, which is something you can work with. This still needs amplification, but a relatively simple op-amp circuit will do.</p><p>So at some fixed distance from the wire, there are two things you can do to increase your signal—increase coil area or number of turns:</p><p>$$ V \propto N \cdot A $$</p><h3 id=coils-as-inductors>Coils as Inductors</h3><p>Any time you have a coil, you also have an inductor. For a coil with length much greater than diameter, the inductance is:</p><p>$$ L = \frac{\mu_0 A N^2}{l} $$</p><p>where \(A\) is the coil area, \(N\) the number of turns, and \(l\) the length of the coil.</p><p>For a practical coil that may have a length similar in magnitude to the diameter, this is only an approximation good to within a factor of 2 or so. To increase the inductance, inductors are often wound around core materials. These cores effectively amplify the magnetic field (and therefore inductance), by anywhere from factors of 10s to 1000s. Iron is commonly used at low frequencies, and ferrite is used at higher frequencies.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p><p>Also, real inductors always have some capacitance, resulting from the numerous turns of wire wound next to one another. There is always capacitance between two neighboring wires, increasing with decreasing separation.<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> This capacitance can easily be on the order of 10s to 100s of pF for a peanut-sized coil.</p><p><img src=inductor_model.png alt="Model of real inductor"></p><p>You might think, &lsquo;who cares about picoFarads anyways&rsquo;—that is, until you see a mysterious high frequency ringing on a coil that you thought was an ideal inductor. You may be able to see this with sensors that are not designed to resonate at the track frequency (as described below) but resonate at some other frequency (i.e. the “self-resonant” frequency that depends on coil capacitance & inductance). A simple model of what this can look like can be generated in circuitmaker:</p><p><img src=ringing_model.png alt="Simulation model for inductor"></p><p>The sinusoidal source is simulating the signal from the track, the lower magnitude square wave source is simulating quick noise pulses that might be generated from motor switching, etc. The resulting waveforms show hi-frequency ringing at the self-resonant frequency (triggered by the noise spikes) riding on top of the desired <i class=units>20&#8201;kHz</i> signal waveform:</p><p><img src=ringing_data.png alt="Data from inductor simulation"></p><h3 id=lc-resonance-and-signal-amplification>LC Resonance and Signal Amplification</h3><p>You can make a functional sensor using a coil as described above, although it may need to be pretty big (large area, lots of turns) in order to give you a signal large enough to work with. By adding a capacitor in parallel with your coil (and effectively in parallel with the internal coil capacitance), you can make a circuit that resonates at the track frequency. The frequency of this resonance is given by:</p><p>$$ f = \frac{1}{2\pi\sqrt{LC}} $$</p><p>The effect of this is that a small signal from the track can drive a much larger oscillation in the parallel inductor capacitor circuit, which is easier to detect. The effective amplification of a circuit like this can easily be on the order of 10-100. You can model the induced voltage in the coil as a sinusoidal voltage source in series with the inductor:<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup></p><p><img src=parallel_LC.png alt="Model of parallel LC circuit"></p><p>If you could build this circuit and then swept the frequency knob on the function generator, you’d get a plot of \(V_\mathrm{in}/V_\mathrm{out}\) vs. frequency that looks like:</p><p><img src=freqresp.png alt="Parallel LC circuit frequency response"></p><p>If you actually used ideal components<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup> and turned the knob very slowly, you’d find that the peak at <i class=units>20&#8201;kHz</i> was infinite.</p><p>This measure of the sharpness of resonance is called the quality factor, or Q, of the circuit. For this circuit, it is infinite. Q is defined as the resonant frequency divided by the width in frequency units of the curve at the point where it is \(1/\sqrt{2}=0.707\) times the maximum value.<sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup></p><p>Suppose all the ideal inductors are used up and you have to order a real inductor from Digi-Key. You find that it has <i class=units>26&#8201;&ohm;</i> of resistance due to the many turns of thin wire. You plug this into your circuitmaker model:</p><p><img src=real_parallel_LC.png alt="Model of real-world parallel LC circuit"></p><p>and get this response:</p><p><img src=real_freqresp.png alt="Real parallel LC circuit frequency response"></p><p>Now instead of having an infinite peak, the resonant circuit amplifies the field signal by about 40. Since the peak is no longer infinite, you happily calculate Q to be 40. Another handy Q formula for a series resistor like this is:</p><p>$$ Q = \frac{2\pi\omega_\mathrm{res} L}{R} $$</p><p>Now, suppose Mark Merlo was playing with the function generator and tweaked the frequency knob so it’s generating <i class=units>21&#8201;kHz</i> instead of <i class=units>20&#8201;kHz</i>. Now the gain of the resonant circuit goes from 40 down to 9, just after you spent hours calibrating your code to work with a gain of 40. So that’s problem #1: your circuit is sensitive to small changes in track frequency. Eventually, Sara figures out what the deal is and recalibrates the knob to <i class=units>20.0001&#8201;kHz</i>. Luis is just starting to build his circuit but Brandon stole all of his capacitors to extend the range of the electric banana. Fortunately, he manages to find a pair with the exact value he needs in the cabinet of freedom, and they even have a ±<i class=units>5&#8201;%</i> tolerance (good as far as capacitors go). Suppose one of the caps is dead on the labeled value, and the other is <i class=units>5&#8201;%</i> high, so that circuit will have a resonant frequency of <i class=units>19.5&#8201;kHz</i>. Now the gain will be approximately 17 for that sensor and 40 for the other sensor—not a very well matched pair of sensors.</p><p>These undesirable effects of a sharp resonance peak can mitigated by lowering the Q even more, which flattens out the peak. An easy way to do this is with a parallel resistor:</p><p><img src=detuned.png alt="Circuit model with parallel detuning resistor"></p><p>If you only have a parallel capacitor (in the location of the <i class=units>10&#8201;k&ohm;</i> resistor) and replace the <i class=units>26&#8201;&ohm;</i> capacitor with a wire, the Q is given by:<sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup></p><p>$$ Q = 2\pi f_\mathrm{res} RC $$</p><p>where \(C\) is the total capacitance summing the coil and external capacitances.</p><p>If you have both resistors in the circuit, the resultant Q is well approximated by
-$$ \frac{1}{Q_\mathrm{total}} = \frac{1}{Q_\mathrm{R,series}} + \frac{1}{Q_\mathrm{R,parallel}} $$</p><p>This expression may even be exact, who knows? Anyways, the peak is quite a bit flatter now so that if the frequency shifts by <i class=units>1&#8201;kHz</i> to <i class=units>21&#8201;kHz</i>, the signal only changes by <i class=units>20&#8201;%</i>, which is a lot better than the factor of 4 we saw above.</p><p><img src=detuned_data.png alt="Simulated response of detuned circuit"></p><p>This parallel resistor that lowers the Q of the circuit is sometimes called a Q-killer resistor for obvious reasons. You’ll want to pick a Q-killer resistor that gives you good amplification without too sharp of a resonant peak which would result in sensitivity to slight frequency variations.</p><h3 id=noise-rejection>Noise Rejection</h3><p>If there is EM noise at frequencies other than the track frequency,<sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup> it will also generate a signal in your sensors. Suppose you have a coil without a resonant capacitor, and the rate of change of magnetic flux from the switched motor current is the same as the rate of change of magnetic flux due to the wire under the track, in the location of your sensor. Then an equal voltage will be produced in the sensor, which will show up as noise that is just as large as your signal.
-If your sensor is part of a tuned circuit that amplifies the track frequency by a factor of 10, then the induced noise from the motor will be 1/10 of the track signal, which is a good thing.</p><p>There are a few things you can do to minimize magnetic noise generated by the motor.</p><ol><li><p>Don’t put your sensors right next to your motors.</p></li><li><p>Run the current supply and return wires for a motor close together. If you run them in a big open loop (and maybe wrap them around your sensors a few times), they will generate much larger magnetic fields & hence more sensor noise.</p></li><li><p>Don’t switch motor currents faster than you need to. For the LMD18200’s, this means leaving off the bootstrap capacitors (which (when added) cause the MOSFETs in the H-bridge to turn on and off a lot faster). When you turn off a MOSFET real fast, the current through it and all the associated wiring changes real fast (large di/dt). This causes any associated magnetic fields to change real fast (which is what your sensors detect), and also causes voltage drops across the wires that were supplying the current due to the inductance of these supply wires.</p></li></ol><div class="notices note"><p>Decreasing switching speed is entirely different from decreasing PWM frequency—lowering the PWM frequency will not affect the switching speed. The MOSFETs still switch on/off at the same speed, they just switch less often at a lower PWM frequency.</p></div><h3 id=signal-amplification>Signal Amplification</h3><p>After all this work (actually, its not that bad, just a few components soldered in parallel), you’ll still probably want to amplify your signal. One feature of the resonant circuits described above is that they do not have very high output impedance—that is, if you try drawing significant currents from them it will load them down and kill the resonance. Kind of like sticking a tuning fork in a block of cheese—the fork will not continue to shake the cheese at 1 kHz for minutes. Instead, the vibrations will quickly die down to nothing.</p><p>Two ways to deal with this low-impedance sensor are to buffer the signal or simply use a non-inverting op-amp configuration (as shown below):</p><p><img src=noninverting_opamp.png alt="Non inverting op-amp"></p><p>As long as the op amp doesn’t saturate (output goes to one rail or the other), this will work pretty well. The LM6144s have the &lsquo;&lsquo;interesting&rsquo;&rsquo; property that if an output saturates and the inputs are no longer held at the same voltage (no longer ideal
-<i class="far fa-frown"></i>), then the input impedance drops drastically, which can load the sensor down and kill the resonance. This can make for some frustrating debugging sessions until you figure out what’s happening.</p><p>Once you’ve amplified the signal, you can either build a peak detector circuit or do the peak detection in software. Given the amount of other stuff going on in software, the peak detector circuit is not a bad choice. Choose your R & C carefully to give the best compromise between smooth signal and fast response to signal changes:</p><p><img src=peakdetect_model.png alt="Peak detection model"></p><p>Time constant, \(\tau=RC\), too small (excessive ripple):</p><p><img src=peakdetect_small.png alt="Small time constant plot"></p><p>Time constant, \(\tau=RC\), too large (output doesn&rsquo;t track input):</p><p><img src=peakdetect_large.png alt="Large time constant plot"></p><h3 id=sensor-locations--sensor-signal-math>Sensor Locations & Sensor Signal Math</h3><p>Once you’ve got your sensors working, where do you put them and what do you do with them? First of all, there are three basic sensor orientations. We’ll call these the Horizontal, Vertical, and Parallel (referring to the axis of the coil). When your sensor axis is parallel with the wire, the field is all perpendicular to the coil, so there is no field component going through the coil, and you get no signal. So, you can forget about those. Vertical and Horizontal coils are more useful.</p><p><img src=orientations.png alt="Coil orientations"></p><p><img src=sensor_location.png alt="Coil location"></p><p>For a coil that is located a horizontal distance \(x\) from the wire and a height \(h\) above the wire, the magnitude of the component of the field that is actually passing through the coil (aligned with the coil axis) is given by:</p><p>$$ \begin{aligned} B_\mathrm{h} &= \frac{\mu_0 i h}{2\pi\left(x^2+h^2\right)} \quad \mathrm{horizontal\space{}coil} \\ B_\mathrm{v} &= \frac{\mu_0 i x}{2\pi\left(x^2+h^2\right)} \quad \mathrm{vertical\space{}coil} \end{aligned} $$</p><p>For a horizontal sensor at fixed height \(h_0\), if you plot the normalized signal in the sensor over a range of \(x\) values that span \(\pm3h_0\) you will get something looking like:</p><p><img src=horiz_sensor.png alt="Response from horizontally oriented sensor"></p><p>Suppose you have two sensors, each mounted a distance \(h_0\) from the center of the robot. Assume horizontal distance \(x\) increases positively to the right of the wire. For a sensor mounted at \(x = +h_0\), the sensor will be over the wire when the center of the robot is at \(x = -h_0\), so plotting the right sensor signal as a function of the position of the robot center gives us something like:</p><p><img src=right_sensor.png alt="Response from right robot sensor"></p><p>The left sensor signal is found in exactly the same way, and its peak will occur when the center of the robot is at \(x = +h_0\). If you read these signals into the HC12 and subtract them in software (Left Sensor – Right Sensor), you get a signal which is roughly proportional to the deviation of the robot center from the wire, over a limited range centered about a deviation of 0.</p><p><img src=sensor_sum.png alt="Combined sensor response"></p><div class="notices note"><p>If you use the summed signal for feedback control, be aware that if the wire is not between the sensors, the sense of the signal can invert. For example, going from \(x=-1\) to \(x=0\), the value of the summed signal is increasing. However, this is also true when going from \(x=-2\) to \(x=-3\)—away from the wire. Keep this in mind when deciding how your robot will respond.</p></div><p>You can follow the exact same procedure to make plots of vertically mounted sensors, or different horizontal sensor configurations (heights, spacing). Similarly, by manipulating your sensor signals with simple math, you may find some resultant signal that works better for whatever you want to do with the position information.</p><h3 id=other-sensing-tidbits>Other Sensing Tidbits</h3><ol><li><p>If your sensors are mounted near any conductive materials (aluminum and copper in particular), induced currents will flow in the metals that partially cancel out the fields that you are trying to measure. So mounting your sensors on aluminum rails probably would not be a good idea.</p></li><li><p>You’ll have to have a fairly accurate capacitance to set the resonant frequency where you want it. There are <i class=units>5&#8201;%</i> and <i class=units>10&#8201;%</i> tolerance polyester caps for sale with the coil/inductors. Two advantages of these caps over ceramic caps is tolerance (<i class=units>20&#8201;%</i> is typical on ceramic) and low capacitance change with change in temperature (not sure what the specs are but these type of capacitors typically change an order of magnitude less than ceramic caps for a given change in temperature).</p></li><li><p>If you’re trying to dial in your total capacitance by adding small parallel capacitors, the tolerances on these smaller caps are much less important than the tolerances on the larger caps that make up the bulk of the capacitance. For example, if a parallel cap provides the final <i class=units>10&#8201;%</i> of capacitance with a <i class=units>10&#8201;%</i> capacitance tolerance, it will only contribute about <i class=units>1&#8201;%</i> to the overall tolerance range.</p></li></ol><hr><p>Contributed by Oliver Max, 20 Feb 2002.</p><p>Adapted for web by Arul Suresh, 11 January 2020.</p><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>Ferrite has much lower losses at high frequencies since it is an electrical insulator and doesn’t let internal dissipative eddy currents flow as iron does. <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2 role=doc-endnote><p>For two wires with radius \(r\) and separation \(s\), the capacitance is \(C=\pi\epsilon/\log\left(s/r\right)\)where \(\epsilon\) is the permittivity of the insulator, typically 2-6 times \(\epsilon_0\), the permittivity of free space. <a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3 role=doc-endnote><p>In this model, you have access to the outer leads of the sinusoidal source and inductor in your real-world inductor, but not the one connecting the two. <a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4 role=doc-endnote><p>Available in the TA office for a slight premium. <a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5 role=doc-endnote><p>That is, \(\infty/0\) for this curve, which as we all know is &ldquo;a suffusion of yellow&rdquo; in your calculator. <a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:6 role=doc-endnote><p>Currently just copied, and this sentence clearly got jumbled at some point. <a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:7 role=doc-endnote><p>For example, from the switching of motor currents. <a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=/docs/applicationnotes/ title="Application Notes"><i class="fa fa-chevron-left"></i></a><a class="nav nav-next" href=/docs/applicationnotes/audiomodems/ title="Audio Modems and the PIC" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/docs/js/clipboard.min.js?1588666478></script><script src=/docs/js/perfect-scrollbar.min.js?1588666478></script><script src=/docs/js/perfect-scrollbar.jquery.min.js?1588666478></script><script src=/docs/js/jquery.sticky.js?1588666478></script><script src=/docs/js/featherlight.min.js?1588666478></script><script src=/docs/js/highlight.pack.js?1588666478></script><script>hljs.initHighlightingOnLoad();</script><script src=/docs/js/modernizr.custom-3.6.0.js?1588666478></script><script src=/docs/js/learn.js?1588666478></script><script src=/docs/js/hugo-learn.js?1588666478></script><link href=/docs/mermaid/mermaid.css?1588666478 rel=stylesheet><script src=/docs/mermaid/mermaid.js?1588666478></script><script>mermaid.initialize({startOnLoad:true});</script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css integrity=sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js integrity=sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js integrity=sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI crossorigin=anonymous onload=renderMathInElement(document.body);></script><script type=text/javascript src=/docs/js/bigfoot.min.js></script><script type=text/javascript>$.bigfoot();</script></body></html>
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.78.1" />
+    <meta name="description" content="">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/docs/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/docs/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/docs/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/docs/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="/docs/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/docs/images/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#8c1515">
+<meta name="msapplication-config" content="/docs/images/favicon/browserconfig.xml">
+<meta name="theme-color" content="#8c1515">
+    <title>Magnetic Field Sensing :: The SPDL Docs Repository</title>
+
+    
+    <link href="/docs/css/nucleus.css?1604735136" rel="stylesheet" media="screen, print">
+    <link href="/docs/css/fontawesome-all.min.css?1604735136" rel="stylesheet" media="screen, print">
+    <link href="/docs/css/hybrid.css?1604735136" rel="stylesheet" media="screen, print">
+    <link href="/docs/css/featherlight.min.css?1604735136" rel="stylesheet" media="screen, print">
+    <link href="/docs/css/perfect-scrollbar.min.css?1604735136" rel="stylesheet" media="screen, print">
+    <link href="/docs/css/auto-complete.css?1604735136" rel="stylesheet" media="screen, print">
+    <link href="/docs/css/atom-one-dark-reasonable.css?1604735136" rel="stylesheet" media="screen, print">
+    <link href="/docs/css/theme.css?1604735136" rel="stylesheet" media="screen, print">
+    <link href="/docs/css/hugo-theme.css?1604735136" rel="stylesheet" media="screen, print">
+    
+      <link href="/docs/css/theme-stanford.css?1604735136" rel="stylesheet" media="screen, print">
+    
+
+    <script src="/docs/js/jquery-3.3.1.min.js?1604735136"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+
+
+<link rel="stylesheet" href="/docs/bigfoot.css">
+
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500|Oswald:500&display=swap" rel="stylesheet">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71199601-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-71199601-2');
+</script>
+  </head>
+  <body class="" data-url="/docs/applicationnotes/magneticfieldsensing/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://spdldaemon.github.io/docs">
+<svg style="width:100%; height:100%;" version="1.1" viewBox="0 0 109 109" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <metadata>
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g transform="translate(-41.3 -52.8)" display="none">
+    <g fill="none" stroke="#4d4f53" stroke-width="2">
+      <path d="m46.4 101 4.08 4.08"/>
+      <path d="m49.4 98.4 4.08 4.08"/>
+      <path d="m52.5 95.3 4.08 4.08"/>
+      <path d="m55.6 92.2 4.08 4.08"/>
+      <path d="m58.7 89.1 4.08 4.08"/>
+      <path d="m61.7 86.1 4.08 4.08"/>
+      <path d="m64.8 83 4.08 4.08"/>
+      <path d="m67.9 79.9 4.08 4.08"/>
+      <path d="m71 76.8 4.08 4.08"/>
+      <path d="m74.1 73.8 4.08 4.08"/>
+      <path d="m77.1 70.7 4.08 4.08"/>
+      <path d="m80.2 67.6 4.08 4.08"/>
+      <path d="m83.3 64.5 4.08 4.08"/>
+      <path d="m86.4 61.5 4.08 4.08"/>
+      <path d="m89.4 58.4 4.08 4.08"/>
+      <path d="m92.5 55.3 4.08 4.08"/>
+    </g>
+    <g>
+      <rect transform="rotate(-45)" x="-44.1" y="100" width="4.16" height="14.7" ry="2.08" fill="#0000c8"/>
+      <rect transform="rotate(-45)" x="27.3" y="100" width="4.16" height="14.7" ry="2.08" fill="#0000c8"/>
+      <rect transform="rotate(-45)" x="-44.1" y="112" width="4.16" height="14.7" ry="2.08" display="inline" fill="#c8c800"/>
+      <rect transform="rotate(225)" x="-114" y="-47.4" width="4.16" height="14.7" ry="2.08" display="inline" fill="#c8c800"/>
+    </g>
+    <g fill="#c80000">
+      <rect transform="rotate(-45)" x="-44.1" y="164" width="8.7" height="14.7" ry="2.08" display="inline"/>
+      <rect transform="rotate(-45)" x="22.8" y="123" width="8.7" height="14.7" ry="2.08" display="inline"/>
+      <rect transform="rotate(45)" x="110" y="-21.6" width="8.7" height="14.7" ry="2.08" display="inline"/>
+      <rect transform="rotate(45)" x="177" y="18.1" width="8.7" height="14.7" ry="2.08" display="inline"/>
+    </g>
+  </g>
+  <g transform="translate(-41.3 -52.8)" display="none">
+    <rect x="30.9" y="53.1" width="134" height="110" fill="#dc1010" fill-opacity=".992"/>
+  </g>
+  <g transform="translate(-41.3 -52.8)" fill="none" stroke="#f4f4f4" stroke-opacity=".588" stroke-width="2">
+    <g transform="rotate(-45.4 94.5 112)">
+      <path d="m66.1 66.2v5.76"/>
+      <path d="m70.5 66.2v5.76"/>
+      <path d="m74.8 66.2v5.76"/>
+      <path d="m79.2 66.2v5.76"/>
+      <path d="m83.5 66.2v5.76"/>
+      <path d="m87.9 66.2v5.76"/>
+      <path d="m92.2 66.2v5.76"/>
+      <path d="m96.6 66.2v5.76"/>
+      <path d="m101 66.2v5.76"/>
+      <path d="m105 66.2v5.76"/>
+      <path d="m110 66.2v5.76"/>
+      <path d="m114 66.2v5.76"/>
+      <path d="m118 66.2v5.76"/>
+      <path d="m123 66.2v5.76"/>
+      <path d="m127 66.2v5.76"/>
+      <path d="m131 66.2v5.76"/>
+    </g>
+    <g transform="rotate(225 114 68.5)">
+      <path d="m66.1 66.2v5.76"/>
+      <path d="m70.5 66.2v5.76"/>
+      <path d="m74.8 66.2v5.76"/>
+      <path d="m79.2 66.2v5.76"/>
+      <path d="m83.5 66.2v5.76"/>
+      <path d="m87.9 66.2v5.76"/>
+      <path d="m92.2 66.2v5.76"/>
+      <path d="m96.6 66.2v5.76"/>
+      <path d="m101 66.2v5.76"/>
+      <path d="m105 66.2v5.76"/>
+      <path d="m110 66.2v5.76"/>
+      <path d="m114 66.2v5.76"/>
+      <path d="m118 66.2v5.76"/>
+      <path d="m123 66.2v5.76"/>
+      <path d="m127 66.2v5.76"/>
+      <path d="m131 66.2v5.76"/>
+    </g>
+    <g transform="rotate(-45.4 192 71.3)">
+      <path d="m66.1 66.2v5.76"/>
+      <path d="m70.5 66.2v5.76"/>
+      <path d="m74.8 66.2v5.76"/>
+      <path d="m79.2 66.2v5.76"/>
+      <path d="m83.5 66.2v5.76"/>
+      <path d="m87.9 66.2v5.76"/>
+      <path d="m92.2 66.2v5.76"/>
+      <path d="m96.6 66.2v5.76"/>
+      <path d="m101 66.2v5.76"/>
+      <path d="m105 66.2v5.76"/>
+      <path d="m110 66.2v5.76"/>
+      <path d="m114 66.2v5.76"/>
+      <path d="m118 66.2v5.76"/>
+      <path d="m123 66.2v5.76"/>
+      <path d="m127 66.2v5.76"/>
+      <path d="m131 66.2v5.76"/>
+    </g>
+    <g transform="rotate(44.6 1.09 64.4)">
+      <path d="m66.1 66.2v5.76"/>
+      <path d="m70.5 66.2v5.76"/>
+      <path d="m74.8 66.2v5.76"/>
+      <path d="m79.2 66.2v5.76"/>
+      <path d="m83.5 66.2v5.76"/>
+      <path d="m87.9 66.2v5.76"/>
+      <path d="m92.2 66.2v5.76"/>
+      <path d="m96.6 66.2v5.76"/>
+      <path d="m101 66.2v5.76"/>
+      <path d="m105 66.2v5.76"/>
+      <path d="m110 66.2v5.76"/>
+      <path d="m114 66.2v5.76"/>
+      <path d="m118 66.2v5.76"/>
+      <path d="m123 66.2v5.76"/>
+      <path d="m127 66.2v5.76"/>
+      <path d="m131 66.2v5.76"/>
+    </g>
+  </g>
+  <g transform="translate(-41.3 -52.8)">
+    <rect transform="rotate(-45.4)" x="-46.7" y="106" width="75.1" height="75.1" ry="3.86" fill="none" stroke="#f4f4f4" stroke-linejoin="round"/>
+    <circle transform="rotate(-45.4)" cx="-40.5" cy="112" r="2.27" fill="#f4f4f4"/>
+  </g>
+  <g transform="translate(-41.3 -52.8)" display="none" word-spacing="0px">
+    <text transform="rotate(-45.4)" x="-18.984667" y="126.87369" fill="#2d2e29" font-family="sans-serif" font-size="9.76px" letter-spacing="0px" stroke-width=".183" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="-18.984667" y="126.87369" fill="#f4f4f4" font-size="11.3px" stroke-width=".183"><tspan font-family="Raleway" font-weight="300">ME</tspan><tspan font-family="Orbitron" font-weight="bold">218</tspan></tspan></text>
+    <text transform="rotate(-45.4)" x="-38.931206" y="138.35268" fill="#f4f4f4" font-family="'League Mono'" font-size="11.3px" font-weight="200" letter-spacing="2.05px" stroke-width=".308" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1" xml:space="preserve"><tspan x="-38.931206" y="138.35268"><tspan font-weight="bold">S</tspan><tspan fill="#f4f4f4" fill-opacity=".784">MART</tspan><tspan font-weight="bold">P</tspan><tspan fill="#f4f4f4" fill-opacity=".855">R</tspan></tspan><tspan x="-38.931206" y="149.78459"><tspan fill="#f4f4f4" fill-opacity=".855">ODUCT</tspan><tspan font-weight="bold">D</tspan><tspan fill="#f4f4f4" fill-opacity=".855">E</tspan></tspan><tspan x="-38.931206" y="161.21651"><tspan fill="#f4f4f4" fill-opacity=".855">SIGN</tspan><tspan font-weight="bold">L</tspan><tspan fill="#f4f4f4" fill-opacity=".855">AB</tspan></tspan><tspan x="-38.931206" y="172.64842" fill-opacity=".855">ORATORY</tspan></text>
+  </g>
+  <g transform="translate(1.32e-6)" fill="#f4f4f4">
+    <g>
+      <path d="m41.6 43.9-4.94-4.87 1.63 6.05-0.254 0.257-6.07-1.55 4.94 4.87-0.404 0.41-5.71-5.63 0.404-0.41 6.43 1.65-1.74-6.41 0.404-0.41 5.71 5.63z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m46.8 37.9 0.37 0.365-3.75 3.8-5.71-5.63 3.68-3.73 0.37 0.365-3.27 3.32 2.24 2.21 2.86-2.9 0.354 0.349-2.86 2.9 2.37 2.34z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m46.8 27.1q0.222-0.225 0.509-0.339 0.295-0.122 0.59-0.116 0.295-0.01 0.591 0.108 0.288 0.11 0.513 0.332l1.29 1.27q0.233 0.23 0.347 0.516 0.114 0.287 0.116 0.59 2e-3 0.287-0.116 0.584-0.11 0.288-0.332 0.513l-3.46 3.51q-0.0555 0.0563-0.0073 0.104l1.13 1.11q0.0562 0.0555 0.112-7.95e-4l4.56-4.62 1.05 1.04-5.65 5.73-2.23-2.2q-0.225-0.222-0.339-0.509-0.122-0.295-0.124-0.582-0.0021-0.303 0.108-0.591 0.11-0.288 0.34-0.521l3.46-3.51q0.0555-0.0563 0.0073-0.104l-1.29-1.27q-0.0562-0.0555-0.112 7.95e-4l-3.46 3.51q-0.0555 0.0563 7.65e-4 0.112l0.434 0.428-1.04 1.05-0.434-0.428q-0.225-0.222-0.339-0.509-0.122-0.295-0.124-0.582-0.0021-0.303 0.108-0.591 0.11-0.288 0.34-0.521z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m50.1 23.7 1.15-1.17 5.79 5.71-1.04 1.05-4.25-4.19q0.0258 0.263 0.0435 0.519 0.0176 0.239 0.0433 0.487l-1.37 1.39z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m59.8 18.4q0.153 0.151 0.266 0.341 0.113 0.175 0.154 0.39 0.216 0.0384 0.4 0.157 0.184 0.102 0.337 0.253l1.28 1.26q0.233 0.23 0.347 0.516 0.114 0.287 0.116 0.59 2e-3 0.287-0.116 0.584-0.11 0.288-0.332 0.513l-3.46 3.51q-0.23 0.233-0.516 0.347-0.287 0.114-0.582 0.124-0.295-0.0059-0.584-0.116-0.288-0.11-0.521-0.34l-1.28-1.26q-0.322-0.317-0.42-0.731-0.416-0.0929-0.737-0.41l-1.13-1.12q-0.225-0.222-0.339-0.509-0.122-0.295-0.124-0.582-0.0021-0.303 0.108-0.591 0.11-0.288 0.34-0.521l3.46-3.51q0.198-0.201 0.453-0.314 0.255-0.13 0.526-0.147 0.271-0.0338 0.535 0.0362 0.272 0.062 0.496 0.22zm0.119 2.19q-0.0482-0.0475-0.104 0.0087l-3.46 3.51q-0.0555 0.0563-0.0073 0.104l1.28 1.26q0.0562 0.0555 0.112-7.94e-4l3.46-3.51q0.0555-0.0563-7.66e-4 -0.112zm-2.28-2.25q-0.0562-0.0555-0.112 7.95e-4l-3.46 3.51q-0.0555 0.0563 7.66e-4 0.112l1.21 1.19q0.0562 0.0555 0.112-7.94e-4l3.46-3.51q0.0555-0.0563-7.66e-4 -0.112z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m29.1 66.1q0.692-0.348 1.26-0.536 0.557-0.195 1.2-0.136 0.647 0.0514 1.19 0.59 0.884 0.872 0.684 1.86-0.201 0.991-1.14 1.95-1.59 1.61-3.28 1.03l0.516-1.57q0.456 0.164 0.918 0.0654 0.462-0.099 0.859-0.501 0.388-0.394 0.473-0.802 0.0769-0.416-0.253-0.741-0.289-0.285-0.712-0.211-0.423 0.0748-1.06 0.383-0.613 0.3-1.16 0.487-0.542 0.179-1.21 0.12-0.671-0.0592-1.23-0.614-0.764-0.753-0.539-1.69 0.225-0.936 1.09-1.81 0.666-0.675 1.48-0.904 0.805-0.237 1.56 0.0929l-0.437 1.49q-0.456-0.18-0.871-0.0977-0.423 0.0748-0.74 0.396-0.349 0.354-0.426 0.689-0.0775 0.336 0.172 0.582 0.225 0.222 0.6 0.227 0.367-0.0026 0.797-0.213z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+    </g>
+    <g fill-opacity=".784">
+      <path d="m40 61.9-4.92-4.41 3.25 5.38-0.444 0.45-5.43-3.18 4.48 4.86-0.412 0.418-5.3-5.88 0.499-0.506 4.19 2.52 1.73 1.09-1.12-1.71-2.57-4.16 0.499-0.506 5.95 5.22z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m43.8 54.3-2.05 2.07 1.45 2.26-0.42 0.426-4.38-6.81 1.22-1.24 6.87 4.29-0.42 0.426zm-0.465-0.284-3.66-2.3-0.555 0.563 2.35 3.63z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m48.5 45.1q1.41 1.39 0.497 2.65l3.57 1.43-0.452 0.458-3.51-1.44-1.31 1.33 2.5 2.47-0.404 0.41-5.63-5.55 1.7-1.72q0.42-0.426 0.85-0.653 0.429-0.227 0.989-0.119 0.56 0.108 1.2 0.742zm-1.58 4.05 1.53-1.55q0.42-0.426 0.369-0.921-0.0515-0.511-0.719-1.17-0.627-0.618-1.13-0.623-0.503-0.0204-0.931 0.414l-1.49 1.51z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m53.6 37.6-1.62 1.64 5.25 5.18-0.404 0.41-5.25-5.18-1.61 1.63-0.378-0.373 3.63-3.68z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+    </g>
+    <path d="m61 36.8 1.85 1.82-1.21 1.23-5.63-5.55 1.83-1.86q0.468-0.474 0.961-0.749 0.493-0.291 1.17-0.192 0.679 0.0831 1.46 0.852 1.22 1.2 1.08 2.14-0.153 0.927-0.89 1.67zm-0.981-0.967 0.404-0.41q0.285-0.289 0.388-0.522t-0.0116-0.519q-0.114-0.303-0.516-0.699-0.37-0.365-0.65-0.45-0.28-0.102-0.511 0.0036-0.231 0.105-0.516 0.395l-0.404 0.41z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+    <g fill-opacity=".784">
+      <path d="m67.1 26.2q1.41 1.39 0.497 2.65l3.57 1.43-0.452 0.458-3.51-1.44-1.31 1.33 2.5 2.47-0.404 0.41-5.63-5.55 1.7-1.72q0.42-0.426 0.85-0.653 0.429-0.227 0.989-0.119t1.2 0.742zm-1.58 4.05 1.53-1.55q0.42-0.426 0.369-0.921-0.0515-0.511-0.719-1.17-0.627-0.618-1.13-0.623-0.503-0.0204-0.931 0.414l-1.49 1.51z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m40.5 77.8q-0.864 0.876-1.98 0.772-1.12-0.12-2.76-1.74-1.63-1.61-1.76-2.72-0.128-1.12 0.736-2 0.856-0.868 1.97-0.748 1.12 0.104 2.75 1.71 1.64 1.62 1.77 2.74 0.127 1.11-0.729 1.98zm-0.386-0.38q0.436-0.442 0.528-0.954 0.1-0.52-0.272-1.24-0.372-0.732-1.35-1.7-0.981-0.967-1.71-1.32-0.721-0.362-1.24-0.255-0.51 0.0994-0.946 0.541-0.436 0.442-0.536 0.962-0.1 0.52 0.264 1.24 0.372 0.716 1.35 1.68 0.981 0.967 1.71 1.34 0.729 0.354 1.25 0.247 0.518-0.107 0.954-0.549z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m40.9 66q0.571-0.579 1.12-0.846 0.541-0.275 1.47 0.0217 0.936 0.289 2.23 1.56 1.29 1.28 1.6 2.21 0.31 0.924 0.0502 1.48-0.268 0.545-0.838 1.12l-1.26 1.28-5.63-5.55zm5.41 5.02q0.491-0.498 0.584-1.03 0.0921-0.527-0.288-1.2-0.38-0.692-1.31-1.61-0.932-0.919-1.62-1.28-0.689-0.378-1.22-0.279-0.526 0.0995-1.02 0.598l-1.01 1.03 4.87 4.8z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m52.9 65.2q-0.571 0.579-1.15 0.75-0.582 0.156-1.29-0.151-0.705-0.314-1.6-1.2l-3.36-3.31 0.404-0.41 3.44 3.39q0.723 0.713 1.28 0.981 0.553 0.26 0.999 0.145 0.454-0.123 0.898-0.573 0.452-0.458 0.56-0.906 0.109-0.448-0.167-0.989-0.275-0.557-0.999-1.27l-3.44-3.39 0.404-0.41 3.36 3.31q0.9 0.888 1.22 1.59t0.177 1.28q-0.156 0.576-0.734 1.16z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m60 56.3q0.204 0.629 0.0089 1.28-0.203 0.64-0.79 1.23-0.919 0.932-2.07 0.733-1.15-0.215-2.66-1.71-1.5-1.48-1.72-2.63-0.216-1.16 0.712-2.1 1.13-1.14 2.53-0.728l-0.18 0.584q-0.56-0.188-1.04-0.0566-0.47 0.123-0.922 0.581-0.713 0.723-0.483 1.68t1.53 2.24q1.31 1.29 2.26 1.52 0.951 0.225 1.66-0.491 0.919-0.932 0.577-1.95z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m61.8 45.6-1.62 1.64 5.25 5.18-0.404 0.41-5.25-5.18-1.61 1.63-0.378-0.373 3.63-3.68z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+    </g>
+    <path d="m65.8 40.7q0.61-0.619 1.2-0.926 0.596-0.315 1.56-0.0508 0.96 0.249 2.25 1.52 1.29 1.28 1.56 2.24 0.27 0.948-0.0371 1.55-0.299 0.593-0.91 1.21l-1.72 1.74-5.63-5.55zm4.51 4.72q0.452-0.458 0.521-0.85 0.0611-0.4-0.23-0.861-0.299-0.469-1.04-1.2-0.739-0.729-1.2-1.01-0.473-0.292-0.864-0.217-0.399 0.0666-0.85 0.525l-0.373 0.378 3.67 3.61z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+    <g fill-opacity=".784">
+      <path d="m71.3 35.9 2.3 2.27 2.23-2.26 0.37 0.365-2.23 2.26 2.2 2.17 2.66-2.69 0.378 0.373-3.06 3.1-5.63-5.55 3.06-3.1 0.378 0.373z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m45.3 82.7q1.34-0.608 2.21-0.702 0.861-0.102 1.46 0.493 0.715 0.705 0.602 1.61-0.114 0.887-0.954 1.74-1.39 1.41-2.83 0.994l0.203-0.624q0.576 0.188 1.13 0.0081 0.549-0.187 1.11-0.758 0.674-0.683 0.757-1.33 0.0832-0.663-0.439-1.18-0.434-0.428-1.1-0.359-0.678 0.0606-1.71 0.547-0.971 0.47-1.8 0.508-0.83 0.0218-1.41-0.549-0.643-0.634-0.513-1.43 0.138-0.799 0.875-1.55 1.21-1.23 2.58-0.768l-0.187 0.592q-0.544-0.204-1.03-0.0647-0.486 0.123-0.978 0.621-0.539 0.547-0.663 1.12-0.116 0.568 0.334 1.01 0.78 0.769 2.35 0.0634z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m49.7 74.1 4.87 4.8 1.3-1.32 0.378 0.373-3 3.04-0.378-0.373 1.29-1.31-4.87-4.8-1.29 1.31-0.378-0.373 3-3.04 0.378 0.373z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m62 70.6q0.108 0.566-0.0871 1.25-0.195 0.68-0.853 1.35-0.919 0.932-2.07 0.733-1.14-0.208-2.66-1.71-1.5-1.48-1.69-2.66-0.184-1.2 0.751-2.14 0.555-0.563 1.14-0.71 0.59-0.148 1.3 0.0628l-0.18 0.584q-0.576-0.188-1.01-0.0888-0.438 0.0909-0.874 0.533-1.51 1.54 0.978 3.99 1.31 1.29 2.26 1.52 0.952 0.225 1.66-0.491 0.935-0.948 0.753-1.97l-1.76-1.74-1.24 1.26-0.378-0.373 1.65-1.67z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m63.1 59.8 5.63 5.55-0.539 0.547-7.21-2.69 5 4.93-0.404 0.41-5.63-5.55 0.539-0.547 7.21 2.69-5-4.93z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+    </g>
+    <path d="m74.4 57.5 0.981 0.967-3.52 3.57-5.63-5.55 1.21-1.23 4.65 4.58z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+    <g fill-opacity=".784">
+      <path d="m78.7 51.5-2.05 2.07 1.45 2.26-0.42 0.426-4.38-6.81 1.22-1.24 6.87 4.29-0.42 0.426zm-0.465-0.284-3.66-2.3-0.555 0.563 2.35 3.63z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m83.7 44.2q-0.0322-0.0317 0.326-0.138 0.366-0.114 0.862-6e-3 0.488 0.1 1.02 0.624 0.812 0.801 0.881 1.53 0.061 0.726-0.645 1.44l-1.89 1.92-5.63-5.55 1.55-1.57q0.428-0.434 0.818-0.652 0.382-0.226 0.893-0.134 0.503 0.0843 1.11 0.679 0.482 0.476 0.645 0.89 0.163 0.414 0.133 0.702-0.0299 0.288-0.0621 0.256zm-2.13 1.92 1.43-1.45q0.357-0.362 0.242-0.84-0.115-0.478-0.662-1.02-0.587-0.579-1.03-0.568-0.431 3e-3 -0.827 0.405l-1.32 1.33zm4.18 1.18q0.515-0.522 0.456-1.04-0.0595-0.518-0.711-1.16-0.547-0.539-1.08-0.559-0.527-0.0282-0.892 0.341l-1.59 1.61 2.34 2.31z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m56.8 93.9q-0.864 0.876-1.98 0.772-1.12-0.12-2.76-1.74-1.63-1.61-1.76-2.72-0.128-1.12 0.736-2 0.856-0.868 1.97-0.748 1.12 0.104 2.75 1.71 1.64 1.62 1.77 2.74 0.127 1.11-0.729 1.98zm-0.386-0.38q0.436-0.442 0.528-0.954 0.1-0.52-0.272-1.24-0.372-0.732-1.35-1.7t-1.71-1.32q-0.721-0.362-1.24-0.255-0.51 0.0994-0.946 0.541-0.436 0.442-0.536 0.962-0.1 0.52 0.264 1.24 0.372 0.716 1.35 1.68t1.71 1.34q0.729 0.354 1.25 0.247 0.518-0.107 0.954-0.549z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m60.5 81.7q1.41 1.39 0.497 2.65l3.57 1.43-0.452 0.458-3.51-1.44-1.31 1.33 2.5 2.47-0.404 0.41-5.63-5.55 1.7-1.72q0.42-0.426 0.85-0.653 0.429-0.227 0.989-0.119 0.56 0.108 1.2 0.742zm-1.58 4.05 1.53-1.55q0.42-0.426 0.369-0.921-0.0515-0.511-0.719-1.17-0.627-0.618-1.13-0.623-0.503-0.0204-0.931 0.414l-1.49 1.51z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m68.2 78.3-2.05 2.07 1.45 2.26-0.42 0.426-4.38-6.81 1.22-1.24 6.87 4.29-0.42 0.426zm-0.465-0.284-3.66-2.3-0.555 0.563 2.35 3.63z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m71.8 67.9-1.62 1.64 5.25 5.18-0.404 0.41-5.25-5.18-1.61 1.63-0.378-0.373 3.63-3.68z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m81.5 68.8q-0.864 0.876-1.98 0.772-1.12-0.12-2.76-1.74-1.63-1.61-1.76-2.72-0.128-1.12 0.736-2 0.856-0.868 1.97-0.748 1.12 0.104 2.75 1.71 1.64 1.62 1.77 2.74 0.127 1.11-0.729 1.98zm-0.386-0.38q0.436-0.442 0.528-0.954 0.1-0.52-0.272-1.24-0.372-0.732-1.35-1.7-0.981-0.967-1.71-1.32-0.721-0.362-1.24-0.255-0.51 0.0994-0.946 0.541-0.436 0.442-0.536 0.962-0.1 0.52 0.264 1.24 0.372 0.716 1.35 1.68 0.981 0.967 1.71 1.34 0.729 0.354 1.25 0.247 0.518-0.107 0.954-0.549z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m85.3 56.6q1.41 1.39 0.497 2.65l3.57 1.43-0.452 0.458-3.51-1.44-1.31 1.33 2.5 2.47-0.404 0.41-5.63-5.55 1.7-1.72q0.42-0.426 0.85-0.653 0.429-0.227 0.989-0.119 0.56 0.108 1.2 0.742zm-1.58 4.05 1.53-1.55q0.42-0.426 0.369-0.921-0.0515-0.511-0.719-1.17-0.627-0.618-1.13-0.623-0.503-0.0204-0.931 0.414l-1.49 1.51z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+      <path d="m90.1 48.7 1.7 4.97 2.28 2.25-0.404 0.41-2.27-2.24-5.01-1.63 0.452-0.458 4.2 1.35 0.0238-0.0241-1.42-4.17z" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal"/>
+    </g>
+  </g>
+</svg>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/docs/js/lunr.min.js?1604735136"></script>
+<script type="text/javascript" src="/docs/js/auto-complete.js?1604735136"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/spdldaemon.github.io\/docs";
+    
+</script>
+<script type="text/javascript" src="/docs/js/search.js?1604735136"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/tools/" title="Tools" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/tools/">
+          <b>1. </b>Tools
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/tools/onshape/" title="Onshape" class="dd-item ">
+        <a href="/docs/tools/onshape/">
+        Onshape
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/tools/kicad/" title="KiCad" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/tools/kicad/">
+          KiCad
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/tools/kicad/usingkicad/" title="Using KiCad" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/tools/kicad/usingkicad/">
+          Using KiCad
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/tools/kicad/schematiccapture/" title="Schematic Capture" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/tools/kicad/schematiccapture/">
+          Schematic Capture
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/applicationnotes/" title="Application Notes" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/docs/applicationnotes/">
+          <b>2. </b>Application Notes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/applicationnotes/magneticfieldsensing/" title="Magnetic Field Sensing" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/docs/applicationnotes/magneticfieldsensing/">
+          Magnetic Field Sensing
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/applicationnotes/audiomodems/" title="Audio Modems and the PIC" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/applicationnotes/audiomodems/">
+          Audio Modems and the PIC
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/applicationnotes/joystickinput/" title="Notes on Joystick Implementation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/applicationnotes/joystickinput/">
+          Notes on Joystick Implementation
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://me218archive.stanford.edu"><i class='fas fa-archive'></i> The ME 218 Archive</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/SPDLDaemon/spdl-docs-master"><i class='fab fa-github'></i> Github Repository</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fas fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://learn.netlify.com/en/"><i class='fas fa-bookmark'></i> Learn Theme Documentation</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/docs/'>The SPDL Docs Repository</a> <i class='fa fa-caret-right crumb' aria-hidden='true'></i> <a href='/docs/applicationnotes/'>Application Notes</a> <i class='fa fa-caret-right crumb' aria-hidden='true'></i> Magnetic Field Sensing
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#basic-em">Basic E&amp;M</a></li>
+        <li><a href="#detection">Detection</a></li>
+        <li><a href="#coils-as-inductors">Coils as Inductors</a></li>
+        <li><a href="#lc-resonance-and-signal-amplification">LC Resonance and Signal Amplification</a></li>
+        <li><a href="#noise-rejection">Noise Rejection</a></li>
+        <li><a href="#signal-amplification">Signal Amplification</a></li>
+        <li><a href="#sensor-locations--sensor-signal-math">Sensor Locations &amp; Sensor Signal Math</a></li>
+        <li><a href="#other-sensing-tidbits">Other Sensing Tidbits</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Magnetic Field Sensing
+            </h1>
+          
+
+        
+
+
+
+
+	<!-- spellcheck: off -->
+<p>If this looks overly mathematical, don’t worry, you can certainly skip the math and get something working by trial and error as is commonly done. If you take this approach, you still might want to check out the section on matching your coil resonance to the track frequency to minimize noise picked up from other sources. Either way, it’s usually helpful to understand the underlying physics when it comes to troubleshooting or improving your sensors. Also, some quick, back of the envelope calculations can often get you in the ballpark a lot quicker than random experimentation.</p>
+<h3 id="basic-em">Basic E&amp;M</h3>
+<p>A current flowing in an infinite wire will generate a magnetic field that circles around  the wire (in a direction given by the right hand rule – align your thumb with the current, and your fingers point in the \(B\) field direction) whose strength drops off with \(1/r\):</p>
+<p>$$B=\frac{\mu_0 i}{2\pi r}$$</p>
+<p>where \(\mu_0 = 1.26 \times 10^{-6} \mathrm{H}/\mathrm{m}\) is the vacuum permeability, \(i\) is the current in Amps, and \(r\) is the distance from the wire in meters.</p>
+<p>So if there is a sinusoidal current flowing in the wire that looks like</p>
+<p>$$ \begin{aligned} i &amp;= 0.1 \sin \omega t \\ \omega &amp;= 2\pi f \\ f &amp;= 20000 \end{aligned} $$</p>
+<p>It will generate a magnetic field around the wire that varies sinusoidally in time:</p>
+<p>$$ B = \frac{\mu_0}{2\pi r} \cdot 0.1 \sin \omega t $$</p>
+<h3 id="detection">Detection</h3>
+<p>An easy way to detect a magnetic field is to take advantage of the fact that when the magnetic flux in a loop of wire changes, a voltage is generated in the coil that is proportional to the rate of change:</p>
+<p>$$ \begin{aligned} V &amp;= -\frac{\partial\Phi}{\partial t} \\ \Phi &amp;= B \cdot A\end{aligned} $$</p>
+<p>where \(B\) is the magnetic field, and \(A\) is the coil area. We assume that \(B\) is constant over the area of the coil, which is a good approximation when the coils are small.</p>
+<p>Calculating the peak induced voltage for a <i class="units" >1&thinsp;cm</i> diameter coil located <i class="units" >10&thinsp;cm</i> from the wire, we get:</p>
+<p>$$ \begin{aligned} V &amp;= -\frac{\partial}{\partial t} \left( \frac{\mu_0}{2\pi r} \cdot 0.1 \sin \omega t \right) \cdot A \\ &amp;= \omega \cdot \left( \frac{\mu_0}{2\pi r} \cdot 0.1 \cos \omega t \right) \cdot A \\ V_\mathrm{peak} &amp;= 2.52 \thinspace \mathrm{\mu V} \end{aligned} $$</p>
+<!-- need to figure out upright mu here -->
+<p>which is a miniscule value, and would not be able to see it on a typical oscilloscope with <i class="units" >5&thinsp;mV</i> resolution. To increase your signal, you can connect several of these sensor loops in series. If you have \(N\) turns on your coil, you will get an induced voltage that is \(N\) times larger than the result for a single loop. With 1000 coils on the same sensor as above, you would see <i class="units" >2.52&thinsp;mV</i>, which is something you can work with. This still needs amplification, but a relatively simple op-amp circuit will do.</p>
+<p>So at some fixed distance from the wire, there are two things you can do to increase your signal—increase coil area or number of turns:</p>
+<p>$$ V \propto N \cdot A $$</p>
+<h3 id="coils-as-inductors">Coils as Inductors</h3>
+<p>Any time you have a coil, you also have an inductor. For a coil with length much greater than diameter, the inductance is:</p>
+<p>$$ L = \frac{\mu_0 A N^2}{l} $$</p>
+<p>where \(A\) is the coil area, \(N\) the number of turns, and \(l\) the length of the coil.</p>
+<p>For a practical coil that may have a length similar in magnitude to the diameter, this is only an approximation good to within a factor of 2 or so. To increase the inductance, inductors are often wound around core materials. These cores effectively amplify the magnetic field (and therefore inductance), by anywhere from factors of 10s to 1000s. Iron is commonly used at low frequencies, and ferrite is used at higher frequencies.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>Also, real inductors always have some capacitance, resulting from the numerous turns of wire wound next to one another. There is always capacitance between two neighboring wires, increasing with decreasing separation.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> This capacitance can easily be on the order of 10s to 100s of pF for a peanut-sized coil.</p>
+<p><img src="inductor_model.png" alt="Model of real inductor"></p>
+<p>You might think, &lsquo;who cares about picoFarads anyways&rsquo;—that is, until you see a mysterious high frequency ringing on a coil that you thought was an ideal inductor. You may be able to see this with sensors that are not designed to resonate at the track frequency (as described below) but resonate at some other frequency (i.e. the “self-resonant” frequency that depends on coil capacitance &amp; inductance). A simple model of what this can look like can be generated in circuitmaker:</p>
+<p><img src="ringing_model.png" alt="Simulation model for inductor"></p>
+<p>The sinusoidal source is simulating the signal from the track, the lower magnitude square wave source is simulating quick noise pulses that might be generated from motor switching, etc. The resulting waveforms show hi-frequency ringing at the self-resonant frequency (triggered by the noise spikes) riding on top of the desired <i class="units" >20&thinsp;kHz</i> signal waveform:</p>
+<p><img src="ringing_data.png" alt="Data from inductor simulation"></p>
+<h3 id="lc-resonance-and-signal-amplification">LC Resonance and Signal Amplification</h3>
+<p>You can make a functional sensor using a coil as described above, although it may need to be pretty big (large area, lots of turns) in order to give you a signal large enough to work with. By adding a capacitor in parallel with your coil (and effectively in parallel with the internal coil capacitance), you can make a circuit that resonates at the track frequency. The frequency of this resonance is given by:</p>
+<p>$$ f = \frac{1}{2\pi\sqrt{LC}} $$</p>
+<p>The effect of this is that a small signal from the track can drive a much larger oscillation in the parallel inductor capacitor circuit, which is easier to detect. The effective amplification of a circuit like this can easily be on the order of 10-100. You can model the induced voltage in the coil as a sinusoidal voltage source in series with the inductor:<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<p><img src="parallel_LC.png" alt="Model of parallel LC circuit"></p>
+<p>If you could build this circuit and then swept the frequency knob on the function generator, you’d get a plot of \(V_\mathrm{in}/V_\mathrm{out}\) vs. frequency that looks like:</p>
+<p><img src="freqresp.png" alt="Parallel LC circuit frequency response"></p>
+<p>If you actually used ideal components<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> and turned the knob very slowly, you’d find that the peak at <i class="units" >20&thinsp;kHz</i> was infinite.</p>
+<p>This measure of the sharpness of resonance is called the quality factor, or Q, of the circuit. For this circuit, it is infinite. Q is defined as the resonant frequency divided by the width in frequency units of the curve at the point where it is \(1/\sqrt{2}=0.707\) times the maximum value.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>Suppose all the ideal inductors are used up and you have to order a real inductor from Digi-Key. You find that it has <i class="units" >26&thinsp;&Omega;</i> of resistance due to the many turns of thin wire. You plug this into your circuitmaker model:</p>
+<p><img src="real_parallel_LC.png" alt="Model of real-world parallel LC circuit"></p>
+<p>and get this response:</p>
+<p><img src="real_freqresp.png" alt="Real parallel LC circuit frequency response"></p>
+<p>Now instead of having an infinite peak, the resonant circuit amplifies the field signal by about 40. Since the peak is no longer infinite, you happily calculate Q to be 40. Another handy Q formula for a series resistor like this is:</p>
+<p>$$ Q = \frac{2\pi\omega_\mathrm{res} L}{R} $$</p>
+<p>Now, suppose Mark Merlo was playing with the function generator and tweaked the frequency knob so it’s generating <i class="units" >21&thinsp;kHz</i> instead of <i class="units" >20&thinsp;kHz</i>. Now the gain of the resonant circuit goes from 40 down to 9, just after you spent hours calibrating your code to work with a gain of 40. So that’s problem #1: your circuit is sensitive to small changes in track frequency. Eventually, Sara figures out what the deal is and recalibrates the knob to <i class="units" >20.0001&thinsp;kHz</i>. Luis is just starting to build his circuit but Brandon stole all of his capacitors to extend the range of the electric banana. Fortunately, he manages to find a pair with the exact value he needs in the cabinet of freedom, and they even have a ±<i class="units" >5&thinsp;%</i> tolerance (good as far as capacitors go). Suppose one of the caps is dead on the labeled value, and the other is <i class="units" >5&thinsp;%</i> high, so that circuit will have a resonant frequency of <i class="units" >19.5&thinsp;kHz</i>. Now the gain will be approximately 17 for that sensor and 40 for the other sensor—not a very well matched pair of sensors.</p>
+<p>These undesirable effects of a sharp resonance peak can mitigated by lowering the Q even more, which flattens out the peak. An easy way to do this is with a parallel resistor:</p>
+<p><img src="detuned.png" alt="Circuit model with parallel detuning resistor"></p>
+<p>If you only have a parallel capacitor (in the location of the <i class="units" >10&thinsp;k&Omega;</i> resistor) and replace the <i class="units" >26&thinsp;&Omega;</i> capacitor with a wire, the Q is given by:<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<p>$$ Q = 2\pi f_\mathrm{res} RC $$</p>
+<p>where \(C\) is the total capacitance summing the coil and external capacitances.</p>
+<p>If you have both resistors in the circuit, the resultant Q is well approximated by
+$$ \frac{1}{Q_\mathrm{total}} = \frac{1}{Q_\mathrm{R,series}} + \frac{1}{Q_\mathrm{R,parallel}} $$</p>
+<p>This expression may even be exact, who knows?  Anyways, the peak is quite a bit flatter now so that if the frequency shifts by <i class="units" >1&thinsp;kHz</i> to <i class="units" >21&thinsp;kHz</i>, the signal only changes by <i class="units" >20&thinsp;%</i>, which is a lot better than the factor of 4 we saw above.</p>
+<p><img src="detuned_data.png" alt="Simulated response of detuned circuit"></p>
+<p>This parallel resistor that lowers the Q of the circuit is sometimes called a Q-killer resistor for obvious reasons. You’ll want to pick a Q-killer resistor that gives you good amplification without too sharp of a resonant peak which would result in sensitivity to slight frequency variations.</p>
+<h3 id="noise-rejection">Noise Rejection</h3>
+<p>If there is EM noise at frequencies other than the track frequency,<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> it will also generate a signal in your sensors. Suppose you have a coil without a resonant capacitor, and the rate of change of magnetic flux from the switched motor current is the same as the rate of change of magnetic flux due to the wire under the track, in the location of your sensor. Then an equal voltage will be produced in the sensor, which will show up as noise that is just as large as your signal.
+If your sensor is part of a tuned circuit that amplifies the track frequency by a factor of 10, then the induced noise from the motor will be 1/10 of the track signal, which is a good thing.</p>
+<p>There are a few things you can do to minimize magnetic noise generated by the motor.</p>
+<ol>
+<li>
+<p>Don’t put your sensors right next to your motors.</p>
+</li>
+<li>
+<p>Run the current supply and return wires for a motor close together. If you run them in a big open loop (and maybe wrap them around your sensors a few times), they will generate much larger magnetic fields &amp; hence more sensor noise.</p>
+</li>
+<li>
+<p>Don’t switch motor currents faster than you need to. For the LMD18200’s, this means leaving off the bootstrap capacitors (which (when added) cause the MOSFETs in the H-bridge to turn on and off a lot faster).  When you turn off a MOSFET real fast, the current through it and all the associated wiring changes real fast (large di/dt).  This causes any associated magnetic fields to change real fast (which is what your sensors detect), and also causes voltage drops across the wires that were supplying the current due to the inductance of these supply wires.</p>
+</li>
+</ol>
+
+<div class="notices note" ><p>Decreasing switching speed is entirely different from decreasing PWM frequency—lowering the PWM frequency will not affect the switching speed. The MOSFETs still switch on/off at the same speed, they just switch less often at a lower PWM frequency.</p>
+</div>
+
+<h3 id="signal-amplification">Signal Amplification</h3>
+<p>After all this work (actually, its not that bad, just a few components soldered in parallel), you’ll still probably want to amplify your signal. One feature of the resonant circuits described above is that they do not have very high output impedance—that is, if you try drawing significant currents from them it will load them down and kill the resonance. Kind of like sticking a tuning fork in a block of cheese—the fork will not continue to shake the cheese at 1 kHz for minutes. Instead, the vibrations will quickly die down to nothing.</p>
+<p>Two ways to deal with this low-impedance sensor are to buffer the signal or simply use a non-inverting op-amp configuration (as shown below):</p>
+<p><img src="noninverting_opamp.png" alt="Non inverting op-amp"></p>
+<p>As long as the op amp doesn’t saturate (output goes to one rail or the other), this will work pretty well. The LM6144s have the &lsquo;&lsquo;interesting&rsquo;&rsquo; property that if an output saturates and the inputs are no longer held at the same voltage (no longer ideal 
+  <i class="far fa-frown "></i>
+), then the input impedance drops drastically, which can load the sensor down and kill the resonance. This can make for some frustrating debugging sessions until you figure out what’s happening.</p>
+<p>Once you’ve amplified the signal, you can either build a peak detector circuit or do the peak detection in software. Given the amount of other stuff going on in software, the peak detector circuit is not a bad choice. Choose your R &amp; C carefully to give the best compromise between smooth signal and fast response to signal changes:</p>
+<p><img src="peakdetect_model.png" alt="Peak detection model"></p>
+<p>Time constant, \(\tau=RC\), too small (excessive ripple):</p>
+<p><img src="peakdetect_small.png" alt="Small time constant plot"></p>
+<p>Time constant, \(\tau=RC\), too large (output doesn&rsquo;t track input):</p>
+<p><img src="peakdetect_large.png" alt="Large time constant plot"></p>
+<h3 id="sensor-locations--sensor-signal-math">Sensor Locations &amp; Sensor Signal Math</h3>
+<p>Once you’ve got your sensors working, where do you put them and what do you do with them? First of all, there are three basic sensor orientations. We’ll call these the Horizontal, Vertical, and Parallel (referring to the axis of the coil). When your sensor axis is parallel with the wire, the field is all perpendicular to the coil, so there is no field component going through the coil, and you get no signal. So, you can forget about those. Vertical and Horizontal coils are more useful.</p>
+<p><img src="orientations.png" alt="Coil orientations"></p>
+<p><img src="sensor_location.png" alt="Coil location"></p>
+<p>For a coil that is located a horizontal distance \(x\) from the wire and a height \(h\) above the wire, the magnitude of the component of the field that is actually passing through the coil (aligned with the coil axis) is given by:</p>
+<p>$$ \begin{aligned} B_\mathrm{h} &amp;= \frac{\mu_0 i h}{2\pi\left(x^2+h^2\right)} \quad \mathrm{horizontal\space{}coil} \\ B_\mathrm{v} &amp;= \frac{\mu_0 i x}{2\pi\left(x^2+h^2\right)} \quad \mathrm{vertical\space{}coil} \end{aligned} $$</p>
+<p>For a horizontal sensor at fixed height \(h_0\), if you plot the normalized signal in the sensor over a range of \(x\) values that span \(\pm3h_0\) you will get something looking like:</p>
+<p><img src="horiz_sensor.png" alt="Response from horizontally oriented sensor"></p>
+<p>Suppose you have two sensors, each mounted a distance \(h_0\) from the center of the robot. Assume horizontal distance \(x\) increases positively to the right of the wire. For a sensor mounted at \(x =  +h_0\), the sensor will be over the wire when the center of the robot is at \(x =  -h_0\), so plotting the right sensor signal as a function of the position of the robot center gives us something like:</p>
+<p><img src="right_sensor.png" alt="Response from right robot sensor"></p>
+<p>The left sensor signal is found in exactly the same way, and its peak will occur when the center of the robot is at  \(x =  +h_0\). If you read these signals into the HC12 and subtract them in software (Left Sensor – Right Sensor), you get a signal which is roughly proportional to the deviation of the robot center from the wire, over a limited range centered about a deviation of 0.</p>
+<p><img src="sensor_sum.png" alt="Combined sensor response"></p>
+
+<div class="notices note" ><p>If you use the summed signal for feedback control, be aware that if the wire is not between the sensors, the sense of the signal can invert.  For example, going from \(x=-1\) to \(x=0\), the value of the summed signal is increasing.  However, this is also true when going from \(x=-2\) to \(x=-3\)—away from the wire.  Keep this in mind when deciding how your robot will respond.</p>
+</div>
+
+<p>You can follow the exact same procedure to make plots of vertically mounted sensors, or different horizontal sensor configurations (heights, spacing). Similarly, by manipulating your sensor signals with simple math, you may find some resultant signal that works better for whatever you want to do with the position information.</p>
+<h3 id="other-sensing-tidbits">Other Sensing Tidbits</h3>
+<ol>
+<li>
+<p>If your sensors are mounted near any conductive materials (aluminum and copper in particular), induced currents will flow in the metals that partially cancel out the fields that you are trying to measure. So mounting your sensors on aluminum rails probably would not be a good idea.</p>
+</li>
+<li>
+<p>You’ll have to have a fairly accurate capacitance to set the resonant frequency where you want it.  There are <i class="units" >5&thinsp;%</i> and <i class="units" >10&thinsp;%</i> tolerance polyester caps for sale with the coil/inductors. Two advantages of these caps over ceramic caps is tolerance (<i class="units" >20&thinsp;%</i> is typical on ceramic) and low capacitance change with change in temperature (not sure what the specs are but these type of capacitors typically change an order of magnitude less than ceramic caps for a given change in temperature).</p>
+</li>
+<li>
+<p>If you’re trying to dial in your total capacitance by adding small parallel capacitors, the tolerances on these smaller caps are much less important than the tolerances on the larger caps that make up the bulk of the capacitance. For example, if a parallel cap provides the final <i class="units" >10&thinsp;%</i> of capacitance with a <i class="units" >10&thinsp;%</i> capacitance tolerance, it will only contribute about <i class="units" >1&thinsp;%</i> to the overall tolerance range.</p>
+</li>
+</ol>
+<hr>
+<p>Contributed by Oliver Max, 20 Feb 2002.</p>
+<p>Adapted for web by Arul Suresh, 11 January 2020.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Ferrite has much lower losses at high frequencies since it is an electrical insulator and doesn’t let internal dissipative eddy currents flow as iron does. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>For two wires with radius \(r\) and separation \(s\), the capacitance is \(C=\pi\epsilon/\log\left(s/r\right)\)where \(\epsilon\) is the permittivity of the insulator, typically 2-6 times \(\epsilon_0\), the permittivity of free space. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>In this model, you have access to the outer leads of the sinusoidal source and inductor in your real-world inductor, but not the one connecting the two. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Available in the TA office for a slight premium. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>That is, \(\infty/0\) for this curve, which as we all know is &ldquo;a suffusion of yellow&rdquo; in your calculator. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>Currently just copied, and this sentence clearly got jumbled at some point. <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7" role="doc-endnote">
+<p>For example, from the switching of motor currents. <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/docs/applicationnotes/" title="Application Notes"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/docs/applicationnotes/audiomodems/" title="Audio Modems and the PIC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/docs/js/clipboard.min.js?1604735136"></script>
+    <script src="/docs/js/perfect-scrollbar.min.js?1604735136"></script>
+    <script src="/docs/js/perfect-scrollbar.jquery.min.js?1604735136"></script>
+    <script src="/docs/js/jquery.sticky.js?1604735136"></script>
+    <script src="/docs/js/featherlight.min.js?1604735136"></script>
+    <script src="/docs/js/highlight.pack.js?1604735136"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/docs/js/modernizr.custom-3.6.0.js?1604735136"></script>
+    <script src="/docs/js/learn.js?1604735136"></script>
+    <script src="/docs/js/hugo-learn.js?1604735136"></script>
+
+    <link href="/docs/mermaid/mermaid.css?1604735136" rel="stylesheet" />
+    <script src="/docs/mermaid/mermaid.js?1604735136"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+<script type="text/javascript" src="/docs/js/bigfoot.min.js"></script>
+<script type="text/javascript">
+    $.bigfoot();
+</script>
+  </body>
+</html>
